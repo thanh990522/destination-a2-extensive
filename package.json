@@ -1,0 +1,8 @@
+{
+  "name": "destination-a2-communication",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Destination A2, integrated skills and communication, Unit 1",
+  "scripts": {"build": "node tools/build.mjs", "test": "node --test tests/content.test.mjs"},
+  "engines": {"node": ">=18"}
+}
