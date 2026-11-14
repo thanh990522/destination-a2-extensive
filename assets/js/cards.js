@@ -38,7 +38,7 @@
         <ul class="goals">${(U.goals || []).map(g => `<li>${ic('✅', 'xs')}<span>${md(g)}</span></li>`).join('')}</ul>
         <div class="teacher-line"><span class="avatar">HT</span><div><b>Mr. Hà Chí Thanh</b><small>${esc(U.book)}</small></div></div>
       </div>
-      <div class="cover-path"><p class="kicker">IN THIS UNIT</p><ol>${U.stages.filter(s => s.skill !== 'start').map((s, i) => `<li class="sk-${s.skill}"><span class="cp-n">${i + 1}</span>${ic(s.icon, 'sm')}<span><b>${md(s.name)}</b><small>${esc((SKILL[s.skill] || [''])[0])}</small></span></li>`).join('')}</ol></div>
+      <div class="cover-path${U.stages.length > 10 ? ' many' : ''}"><p class="kicker">IN THIS UNIT</p><ol>${U.stages.filter(s => s.skill !== 'start').map((s, i) => `<li class="sk-${s.skill}"><span class="cp-n">${i + 1}</span>${ic(s.icon, 'sm')}<span><b>${md(s.name)}</b><small>${esc((SKILL[s.skill] || [''])[0])}</small></span></li>`).join('')}</ol></div>
     </div>`;
 
   R.divider = (st, U) => {
@@ -113,7 +113,7 @@
       const w = Math.max(6, Math.min(16, Math.max(...A2.answers(it).map(a => String(a).length)) + 2));
       return `<span class="item cz" data-item="${id}"><sup>${label}</sup><input class="gap" data-q="${id}" style="width:${w}ch" autocomplete="off" spellcheck="false" aria-label="Gap ${i}">${it.hint ? `<em class="czh">(${esc(it.hint)})</em>` : ''}<button class="eye mini" type="button" data-eye="${id}" aria-label="Show answer ${i}" aria-expanded="false">${A2.eye}</button><span class="ans inline" id="ans-${id}" hidden><b>${md(A2.shown(it))}</b></span></span>`;
     });
-    return `${lead(c)}${bank(c)}<div class="set" data-set="${c.id}"><div class="cloze ${c.style || 'letter'}">${c.textTitle ? `<p class="cz-title">${md(c.textTitle)}</p>` : ''}<p>${html.replace(/<br><br>/g, '</p><p>')}</p></div>${A2.checkBar(c.id, c.items.length)}</div>${transfer(c)}${note(c)}`;
+    return `${lead(c)}${bank(c)}<div class="set" data-set="${c.id}"><div class="cloze ${c.style || 'letter'}">${c.textTitle ? `<p class="cz-title">${md(c.textTitle)}</p>` : ''}<p>${c.style === 'dialogue' ? html.replace(/(<br>)+/g, '</p><p>') : html.replace(/<br><br>/g, '</p><p>')}</p></div>${A2.checkBar(c.id, c.items.length)}</div>${transfer(c)}${note(c)}`;
   };
 
   R.listen = (c, U, mode, part) => {

@@ -6,51 +6,64 @@ Teacher: **Mr. Hà Chí Thanh**
 
 One book Unit = one integrated learning Unit. The book’s number, order and language scope stay the same. Every Unit adds a familiar situation and all four skills, with speaking throughout. Pacing is flexible: the programme is organised by Unit, not by session.
 
-### Vocabulary Units
-Follow the categories that the book Unit actually uses (Unit 3: nouns, verbs, phrasal verbs, phrases, adjectives and adverbs, word formation). Split large categories into sets of 3–8 items. **Each set is followed immediately by its own practice** (at least one question per taught item), then the next set begins. Word formation is taught as word-family tables, each followed by practice.
+### Vocabulary Units (model: Unit 3)
+Follow the categories that the book Unit actually uses (Unit 3: nouns, verbs and phrasal verbs, phrases, adjectives and adverbs, word formation). Each category is taught with **flip cards** (3–8 items per slide, Vietnamese meaning and example on the back), and is followed at once by **the book’s own exercises for that category, quoted exactly** (Unit 3: A–B after nouns, C–D after verbs, E after phrases, F–G after adjectives and adverbs, H–I after the word-family tables). Then the skills, each with its own pre-stage words.
 
-### Grammar Units (model: Unit 1)
-Teach the whole grammar of the Unit first from the book’s theory page, then do the **book’s own grammar exercises, quoted exactly** (Unit 1: A–F, pages 7–8), then move to the skills. New words are taught in the **pre-stage of each skill** (pre → while → post), not in a separate vocabulary block. One card = one slide. Units 2–3 below still use the earlier allocation and will be converted.
-
-### Grammar Units (earlier allocation, Units 2–3)
-Each grammar point is one block. **All the theory of the block comes first** (form table, uses, spelling or sound notes, comparison with a related form, “watch out”), **then all the exercises**: recognition → controlled choice → form completion → sentence writing → error correction → text completion, ending with a speaking activity. A Unit with two grammar points (Unit 1, Unit 2) has two blocks, each placed next to the listening that uses it. Grammar explanations have a Vietnamese box; everything else on slides is in English.
+### Grammar Units (model: Units 1 and 2)
+Teach the whole grammar of the Unit first from the book’s theory page (sentence formulas in highlighted frames, uses, helpful hints, watch-out notes, a Vietnamese box), then do the **book’s own grammar exercises, quoted exactly** (Unit 1: A–F, pp. 7–8; Unit 2: A–F, pp. 10–11), then move to the skills. New words are taught in the **pre-stage of each skill** (pre → while → post), not in a separate vocabulary block. One card = one slide.
 
 ### Skills
-- **Listening**: a real recording on the closest topic (checked script and audio). Key unfamiliar words are taught and practised first; then main idea, details and a speaking follow-up.
-- **Reading**: an original text built from the Unit language; new words taught first; main idea, details, then grammar or vocabulary noticing.
-- **Speaking**: phrase bank + practice, an information gap, and a role play with a clear outcome, timer, optional recording and a 0–2 rubric (task, interaction, Unit language, pronunciation).
-- **Writing**: a model text with analysis questions, a plan, draft area with word count, checklist and download.
-- **Review**: ten-question Unit check, can-do list, book practice reference and homework.
+- **Listening**: a real recording on the closest topic (checked script and audio). Key words are taught first on flip cards; then one detail task and a speaking follow-up with suggested structures. Task types vary across a Unit (note completion, True/False, multiple choice, “Who…?”).
+- **Reading**: two original texts, easier → harder (A2, then A2+/B1), each with its own pre-reading words and a **different detail question type** (Unit 1: True/False, note completion; Unit 2: “Who…?” matching, True/False/Not given; Unit 3: multiple choice, short answers). Showing an answer highlights the evidence in the text.
+- **Speaking**: phrase flip cards + two-column tap-to-match responses, an information gap (Unit 1: map, Unit 2: spot the difference, Unit 3: family tree), and a role play with a clear outcome, timer and optional recording.
+- **Writing**: a model text with analysis questions (evidence highlighted), a plan, draft area with word count, checklist and download.
+- **Review**: ten-question Unit check, can-do list and homework.
 
 ## Standard learning sequence
 
-**Unit 1 (new model, 35 slides)**
+**Unit 1 · grammar (31 slides)**
 
 | Stage | Slides |
 | --- | --- |
 | Welcome | Cover · warm-up |
-| Grammar | Present simple form and use · spelling, adverbs, time phrases · there is / there are · it’s → **Book exercises A, B, C, D, E, F** (pp. 7–8, exact) → Find someone who… |
-| Listening 1: My Day | Pre: new words · check → While: main idea · details → Post: speaking |
-| Listening 2: My Hometown | Pre: new words · check → While: main idea · details → Post: speaking |
-| Reading: My street | Text 1 (A2): pre-reading words → True/False details · Text 2 (A2+/B1): pre-reading words → note completion, one or two words. Answers highlight the evidence in the text. |
+| Grammar | Present simple form and use · spelling, adverbs, time phrases · there is / there are · it’s → **Book exercises A–F** (pp. 7–8, exact) |
+| Listening 1: My Day | Pre: flip words → While: details → Post: speaking |
+| Listening 2: My Hometown | Pre: flip words → While: details → Post: speaking |
+| Reading: My street | Text 1 (A2): True/False · Text 2 (A2+/B1): note completion |
 | Speaking: Meet a neighbour | Pre: phrases · match → information gap → role play |
 | Writing: A welcome message | Pre: model text → task |
 | Review | Unit check · can-do and homework |
 
-**Units 2–3 (earlier allocation)**
+**Unit 2 · grammar (32 slides)**
 
-| Unit 2 (grammar) | Unit 3 (vocabulary) |
+| Stage | Slides |
 | --- | --- |
-| Welcome | Welcome |
-| Home words: 3 sets, each + practice | Nouns: 4 sets, each + practice |
-| Present continuous: theory 1–4 → exercises 1–6 → speaking | Verbs, phrasal verbs: 3 sets, each + practice |
-| Listening: Where’s Mom? | Phrases: 2 sets, each + practice |
-| Listening: Right now | Adjectives and adverbs: 3 sets, each + practice |
-| Stative verbs: theory 1–2 → exercises 1–4 | Word formation: 2 tables, each + practice |
-| Listening: It smells great! | Listening: My English Family; Parents’ jobs |
-| Reading: family group chat | Reading: Meet my family |
-| Speaking: video call, spot the difference | Speaking: family tree gap, introduce someone |
-| Writing: live update · Unit check + homework | Writing: profile · Unit check + homework |
+| Welcome | Cover · warm-up |
+| Grammar | Present continuous form · use (helpful hints, watch out) · stative verbs (book list) → **Book exercises A–F** (pp. 10–11, exact) |
+| Listening 1: Where’s Mom? | Pre: flip words → While: note completion → Post: speaking |
+| Listening 2: Right now | Pre: flip words → While: True/False → Post: speaking |
+| Listening 3: It smells great! | Pre: flip words → While: multiple choice → Post: describe a dish (sense verbs) |
+| Reading: At home this week | Text 1 (A2): family group chat, “Who…?” · Text 2 (A2+/B1): blog post, True/False/Not given |
+| Speaking: A video call | Pre: phrases · match → spot the difference (6 differences) → role play |
+| Writing: A live update | Pre: model text → task |
+| Review | Unit check · can-do and homework |
+
+**Unit 3 · vocabulary (43 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Welcome | Cover · warm-up |
+| Nouns | 4 flip sets (family, grand-, friends and people, hair) → **Book A, B** (p. 13) |
+| Verbs and phrasal verbs | 3 flip sets → **Book C, D** (pp. 13–14) |
+| Phrases | 2 flip sets → **Book E** (p. 14) |
+| Adjectives and adverbs | 3 flip sets → **Book F** (crossword clues), **G** (pp. 14–15) |
+| Word formation | 2 word-family tables → **Book H, I** (p. 15) |
+| Listening 1: My English Family | Pre: flip words → While: “Who…?” multiple choice → Post: speaking |
+| Listening 2: Parents’ jobs | Pre: flip words → While: note completion → Post: speaking |
+| Reading: Family and neighbours | Text 1 (A2): profile, multiple choice · Text 2 (A2+/B1): article, short answers (max. three words) |
+| Speaking: Someone special | Pre: phrases · match → family-tree information gap → role play |
+| Writing: A profile | Pre: model text → task |
+| Review | Unit check · can-do and homework |
 
 ## Homework
 

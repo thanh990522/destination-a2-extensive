@@ -102,7 +102,7 @@ html,body{height:100%;overflow:hidden;background:#0B1F5C}
 .slide .t-short .ans{flex-basis:100%}
 /* long letters in two columns */
 .slide.type-cloze .cloze{columns:2;column-gap:34px}
-.slide.type-cloze .cloze p{break-inside:avoid-column}
+.slide.type-cloze .cloze.dialogue p{break-inside:avoid-column}
 .slide.type-wrap .wrap-card{align-items:start}
 /* v3 */
 .slide-body{overflow-y:auto;scrollbar-width:thin}
@@ -115,3 +115,10 @@ html,body{height:100%;overflow:hidden;background:#0B1F5C}
 .slide .frame{font-size:20px}
 .slide .pr{font-size:21px;padding:12px 14px}.slide .chosen{font-size:19px}
 .slide .split.read .side{position:sticky;top:0}
+
+/* covers with many stages: two-column path */
+.cover-slide .cover:has(.cover-path.many){grid-template-columns:1.05fr .95fr}
+.cover-slide .cover-path.many ol{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cover-slide .cover-path.many li{padding:8px 10px;margin:0}
+.cover-slide .cover-path.many li b{font-size:16px;line-height:1.2}
+.cover-slide .cover:has(.cover-path.many) h1{font-size:62px}

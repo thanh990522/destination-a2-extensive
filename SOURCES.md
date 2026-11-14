@@ -8,8 +8,8 @@ Checked on 14 November 2026.
 
 - Units 1–3 were inspected page by page: Unit 1 (pages 6–8), Unit 2 (pages 9–11), Unit 3 (pages 12–15).
 - Grammar scope (forms, uses, helpful hints, watch-out notes, the stative-verb list) and the Unit 3 word lists by category follow the book.
-- **Unit 1** follows the teacher’s instruction to use the book directly: the grammar theory (page 6, with Vietnamese explanations added) and **exercises A–F (pages 7–8) are quoted exactly**, including the instructions and the word box. The answer keys were written for this course (the book page has no key).
-- Units 2–3, all reading texts, skill tasks, writing models and homework are newly written.
+- **Units 1–3** follow the teacher’s instruction to use the book directly: the grammar theory and word lists (with Vietnamese explanations added) and the book exercises are **quoted exactly**, including instructions and word boxes: Unit 1 A–F (pages 7–8), Unit 2 A–F (pages 10–11), Unit 3 A–I (pages 13–15). Two adaptations for the screen: Unit 3 exercise F (crossword) is shown as its numbered Across/Down clues without the grid, and Unit 3 exercise D (matching) is shown as two tap-to-match columns in the book’s order. The instructions of Unit 3 H and I read “grammatically and in meaning” as printed. The answer keys were written for this course (the book pages have no key).
+- All reading texts, skill tasks, writing models and homework are newly written.
 - The book is copyrighted by its publisher. The site is public on GitHub Pages: keep the copied book material for students who use the book, and consider closing lessons in the admin page when they are not in use.
 
 ## Real recordings (all from ELLLO, English Listening Lesson Library Online, elllo.org)

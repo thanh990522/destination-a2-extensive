@@ -52,13 +52,19 @@ for (const n of C.built) {
     const words = w.model.slice(1).join(' ').split(/\s+/).filter(Boolean).length;
     assert.ok(words >= w.min - 5 && words <= w.max + 5, `writing model ${words} words`);
   });
-  test(`Unit ${n}: in vocabulary Units every word set is followed at once by its own practice`, () => {
-    U.cards.forEach((c, i) => {
-      if (c.type !== 'words' || U.type !== 'Vocabulary') return;
-      const next = U.cards[i + 1];
-      assert.ok(next && next.type === 'practice' && next.stage === c.stage, 'practice must follow ' + c.id);
-      assert.ok(next.items.length >= c.words.length, `${next.id}: one question per taught item at least`);
+  test(`Unit ${n}: every vocabulary category teaches its words first, then its book exercises`, () => {
+    U.stages.filter(s => s.skill === 'vocab').forEach(s => {
+      const cs = U.cards.filter(c => c.stage === s.id);
+      const isEx = c => ['practice', 'pairs', 'cloze'].includes(c.type);
+      const firstEx = cs.findIndex(isEx);
+      assert.ok(firstEx > 0, s.id + ': words, then exercises');
+      assert.ok(cs.slice(firstEx).every(isEx), s.id + ': no new words after the exercises start');
+      assert.ok(cs.slice(firstEx).every(c => c.book), s.id + ': exercises come from the book');
     });
+    if (U.type === 'Vocabulary') {
+      const taught = U.cards.filter(c => c.type === 'words' && U.stages.find(s => s.id === c.stage).skill === 'vocab');
+      assert.ok(taught.length >= 8, 'vocabulary Units teach every book category');
+    }
   });
   test(`Unit ${n}: grammar stages give all theory before any exercise`, () => {
     U.stages.filter(s => s.skill === 'grammar').forEach(s => {
