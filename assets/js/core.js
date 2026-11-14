@@ -139,6 +139,26 @@
   A2.optionsOf = item => item.o || [];
   const gradable = item => !['open', 'say'].includes(item.t);
 
+  /* ---------- spread correct answers evenly over A/B/C (book exercises keep the book’s order) ---------- */
+  const PAT = { 2: [0, 1, 1, 0, 1, 0, 0, 1], 3: [1, 0, 2, 2, 1, 0, 0, 2, 1], 4: [2, 0, 3, 1, 1, 3, 0, 2] };
+  const hash = s => [...String(s)].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+  A2.balance = (items, seed) => {
+    const h = hash(seed);
+    (items || []).forEach((it, i) => {
+      if (it.fixed) return;
+      const keys = A2.answers(it).map(A2.norm);
+      const reorder = list => {
+        const n = list.length, pat = PAT[n]; if (!pat) return list;
+        const ci = list.findIndex(o => keys.includes(A2.norm(o))); if (ci < 0) return list;
+        const rest = list.filter((_, k) => k !== ci), pos = pat[(i + h) % pat.length];
+        rest.splice(pos, 0, list[ci]); return rest;
+      };
+      if (it.o && !it._bal) { it.o = reorder(it.o); it._bal = 1; }
+      else if (!it._bal && /\{[^}]+\|[^}]+\}/.test(it.q || '')) { it.q = it.q.replace(/\{([^}]+)\}/, (m, g) => '{' + reorder(g.split('|').map(x => x.trim())).join('|') + '}'); it._bal = 1; }
+    });
+  };
+  A2.balanceUnit = U => (U.cards || []).forEach(c => { if (!c.book && c.type !== 'cloze') A2.balance(c.items, U.n + c.id); });
+
   /* ---------- question rendering ---------- */
   const eyeBtn = (id, label = 'Show this answer') => `<button class="eye" type="button" data-eye="${id}" aria-expanded="false" aria-controls="ans-${id}" title="${label}" aria-label="${label}">${A2.eye}</button>`;
   const ansBox = (id, item) => {
@@ -168,7 +188,7 @@
     } else if (t === 'match') {
       body = `<p class="qtext">${A2.md(item.q)}</p><select class="sel" data-q="${id}" aria-label="Match ${n}"><option value="">Choose…</option>${(opts.matchOptions || item.o || []).map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join('')}</select>`;
     } else if (t === 'open' || t === 'say') {
-      body = `<p class="qtext">${A2.md(item.q)}</p>${t === 'open' ? `<textarea class="line area" data-q="${id}" rows="2" placeholder="Your answer"></textarea>` : ''}`;
+      body = `<p class="qtext">${A2.md(item.q)}</p>${item.frame ? `<p class="frame"><span>Try:</span> ${A2.md(item.frame)}</p>` : ''}${t === 'open' ? `<textarea class="line area" data-q="${id}" rows="2" placeholder="Your answer"></textarea>` : ''}`;
     }
     return `<li class="item t-${t}" data-item="${id}">${num}${pic}<div class="qbody">${body}${ansBox(id, item)}</div>${eyeBtn(id, t === 'say' || t === 'open' ? 'Show a possible answer' : 'Show this answer')}</li>`;
   };

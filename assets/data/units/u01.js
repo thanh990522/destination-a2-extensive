@@ -26,47 +26,53 @@ window.A2_UNITS[1] = {
     { id: 'cover', stage: 'start', type: 'cover', title: 'My day, my ==neighbourhood==' },
     { id: 'warm', stage: 'start', type: 'talk', tag: 'Warm-up · speaking', title: 'A little about ==you==', lead: 'Ask and answer with a partner. Add one extra detail.',
       items: [
-        { q: 'What time do you usually get up?', model: 'I usually get up at half past six. What about you?' },
-        { q: 'What do you do at weekends?', model: 'I often meet my friends. We go to a café or the cinema.' },
-        { q: 'What is there near your home?', model: 'There is a small park, and there are two cafés near my home.' },
-        { q: 'What’s the weather like today?', model: 'It’s hot and sunny today.' }],
+        { q: 'What time do you usually get up?', frame: 'I usually get up at ___.', model: 'I usually get up at half past six. What about you?' },
+        { q: 'What do you do at weekends?', frame: 'At weekends, I often / sometimes ___.', model: 'I often meet my friends. We go to a café or the cinema.' },
+        { q: 'What is there near your home?', frame: 'There is a ___ and there are ___ near my home.', model: 'There is a small park, and there are two cafés near my home.' },
+        { q: 'What’s the weather like today?', frame: 'It’s ___ today.', model: 'It’s hot and sunny today.' }],
       useful: ['I usually…', 'There is / There are…', 'It’s…', 'What about you?'] },
 
     /* ---------- GRAMMAR: theory (book p. 6) ---------- */
-    { id: 'g1', stage: 'grammar', type: 'grammar', tag: 'Grammar 1 · present simple', title: 'Present simple: ==form and use==',
+    { id: 'g1', stage: 'grammar', type: 'grammar', tag: 'Grammar 1 · present simple', title: 'Present simple: ==form==',
       blocks: [
-        { form: { cols: ['', 'Affirmative form', 'Negative form', 'Question form and short answer'], rows: [
-          ['I / you / we / they', 'I / you / we / they **talk** …', 'I / you / we / they **don’t talk** …', '**Do** I / you / we / they **talk** …? – Yes, I / you / we / they **do**. / No, I / you / we / they **don’t**.'],
-          ['he / she / it', 'He / she / it **talks** …', 'He / she / it **doesn’t talk** …', '**Does** he / she / it **talk** …? – Yes, he / she / it **does**. / No, he / she / it **doesn’t**.']] } },
+        { formulas: [
+          ['✅ Affirmative', 'I / you / we / they + **V**   ·   he / she / it + **V-s / V-es**', 'I / you / we / they **talk** … · He / she / it **talks** …'],
+          ['❌ Negative', 'S + **don’t / doesn’t** + **V**', 'I / you / we / they **don’t talk** … · He / she / it **doesn’t talk** …'],
+          ['❓ Question', '**Do / Does** + S + **V** …?', '**Do** you **talk** …? · **Does** she **talk** …?'],
+          ['💬 Short answer', 'Yes, S + **do / does**.   ·   No, S + **don’t / doesn’t**.', 'Yes, I **do**. / No, I **don’t**. · Yes, she **does**. / No, she **doesn’t**.']] },
+        { vi: 'Sau **do / does / don’t / doesn’t**, động từ luôn ở dạng nguyên mẫu (không thêm -s).' }] },
+    { id: 'g2', stage: 'grammar', type: 'grammar', tag: 'Grammar 2 · present simple', title: 'Present simple: ==use and spelling==', layout: 'two',
+      blocks: [
         { uses: [
           ['repeated actions in the present', 'Adam **walks** to school every morning.', 'hành động lặp đi lặp lại'],
           ['typical situations', '**Do** the twins **live** in a large house?', 'tình huống thường thấy'],
           ['feelings, thoughts and states', 'Sandra **doesn’t look** like her cousin.', 'cảm xúc, suy nghĩ, trạng thái'],
           ['general facts', 'Birds **teach** their children how to fly.', 'sự thật hiển nhiên']] },
-        { vi: 'I/you/we/they + động từ nguyên mẫu; he/she/it + động từ thêm **-s/-es**. Phủ định và câu hỏi dùng **do/does**; sau do/does/don’t/doesn’t động từ luôn ở dạng nguyên mẫu.' }] },
-    { id: 'g2', stage: 'grammar', type: 'grammar', tag: 'Grammar 2 · present simple', title: 'Spelling, adverbs and ==time phrases==', layout: 'two',
+        { watch: { text: 'he / she / it:', ex: ['go → **goes**', 'do → **does**', 'watch → **watches**', 'study → **studies**'] } }] },
+    { id: 'g3', stage: 'grammar', type: 'grammar', tag: 'Grammar 3 · adverbs and phrases', title: 'Adverbs and ==time phrases==',
       blocks: [
-        { watch: { text: 'Spelling with he / she / it:', ex: ['I / you / we / they **go** – he / she / it **goes**', 'I / you / we / they **do** – he / she / it **does**', 'I / you / we / they **watch** – he / she / it **watches**', 'I / you / we / they **study** – he / she / it **studies**'] } },
-        { hint: { title: 'Helpful hints', text: 'Present simple is usually used with adverbs: **always · regularly · sometimes · usually · often · never**. These adverbs usually go **before the main verb**, but **after to be**:', ex: ['Tessa **often visits** her grandma.', 'We**’re always** glad to see our aunt.'] } },
-        { hint: { title: 'Phrases', text: '**every day / week / year** · **on Mondays** · **in the summer / autumn** · **at weekends / the weekend / 6 pm / two o’clock**. As a rule, these phrases are put at the **beginning** or at the **end** of the sentence:', ex: ['I go out with my friends **at weekends**.', '**At weekends**, I go out with my friends.'] } },
-        { vi: 'Trạng từ tần suất đứng **trước động từ thường** nhưng **sau động từ to be**. Cụm từ chỉ thời gian thường đặt ở **đầu** hoặc **cuối** câu.' }] },
-    { id: 'g3', stage: 'grammar', type: 'grammar', tag: 'Grammar 3 · there is / there are', title: 'There is / ==There are==',
+        { formulas: [
+          ['Adverb + verb', 'S + **adverb** + main verb', 'Tessa **often visits** her grandma.', 'Trạng từ đứng trước động từ thường.'],
+          ['be + adverb', 'S + **be** + **adverb**', 'We’**re always** glad to see our aunt.', 'Trạng từ đứng sau động từ to be.'],
+          ['Time phrase', '**Time phrase**, S + V …   ·   S + V … + **time phrase**', '**At weekends**, I go out with my friends. / I go out with my friends **at weekends**.', 'Cụm thời gian đặt ở đầu hoặc cuối câu.']] },
+        { chips: { title: 'Adverbs', list: ['always', 'usually', 'often', 'regularly', 'sometimes', 'never'] } },
+        { chips: { title: 'Phrases', list: ['every day / week / year', 'on Mondays', 'in the summer / autumn', 'at weekends / the weekend', 'at 6 pm / two o’clock'] } }] },
+    { id: 'g4', stage: 'grammar', type: 'grammar', tag: 'Grammar 4 · there is / there are', title: 'There is / ==There are==',
       blocks: [
-        { form: { cols: ['Affirmative form', 'Negative form', 'Question form'], rows: [
-          ['**There is** …', '**There is not (isn’t)** …', '**Is there** …?'],
-          ['**There are** …', '**There are not (aren’t)** …', '**Are there** …?']] } },
-        { uses: [['the existence or location of someone or something in a particular place', '**There is** a bicycle in the street. **There are** two men in the photo.', 'nói về sự tồn tại hoặc vị trí của người/vật ở một nơi']] },
-        { hint: { title: 'Helpful hints', text: '**There is / There are** introduces a person or thing for the first time. Later, we usually use **it** or **they**.', ex: ['✅ **There is** a bicycle in the street. **It is** my sister’s bicycle.', '✅ **There are** two men in the photo. **They’re** my uncles.'] } },
-        { vi: 'There is + danh từ số ít / không đếm được; There are + danh từ số nhiều. Lần đầu nhắc đến dùng there is/are, những lần sau dùng **it** (số ít) hoặc **they** (số nhiều).' }] },
-    { id: 'g4', stage: 'grammar', type: 'grammar', tag: 'Grammar 4 · it’s', title: '==It’s== …',
+        { formulas: [
+          ['✅ Affirmative', '**There is** + singular noun   ·   **There are** + plural noun', '**There is** a bicycle in the street. · **There are** two men in the photo.'],
+          ['❌ Negative', '**There is not (isn’t)** …   ·   **There are not (aren’t)** …', 'There **isn’t** a cinema. · There **aren’t** any shops.'],
+          ['❓ Question', '**Is there** …?   ·   **Are there** …?', '**Is there** a bank near here? · **Are there** any parks?'],
+          ['➡️ Next time', 'There is … → **It** …   ·   There are … → **They** …', 'There is a bicycle in the street. **It is** my sister’s bicycle. · There are two men in the photo. **They’re** my uncles.']] },
+        { vi: 'There is / There are giới thiệu người hoặc vật **lần đầu** (sự tồn tại hoặc vị trí ở một nơi). Những lần sau dùng **it** (số ít) hoặc **they** (số nhiều).' }] },
+    { id: 'g5', stage: 'grammar', type: 'grammar', tag: 'Grammar 5 · it’s', title: '==It’s== …',
       blocks: [
-        { uses: [
-          ['the weather', '**It’s** so cold in Siberia in the winter.', 'thời tiết'],
-          ['the time / day of the week', '**It isn’t** nine o’clock yet. / At last, **it’s** Friday!', 'giờ, thứ trong tuần'],
-          ['distances', '**Is it** far from your home to the school?', 'khoảng cách'],
-          ['familiar situations / states', '**It’s** great to see you again.', 'tình huống, trạng thái quen thuộc']] },
-        { hint: { title: 'Helpful hints', text: '**It** is the subject of sentences that describe the weather, time, dates and distances. In **it’s + adjective + infinitive**, *it* refers to the situation or action expressed by the infinitive.' } },
-        { vi: '“It” là chủ ngữ giả khi nói về thời tiết, thời gian, ngày tháng, khoảng cách. Trong It’s + tính từ + to V, “it” chỉ hành động ở phần to V (It’s great **to see** you again).' }] },
+        { formulas: [
+          ['☀️ Weather', '**It’s** + adjective', '**It’s** so cold in Siberia in the winter.'],
+          ['🕘 Time / day', '**It’s** + time / day', '**It isn’t** nine o’clock yet. / At last, **it’s** Friday!'],
+          ['📏 Distance', '**It’s** + distance   ·   **Is it** far …?', '**Is it** far from your home to the school?'],
+          ['😊 Situation', '**It’s** + adjective + **to + V**', '**It’s** great **to see** you again.']] },
+        { vi: '**It** là chủ ngữ giả khi nói về thời tiết, thời gian, ngày tháng và khoảng cách. Trong **It’s + tính từ + to V**, “it” chỉ hành động ở phần to V.' }] },
 
     /* ---------- GRAMMAR: book exercises A–F (pp. 7–8), quoted exactly ---------- */
     { id: 'exA', stage: 'grammar', type: 'practice', book: 'A', page: 7, tag: 'Grammar practice', title: 'Exercise ==A==', lead: 'Circle the correct answer.', cols: true,
@@ -120,13 +126,6 @@ window.A2_UNITS[1] = {
       textTitle: 'Hi Tamara,',
       text: 'Thank you for your email. It’s great to have a new pen friend! Here’s some information about me. I [1] in Greece with my brother and my parents. My brother is fourteen years old and I [2] twelve. I [3] sports! I [4] in the pool three times a week and I also [5] basketball and tennis every Tuesday and Friday.\n\nMy brother, Petros, is tall and good-looking. He [6] sports but he [7] reading books. He [8] to be a writer.\n\nI [9] two best friends, Maria and Eva. They [10] very friendly and easy-going. We [11] the same hobbies and interests, but we have a lot of fun together. Maria is short with brown hair and blue eyes, like me, and Eva is very tall with blond hair and brown eyes.\n\nWhat about you? What [12a] you [12b] like? [13a] you [13b] any brothers or sisters? How [14a] you [14b] your weekends?\n\nHope to hear from you soon,\nEleni',
       items: [{ a: 'live' }, { a: ['am', '’m'] }, { a: 'love' }, { a: 'swim' }, { a: 'play' }, { a: ['doesn’t like', 'does not like'] }, { a: 'enjoys' }, { a: 'wants' }, { a: 'have' }, { a: 'are' }, { a: ['don’t have', 'do not have'] }, { a: 'do' }, { a: 'look' }, { a: 'Do' }, { a: 'have' }, { a: 'do' }, { a: 'spend' }] },
-    { id: 'g-say', stage: 'grammar', type: 'talk', tag: 'Grammar · speaking', title: 'Find someone ==who…==', lead: 'Ask your classmates. Then report: “Lan gets up before six.”',
-      items: [
-        { q: 'Find someone who **gets up** before six.', model: 'Do you get up before six? – Yes, I do. I get up at 5.30.' },
-        { q: 'Find someone who **never** drinks coffee.', model: 'Do you drink coffee? – No, I never drink coffee.' },
-        { q: 'Find someone who has **a park** near their home.', model: 'Is there a park near your home? – Yes, there is. It’s very quiet.' },
-        { q: 'Find someone who lives **far** from school.', model: 'Is it far from your home to school? – Yes, it’s about ten kilometres.' }],
-      useful: ['Do you…?', 'Is there…? / Are there…?', 'Is it far…?', 'He / She + verb-s'] },
 
     /* ---------- LISTENING 1: My Day ---------- */
     { id: 'l1-w', stage: 'l1', type: 'words', tag: 'Listening 1 · pre-listening', title: 'New words for ==My Day==',
@@ -139,21 +138,7 @@ window.A2_UNITS[1] = {
         ['🍽️', 'canteen', '/kænˈtiːn/', 'noun', 'căng tin', 'We eat in the school **canteen**.'],
         ['💲', 'cheap', '/tʃiːp/', 'adjective', 'rẻ', 'Lunch is **cheap**: only $3.'],
         ['😴', 'tired', '/ˈtaɪəd/', 'adjective', 'mệt', 'I’m **tired** after work.']] },
-    { id: 'l1-wp', stage: 'l1', type: 'practice', tag: 'Listening 1 · pre-listening', title: 'Check the ==new words==', cols: true,
-      items: [
-        { q: 'Natalie loves early mornings. She’s a morning ___.', a: 'person' },
-        { q: 'I wake up at seven, but I get out of ___ at 7.30.', a: 'bed' },
-        { q: 'I check my ___ on my phone.', a: 'emails' },
-        { q: 'At school, each ___ lasts one hour.', a: 'lesson' },
-        { q: 'Twelve o’clock in the day is ___.', a: 'noon' },
-        { q: 'Students buy lunch in the school ___.', a: 'canteen' },
-        { q: 'It costs only $3. It’s very ___.', a: 'cheap' },
-        { q: 'After a long day, I feel ___.', a: 'tired' }] },
-    { id: 'l1-gist', stage: 'l1', type: 'listen', audio: 'day', tag: 'Listening 1 · while listening', title: 'Task 1: ==main idea==', task: 'Listen once. Choose the answers.',
-      items: [
-        { q: 'Natalie talks about…', o: ['her typical day', 'her last holiday', 'her new house'], a: 'her typical day' },
-        { q: 'What is Natalie’s job?', o: ['She’s a teacher.', 'She’s a student.', 'She’s a cook.'], a: 'She’s a teacher.' }] },
-    { id: 'l1-det', stage: 'l1', type: 'listen', audio: 'day', tag: 'Listening 1 · while listening', title: 'Task 2: ==details==', task: 'Listen again. Choose the answers.', cols: true,
+    { id: 'l1-det', stage: 'l1', type: 'listen', audio: 'day', tag: 'Listening 1 · while listening', title: 'Listen for ==details==', task: 'Listen twice. Choose the answers.', cols: true,
       items: [
         { q: 'Natalie wakes up at about…', o: ['6.00', '7.00', '7.30'], a: '7.00' },
         { q: 'She gets out of bed at about…', o: ['7.00', '7.30', '8.00'], a: '7.30' },
@@ -165,11 +150,10 @@ window.A2_UNITS[1] = {
         { q: 'Most nights, she goes to bed at around…', o: ['10 p.m.', '11 p.m.', 'midnight'], a: '10 p.m.' }] },
     { id: 'l1-say', stage: 'l1', type: 'talk', tag: 'Listening 1 · post-listening', title: '==You== and Natalie', lead: 'Compare your day with Natalie’s day.',
       items: [
-        { q: 'Are you a morning person?', model: 'No, I’m not. I wake up at seven, but I don’t get out of bed until 7.20!' },
-        { q: 'What do you do before you get out of bed?', model: 'I check my messages and read the news.' },
-        { q: 'What do you usually drink in the morning?', model: 'I usually drink milk. Natalie drinks hot chocolate.' },
-        { q: 'What do you do in the evening when you are tired?', model: 'I listen to music or watch TV for an hour.' }],
-      useful: ['Me too.', 'Natalie…, but I…', 'I usually…'] },
+        { q: 'Are you a morning person?', frame: 'Yes, I am. / No, I’m not. I ___.', model: 'No, I’m not. I wake up at seven, but I don’t get out of bed until 7.20!' },
+        { q: 'What do you do before you get out of bed?', frame: 'Before I get out of bed, I ___.', model: 'I check my messages and read the news.' },
+        { q: 'What do you usually drink in the morning?', frame: 'I usually drink ___. Natalie drinks ___.', model: 'I usually drink milk. Natalie drinks hot chocolate.' },
+        { q: 'What do you do in the evening when you are tired?', frame: 'When I’m tired, I ___.', model: 'I listen to music or watch TV for an hour.' }] },
 
     /* ---------- LISTENING 2: My Hometown ---------- */
     { id: 'l2-w', stage: 'l2', type: 'words', tag: 'Listening 2 · pre-listening', title: 'New words for ==My Hometown==',
@@ -182,21 +166,7 @@ window.A2_UNITS[1] = {
         ['🌲', 'forest', '/ˈfɒrɪst/', 'noun', 'rừng', 'There are lots of **forests**.'],
         ['🍂', 'season', '/ˈsiːzn/', 'noun', 'mùa', 'My hometown has four **seasons**.'],
         ['❄️', 'snow', '/snəʊ/', 'noun', 'tuyết', 'In winter, there is a lot of **snow**.']] },
-    { id: 'l2-wp', stage: 'l2', type: 'practice', tag: 'Listening 2 · pre-listening', title: 'Check the ==new words==', cols: true,
-      items: [
-        { q: 'The town where you grew up is your ___.', a: 'hometown' },
-        { q: 'In American English, a cinema is a movie ___.', a: ['theatre', 'theater'] },
-        { q: 'A big building with many shops is a ___.', a: 'mall' },
-        { q: 'Chinese, Korean, Italian: there’s a big ___ of food.', a: 'variety' },
-        { q: 'You can swim or fish in a ___.', a: 'lake' },
-        { q: 'A place with many trees is a ___.', a: 'forest' },
-        { q: 'Spring, summer, autumn and winter are the four ___.', a: 'seasons' },
-        { q: 'In winter it’s very cold and the ground is white with ___.', a: 'snow' }] },
-    { id: 'l2-gist', stage: 'l2', type: 'listen', audio: 'town', tag: 'Listening 2 · while listening', title: 'Task 1: ==main idea==', task: 'Listen once. Choose the answers.',
-      items: [
-        { q: 'Sarah mainly talks about…', o: ['her hometown', 'her job', 'her holiday'], a: 'her hometown' },
-        { q: 'What does she think of her hometown?', o: ['It’s a great city.', 'It’s boring.', 'It’s too big.'], a: 'It’s a great city.' }] },
-    { id: 'l2-det', stage: 'l2', type: 'listen', audio: 'town', tag: 'Listening 2 · while listening', title: 'Task 2: ==details==', task: 'Listen again. Choose the answers.', cols: true,
+    { id: 'l2-det', stage: 'l2', type: 'listen', audio: 'town', tag: 'Listening 2 · while listening', title: 'Listen for ==details==', task: 'Listen twice. Choose the answers.', cols: true,
       items: [
         { q: 'About how many people live there?', o: ['8,000', '18,000', '80,000'], a: '80,000' },
         { q: 'How many movie theatres are there?', o: ['two', 'three', 'four'], a: 'three' },
@@ -208,10 +178,10 @@ window.A2_UNITS[1] = {
         { q: 'Why is it a good place for a family?', o: ['It’s safe, with good schools.', 'It’s cheap.', 'There are many jobs.'], a: 'It’s safe, with good schools.' }] },
     { id: 'l2-say', stage: 'l2', type: 'talk', tag: 'Listening 2 · post-listening', title: 'Describe ==your hometown==', lead: 'Use Sarah’s order: people → places → food → weather → good points.',
       items: [
-        { q: 'Where is your hometown? Is it big or small?', model: 'My hometown is Cần Thơ. It’s a big city in the Mekong Delta.' },
-        { q: 'What places are there?', model: 'There are lots of markets, and there’s a famous floating market. It’s very busy in the morning.' },
-        { q: 'What’s the weather like?', model: 'It’s hot all year. There are two seasons: the dry season and the rainy season.' },
-        { q: 'Is it a good place for families? Why?', model: 'Yes, it is. It’s safe and there are good schools.' }] },
+        { q: 'Where is your hometown? Is it big or small?', frame: 'My hometown is ___. It’s a big / small ___.', model: 'My hometown is Cần Thơ. It’s a big city in the Mekong Delta.' },
+        { q: 'What places are there?', frame: 'There is a ___. There are lots of ___.', model: 'There are lots of markets, and there’s a famous floating market. It’s very busy in the morning.' },
+        { q: 'What’s the weather like?', frame: 'It’s ___. There are ___ seasons.', model: 'It’s hot all year. There are two seasons: the dry season and the rainy season.' },
+        { q: 'Is it a good place for families? Why?', frame: 'Yes, it is. / No, it isn’t. It’s ___ and there are ___.', model: 'Yes, it is. It’s safe and there are good schools.' }] },
 
     /* ---------- READING ---------- */
     { id: 'r-w', stage: 'read', type: 'words', tag: 'Reading · pre-reading', title: 'New words for ==the message==',
@@ -224,16 +194,6 @@ window.A2_UNITS[1] = {
         ['🚶', 'on foot', '/ɒn ˈfʊt/', 'phrase', 'đi bộ', 'I go to the library **on foot**.'],
         ['🆓', 'free', '/friː/', 'adjective', 'miễn phí', 'The club is **free**.'],
         ['🎓', 'college', '/ˈkɒlɪdʒ/', 'noun', 'trường cao đẳng / đại học', 'My brother studies at **college**.']] },
-    { id: 'r-wp', stage: 'read', type: 'practice', tag: 'Reading · pre-reading', title: 'Check the ==new words==', cols: true,
-      items: [
-        { q: 'The area around your home is your ___.', a: ['neighbourhood', 'neighborhood'] },
-        { q: 'A person who lives next door is your ___.', a: ['neighbour', 'neighbor'] },
-        { q: 'A block of flats is a big ___.', a: 'building' },
-        { q: 'The bank is ___ to the café.', a: 'next' },
-        { q: 'There is no noise. It’s very ___.', a: 'quiet' },
-        { q: 'I don’t take the bus. I go on ___.', a: 'foot' },
-        { q: 'You don’t pay for it. It’s ___.', a: 'free' },
-        { q: 'After school, my brother studies at ___.', a: 'college' }] },
     { id: 'r-text', stage: 'read', type: 'read', tag: 'Reading · while reading', title: 'Task 1: ==main idea==', lead: 'Read Linh’s message. Choose the answers.', textTitle: 'Hi Alex, welcome to Green Street!', textIcon: '💌',
       text: [
         'I’m Linh, your new neighbour. I live in the blue building next to the café. I work at a school, and I usually leave home at seven. My brother studies at college. He doesn’t get up early, but he always makes breakfast for us on Sundays.',
@@ -262,8 +222,8 @@ window.A2_UNITS[1] = {
         ['☕', 'Would you like to…?', '', 'invitation', 'Bạn có muốn… không?', 'Would you like to have coffee?'],
         ['🕙', 'What time is good for you?', '', 'question', 'Mấy giờ thì tiện cho bạn?', '– Ten o’clock is fine.'],
         ['👍', 'See you then!', '', 'goodbye', 'Hẹn gặp lại nhé!', 'Great. See you then!']] },
-    { id: 'sp-wp', stage: 'speak', type: 'practice', tag: 'Speaking · pre-speaking', title: 'Match the ==responses==', cols: true,
-      matchOptions: ['I’d love to!', 'Nice to meet you, too.', 'No, it’s about five minutes on foot.', 'Ten o’clock is fine.', 'Yes, there is. It’s next to the bank.', 'Yes, I live in the blue building.', 'Bye! See you on Saturday.', 'I’m a nurse. I work at the hospital.'],
+    { id: 'sp-wp', stage: 'speak', type: 'pairs', tag: 'Speaking · pre-speaking', title: 'Match the ==responses==', lead: 'Tap a line on the left, then tap the best response on the right.',
+      right: ['Yes, there is. It’s next to the bank.', 'Ten o’clock is fine.', 'Nice to meet you, too.', 'Bye! See you on Saturday.', 'I’m a nurse. I work at the hospital.', 'No, it’s about five minutes on foot.', 'Yes, I live in the blue building.', 'I’d love to!'],
       items: [
         { t: 'match', q: 'Nice to meet you.', a: 'Nice to meet you, too.' },
         { t: 'match', q: 'Do you live near here?', a: 'Yes, I live in the blue building.' },
@@ -283,7 +243,7 @@ window.A2_UNITS[1] = {
       task: 'Student A has just moved into Student B’s building. Introduce yourselves, ask about routines and local places, then **agree on a place and a time to meet** this weekend.',
       steps: ['Greet and introduce yourself.', 'Ask two questions about your partner’s routine.', 'Ask about places near the building.', 'Invite your partner and agree on a place and time.', 'Say goodbye.'],
       useful: ['Hi, I’m… I live at number…', 'What do you usually do at weekends?', 'Is there a … near here?', 'It’s about … minutes on foot.', 'Would you like to…?', 'See you then!'],
-      timer: 180, record: true, rubric: true,
+      timer: 180, record: true,
       model: ['**A:** Hi! I’m Nam. I live at number 12. I’m new here.', '**B:** Nice to meet you, Nam. I’m Thu. Welcome!', '**A:** Thanks. Is there a café near here?', '**B:** Yes, there are two. The Green Café is next to the bank. It’s about five minutes on foot.', '**A:** What do you usually do at weekends?', '**B:** I often go to the library on Saturday morning. It’s quiet and it’s free.', '**A:** I love reading too! Would you like to go together?', '**B:** Sure. Let’s meet outside the building at nine. See you then!'] },
 
     /* ---------- WRITING ---------- */
