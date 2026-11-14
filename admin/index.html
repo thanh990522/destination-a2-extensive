@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Quản lý lớp · Destination A2</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+.ad-head{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.ad-head::before{content:"";position:absolute;right:-80px;top:-100px;width:240px;height:240px;border-radius:50%;background:var(--yellow)}
+.ad-head .wrap{position:relative;max-width:1200px;margin:0 auto;padding:18px 18px 0}
+.ad-head a{color:#C9D6FF;font-weight:700;text-decoration:none;font-size:14px}
+.ad-head h1{color:#fff;font-size:30px;margin:6px 0 2px}.ad-head h1 em{font-style:normal;color:var(--yellow)}
+.dev{font-size:13.5px;color:#C9D6FF;margin-bottom:12px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{border:0;background:transparent;color:#C9D6FF;font-weight:800;font-size:15px;padding:12px 16px;border-radius:12px 12px 0 0;cursor:pointer}
+.tab.on{background:var(--bg);color:var(--navy)}
+.ad{max-width:1200px;margin:0 auto;padding:20px 18px 60px}
+.panel{background:#fff;border:2px solid var(--line);border-radius:18px;box-shadow:var(--sh);padding:18px;margin-bottom:16px}
+.panel h2{font-size:20px;margin-bottom:4px}.panel .sub{color:var(--muted);font-size:14.5px;margin:0 0 10px}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.f{height:42px;border:2px solid var(--line);border-radius:11px;padding:0 11px;font-weight:700;color:var(--navy);background:#fff;min-width:0}
+.f:focus{outline:none;border-color:var(--blue)}
+.msg{font-weight:700;font-size:14.5px;border-radius:12px;padding:10px 14px;margin-top:10px}
+.msg.ok{background:var(--ok-s);color:#14532D}.msg.err{background:var(--bad-s);color:#991B1B}.msg.info{background:var(--sky);color:var(--navy)}
+.units{display:grid;gap:10px}
+.urow{display:grid;grid-template-columns:minmax(220px,1.4fr) repeat(3,92px) 150px 90px minmax(160px,1fr);gap:10px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:14px;padding:10px 12px}
+.urow.head{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:800;font-size:13px}
+.urow.dirty{border-color:var(--yellow);background:var(--yellow-s)}.urow.off{opacity:.55}
+.urow .nm b{display:block;color:var(--navy)}.urow .nm small{color:var(--muted)}
+.uid{display:inline-block;background:var(--navy);color:var(--yellow);font-weight:900;border-radius:7px;padding:1px 7px;font-size:12.5px;margin-right:6px}
+.sw{position:relative;width:52px;height:30px;display:inline-block}.sw input{opacity:0;width:0;height:0}
+.sw span{position:absolute;inset:0;background:#CBD5E1;border-radius:999px;cursor:pointer;transition:.2s}
+.sw span::before{content:"";position:absolute;left:4px;top:4px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s}
+.sw input:checked+span{background:var(--ok)}.sw input:checked+span::before{transform:translateX(22px)}.sw input:disabled+span{cursor:not-allowed;opacity:.5}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.kpi{background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px}.kpi b{display:block;font-size:28px;color:var(--navy)}.kpi span{color:var(--muted);font-weight:700;font-size:13px}
+.tblw{overflow:auto;border:2px solid var(--line);border-radius:14px;background:#fff;max-height:70vh}
+table.r{border-collapse:collapse;width:100%;font-size:14px}table.r th,table.r td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+table.r th{background:var(--navy);color:#fff;position:sticky;top:0;z-index:1}table.r td.l,table.r th.l{text-align:left}
+.pill{display:inline-block;min-width:46px;border-radius:999px;padding:2px 8px;font-weight:900;font-size:12.5px}
+.pill.ok{background:var(--ok-s);color:var(--ok)}.pill.bad{background:var(--bad-s);color:var(--bad)}.pill.mid{background:var(--sky);color:var(--blue)}.pill.none{color:#CBD5E1}
+textarea.json{width:100%;min-height:420px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;border:2px solid var(--line);border-radius:12px;padding:12px;line-height:1.5}
+.hwsum{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin:10px 0}
+.hwsum div{background:var(--sky);border-radius:12px;padding:10px 12px}.hwsum b{display:block;color:var(--navy)}.hwsum small{color:var(--muted)}
+.steps2{margin:8px 0 12px;padding-left:20px}.steps2 li{margin:4px 0}
+pre.gs{background:#0F172A;color:#E2E8F0;border-radius:12px;padding:12px;font-size:12.5px;max-height:260px;overflow:auto}
+.writing{background:#FFFDF7;border:2px solid #F5E6B8;border-radius:12px;padding:10px 12px;white-space:pre-wrap;text-align:left;font-size:14px;margin:6px 0}
+@media (max-width:980px){.urow{grid-template-columns:1fr 1fr 1fr}.urow.head{display:none}.urow .nm{grid-column:1/-1}.kpis{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="ad-head"><div class="wrap">
+  <a href="../">← Trang học viên</a>
+  <h1>Quản lý lớp · <em>Destination A2</em></h1>
+  <div class="dev" id="dev"></div>
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-t="open">🔓 Đóng / mở bài</button>
+    <button class="tab" data-t="hw">📝 Homework</button>
+    <button class="tab" data-t="res">📊 Kết quả học viên</button>
+    <button class="tab" data-t="set">⚙️ Cài đặt</button>
+  </div>
+</div></header>
+
+<main class="ad">
+  <!-- OPEN / CLOSE -->
+  <section id="t-open">
+    <div class="panel"><div class="bar">
+      <div><h2>Đóng / mở bài học, slide và homework</h2><p class="sub">Bật = học viên vào được. Tắt = bị khoá (kể cả khi có link). Hạn nộp, điểm đạt riêng và lời nhắn hiện trên trang homework. Sau khi lưu, website cập nhật trong khoảng <b>1–2 phút</b>.</p></div>
+      <div class="bar"><button class="btn ghost sm" id="oReload">↻ Tải lại</button><button class="btn y" id="oSave" disabled>💾 Lưu thay đổi</button></div>
+    </div><div id="oMsg"></div></div>
+    <div class="units" id="units"></div>
+  </section>
+
+  <!-- HOMEWORK -->
+  <section id="t-hw" hidden>
+    <div class="panel"><div class="bar">
+      <div><h2>Quản lý homework</h2><p class="sub">Chọn Unit để xem cấu trúc, mở bản xem trước, sao chép link gửi học viên hoặc chỉnh sửa câu hỏi. Hạn nộp và đóng/mở homework nằm ở tab 🔓.</p></div>
+      <div class="bar"><select class="f" id="hwUnit"></select><button class="btn ghost sm" id="hwLoad">↻ Tải</button></div>
+    </div>
+      <div id="hwInfo"></div>
+      <div class="bar" style="margin-top:8px"><a class="btn ghost sm" id="hwPreview" target="_blank" rel="noopener">👁 Xem trước</a><button class="btn ghost sm" id="hwCopy">🔗 Copy link cho học viên</button><button class="btn ghost sm" id="hwShowRes">📊 Xem kết quả Unit này</button></div>
+      <div id="hwMsg"></div>
+    </div>
+    <div class="panel">
+      <div class="bar"><div><h2>Chỉnh sửa nội dung (JSON)</h2><p class="sub">Mỗi phần (part) có <code>items</code>. Câu chọn: <code>{"q":"…","o":["A","B"],"a":"A"}</code> · Điền từ: <code>{"q":"I ___ here.","a":"live"}</code> · Chọn trong câu: <code>{"q":"She {is|are} here.","a":"is"}</code> · Trả lời ngắn: <code>{"q":"Where is Mum?","a":["at the market","market"]}</code> · Nhiều đáp án đúng: <code>"a":["don’t","do not"]</code>. Phần viết/nói: <code>"auto": false</code>.</p></div>
+        <div class="bar"><button class="btn ghost sm" id="hwFormat">✨ Định dạng</button><button class="btn ghost sm" id="hwCheck">✓ Kiểm tra</button><button class="btn y" id="hwSave">💾 Lưu homework</button></div></div>
+      <textarea class="json" id="hwJson" spellcheck="false" placeholder="Bấm ↻ Tải để mở nội dung homework…"></textarea>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="t-res" hidden>
+    <div class="panel"><div class="bar">
+      <div><h2>Kết quả học viên</h2><p class="sub">Dữ liệu từ Google Sheet: mỗi lần học viên mở bài, nộp từng phần homework, gửi bài viết.</p></div>
+      <div class="bar"><select class="f" id="rCls"><option value="">Tất cả lớp</option></select><select class="f" id="rUnit"><option value="">Tất cả Unit</option></select><input class="f" id="rQ" placeholder="🔍 Tìm tên…" style="width:160px"><button class="btn" id="rLoad">↻ Tải dữ liệu</button><button class="btn ghost sm" id="rCsv">⬇ CSV</button></div>
+    </div><div id="rMsg"></div></div>
+    <div class="kpis" id="kpis" hidden></div>
+    <div class="tblw" id="rTbl" hidden></div>
+    <div class="panel" id="rWriting" hidden></div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="t-set" hidden>
+    <div class="panel">
+      <h2>1 · GitHub key (để lưu đóng/mở bài và homework)</h2>
+      <p class="sub">Key chỉ lưu trên trình duyệt này và chỉ gửi tới GitHub.</p>
+      <ol class="steps2">
+        <li>Mở <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token</a>.</li>
+        <li>Repository access: <b>Only select repositories</b> → <code>destination-a2-extensive</code>.</li>
+        <li>Permissions → Repository permissions → <b>Contents: Read and write</b> → Generate → copy.</li>
+      </ol>
+      <div class="bar"><input class="f" id="ghTok" type="password" placeholder="github_pat_…" style="flex:1"><button class="btn" id="ghSave">Lưu &amp; kiểm tra</button><button class="btn ghost sm" id="ghDel">Xoá</button></div>
+      <div id="ghMsg"></div>
+    </div>
+    <div class="panel">
+      <h2>2 · Google Sheet (theo dõi tiến độ và homework)</h2>
+      <ol class="steps2">
+        <li>Tạo Google Sheet mới → <b>Extensions → Apps Script</b>.</li>
+        <li>Dán toàn bộ code bên dưới, đổi dòng <code>ADMIN_KEY</code> thành mật khẩu riêng → Save.</li>
+        <li><b>Deploy → New deployment → Web app</b> · Execute as: <b>Me</b> · Who has access: <b>Anyone</b> → Deploy.</li>
+        <li>Copy <b>Web app URL</b> → dán vào ô dưới → <b>Lưu lên website</b>.</li>
+      </ol>
+      <div class="bar" style="justify-content:flex-start"><button class="btn ghost sm" id="copyGs">📋 Copy code Apps Script</button></div>
+      <pre class="gs" id="gs">Đang tải…</pre>
+      <p class="sub" style="margin-top:10px"><b>Web app URL</b> (lưu lên website để học viên gửi kết quả)</p>
+      <div class="bar"><input class="f" id="pUrl" placeholder="https://script.google.com/macros/s/…/exec" style="flex:1"><button class="btn" id="pUrlSave">Lưu lên website</button></div>
+      <p class="sub" style="margin-top:10px"><b>ADMIN_KEY</b> (chỉ lưu trên trình duyệt này, dùng để tải kết quả)</p>
+      <div class="bar"><input class="f" id="aKey" type="password" placeholder="mật khẩu trong Apps Script" style="flex:1"><button class="btn" id="aKeySave">Lưu</button></div>
+      <div id="setMsg"></div>
+    </div>
+    <div class="panel">
+      <h2>3 · Điểm đạt chung và thiết bị giáo viên</h2>
+      <div class="bar" style="justify-content:flex-start"><label for="passAll"><b>Điểm đạt mặc định cho mỗi phần homework (%)</b></label><input class="f" id="passAll" type="number" min="50" max="100" style="width:100px"><button class="btn" id="passSave">Lưu lên website</button></div>
+      <p class="sub" style="margin-top:12px">Thiết bị giáo viên luôn xem được bài đã khoá và không bị hỏi tên. Thiết bị được đánh dấu tự động khi GitHub key hợp lệ.</p>
+      <div class="bar" style="justify-content:flex-start"><button class="btn ghost sm" id="tOff">Bỏ đánh dấu</button></div>
+      <div id="passMsg"></div>
+    </div>
+  </section>
+</main>
+
+<script src="../assets/data/course.js"></script>
+<script>
+(function () {
+'use strict';
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const OWNER = 'thanh990522', REPO = 'destination-a2-extensive', BR = 'main';
+const SETTINGS_PATH = 'assets/data/settings.js';
+const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }, set: (k, v) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch (e) {} } };
+const msg = (el, cls, t) => { $(el).innerHTML = t ? `<div class="msg ${cls}">${t}</div>` : ''; };
+const C = window.COURSE, BUILT = C.built || [];
+const pad = n => String(n).padStart(2, '0');
+const title = n => { const u = C.units[n - 1]; return u ? `${u[3]}` : ''; };
+const isTeacher = () => LS.get('a2_teacher') === 'true';
+function devInfo() {
+  $('#dev').textContent = (isTeacher() ? '✅ Thiết bị giáo viên' : 'Thiết bị chưa đánh dấu giáo viên') + (LS.get('a2_gh') ? ' · 🔑 Đã có GitHub key' : ' · ⚠ Chưa có GitHub key') + (SET && SET.progressUrl ? ' · 📊 Đã nối Google Sheet' : ' · ⚠ Chưa nối Google Sheet');
+}
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.toggle('on', x === t));
+  ['open', 'hw', 'res', 'set'].forEach(k => { $('#t-' + k).hidden = k !== t.dataset.t; });
+  if (t.dataset.t === 'hw' && !$('#hwJson').value) loadHw();
+});
+
+/* ---------- GitHub contents API ---------- */
+const b64dec = c => new TextDecoder().decode(Uint8Array.from(atob(c.replace(/\n/g, '')), ch => ch.charCodeAt(0)));
+const b64enc = s => { const b = new TextEncoder().encode(s); let r = ''; for (let i = 0; i < b.length; i += 0x8000) r += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(r); };
+async function gh(path, opt = {}) {
+  const tok = LS.get('a2_gh'); if (!tok) throw new Error('Chưa có GitHub key – vào tab ⚙️ Cài đặt.');
+  const r = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/${path}`, Object.assign({}, opt, { headers: Object.assign({ Authorization: 'Bearer ' + tok, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' }, opt.headers || {}) }));
+  if (!r.ok) { const t = await r.text(); throw new Error(r.status === 401 ? 'GitHub key sai hoặc đã hết hạn.' : r.status === 403 || r.status === 404 ? 'Key không có quyền Contents: Read and write cho repo này.' : r.status === 409 ? 'File vừa được thay đổi ở nơi khác. Bấm ↻ Tải lại rồi lưu lại.' : 'GitHub lỗi ' + r.status + ': ' + t.slice(0, 140)); }
+  return r.json();
+}
+async function getFile(p) { const j = await gh(`contents/${p}?ref=${BR}&t=${Date.now()}`); return { text: b64dec(j.content), sha: j.sha }; }
+async function putFile(p, text, sha, message) { return gh(`contents/${p}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message, content: b64enc(text), sha, branch: BR }) }); }
+const parseAssign = text => { const i = text.indexOf('= ', text.indexOf('window.')); const j = text.lastIndexOf(';'); return JSON.parse(text.slice(i + 2, j)); };
+const settingsText = obj => `/* Site settings — edited from the admin page (admin/). Students load this file on every visit. */\nwindow.A2_SETTINGS = ${JSON.stringify(obj, null, 1)};\n`;
+
+/* ---------- settings (read: public file; write: GitHub) ---------- */
+let SET = null, SETsha = null, ORIG = '';
+async function loadSettings(fromGitHub) {
+  if (fromGitHub && LS.get('a2_gh')) {
+    const f = await getFile(SETTINGS_PATH); SETsha = f.sha; SET = parseAssign(f.text);
+  } else {
+    await new Promise(res => { const s = document.createElement('script'); s.src = '../' + SETTINGS_PATH + '?t=' + Date.now(); s.onload = res; s.onerror = res; document.head.appendChild(s); });
+    SET = window.A2_SETTINGS || { passMark: 80, progressUrl: '', units: {} };
+  }
+  SET.units = SET.units || {};
+  BUILT.forEach(n => { SET.units[n] = Object.assign({ lesson: false, slides: false, homework: false, due: '', note: '', passMark: '' }, SET.units[n] || {}); });
+  ORIG = JSON.stringify(SET);
+  devInfo(); renderUnits(); fillSettings();
+}
+async function saveSettings(message) {
+  if (!SETsha) { const f = await getFile(SETTINGS_PATH); SETsha = f.sha; }
+  const r = await putFile(SETTINGS_PATH, settingsText(SET), SETsha, message);
+  SETsha = r.content.sha; ORIG = JSON.stringify(SET); LS.set('a2_teacher', 'true'); devInfo();
+}
+
+/* ---------- open / close ---------- */
+function renderUnits() {
+  const head = `<div class="urow head"><span>Unit</span><span>Bài học</span><span>Slide</span><span>Homework</span><span>Hạn nộp</span><span>Điểm đạt</span><span>Lời nhắn cho học viên</span></div>`;
+  const rows = C.units.map(u => {
+    const n = u[0], built = BUILT.includes(n), c = SET.units[n] || {};
+    const sw = k => `<label class="sw" title="${k}"><input type="checkbox" data-n="${n}" data-k="${k}" ${c[k] ? 'checked' : ''} ${built ? '' : 'disabled'}><span></span></label>`;
+    return `<div class="urow ${built ? '' : 'off'}" id="u${n}"><div class="nm"><span class="uid">U${pad(n)}</span><b style="display:inline">${esc(u[3])}</b><small style="display:block">${esc(u[2])} · ${built ? '✅ đã soạn' : '⏳ chưa soạn'}</small></div>
+      ${sw('lesson')}${sw('slides')}${sw('homework')}
+      <input class="f" type="date" data-n="${n}" data-k="due" value="${esc(c.due || '')}" ${built ? '' : 'disabled'}>
+      <input class="f" type="number" min="50" max="100" placeholder="${SET.passMark || 80}" data-n="${n}" data-k="passMark" value="${esc(c.passMark || '')}" ${built ? '' : 'disabled'}>
+      <input class="f" data-n="${n}" data-k="note" maxlength="160" placeholder="vd. Làm thêm sách trang 7" value="${esc(c.note || '')}" ${built ? '' : 'disabled'}></div>`;
+  }).join('');
+  $('#units').innerHTML = head + rows;
+}
+$('#units').addEventListener('input', e => {
+  const el = e.target.closest('[data-n]'); if (!el) return;
+  const n = el.dataset.n, k = el.dataset.k; SET.units[n] = SET.units[n] || {};
+  SET.units[n][k] = el.type === 'checkbox' ? el.checked : el.value.trim();
+  $('#u' + n).classList.add('dirty'); $('#oSave').disabled = JSON.stringify(SET) === ORIG;
+});
+$('#oReload').onclick = async () => { msg('#oMsg', 'info', 'Đang tải…'); try { await loadSettings(true); msg('#oMsg', 'ok', 'Đã tải trạng thái mới nhất từ GitHub.'); $('#oSave').disabled = true; } catch (err) { msg('#oMsg', 'err', esc(err.message)); } };
+$('#oSave').onclick = async () => {
+  $('#oSave').disabled = true; msg('#oMsg', 'info', 'Đang lưu…');
+  try { await saveSettings('Update lesson and homework access'); renderUnits(); msg('#oMsg', 'ok', '✅ Đã lưu. Website học viên cập nhật sau khoảng 1–2 phút.'); }
+  catch (err) { msg('#oMsg', 'err', esc(err.message)); $('#oSave').disabled = false; }
+};
+
+/* ---------- homework ---------- */
+$('#hwUnit').innerHTML = BUILT.map(n => `<option value="${n}">Unit ${n} · ${esc(title(n))}</option>`).join('');
+let HWsha = null;
+const hwPath = n => `assets/data/homework/hw${pad(n)}.js`;
+const hwHeader = n => `/* Homework for Unit ${n}. Edited from the admin page (admin/ → Homework). Keep valid JSON after the = sign. */\nwindow.A2_HOMEWORK[${n}] = `;
+function validateHw(H) {
+  const errs = [];
+  if (!H || !Array.isArray(H.parts) || !H.parts.length) errs.push('Thiếu "parts".');
+  (H.parts || []).forEach((p, i) => {
+    if (!p.id || !p.title) errs.push(`Part ${i + 1}: cần "id" và "title".`);
+    if (p.auto === false) { if (p.type === 'writing' && !(p.min && p.max && p.task)) errs.push(`Part ${i + 1}: phần viết cần "task", "min", "max".`); return; }
+    if (!Array.isArray(p.items) || !p.items.length) errs.push(`Part ${i + 1}: cần "items".`);
+    (p.items || []).forEach((it, k) => {
+      if (!it.q || it.a == null || it.a === '') errs.push(`Part ${i + 1}, câu ${k + 1}: cần "q" và "a".`);
+      const keys = Array.isArray(it.a) ? it.a : [it.a];
+      if (it.o && !it.o.some(o => keys.includes(o))) errs.push(`Part ${i + 1}, câu ${k + 1}: đáp án không nằm trong "o".`);
+      const m = /\{([^}]+)\}/.exec(it.q || ''); if (m && !it.o && !m[1].split('|').map(s => s.trim()).some(o => keys.includes(o))) errs.push(`Part ${i + 1}, câu ${k + 1}: đáp án không nằm trong {…|…}.`);
+    });
+    if (p.audio) (Array.isArray(p.audio) ? p.audio : [p.audio]).forEach(a => { if (!H.audio || !H.audio[a]) errs.push(`Part ${i + 1}: thiếu audio "${a}".`); });
+  });
+  return errs;
+}
+function hwSummary(H, n) {
+  const c = SET && SET.units[n] || {};
+  $('#hwInfo').innerHTML = `<div class="hwsum">${H.parts.map((p, i) => `<div><b>Part ${i + 1} · ${esc(p.title)}</b><small>${p.auto === false ? (p.type === 'writing' ? `Viết ${p.min}–${p.max} từ` : 'Ghi âm') : `${p.items.length} câu · tự chấm`}</small></div>`).join('')}
+    <div><b>Trạng thái</b><small>${c.homework ? '🟢 Đang mở' : '🔴 Đang khoá'}${c.due ? ' · hạn ' + esc(c.due) : ''} · đạt ${esc(c.passMark || (SET && SET.passMark) || 80)}%</small></div></div>`;
+  const link = new URL(`../homework.html?u=${n}`, location.href).href;
+  $('#hwPreview').href = link; $('#hwCopy').dataset.link = link;
+}
+async function loadHw() {
+  const n = +$('#hwUnit').value; msg('#hwMsg', 'info', 'Đang tải…');
+  try {
+    let text;
+    if (LS.get('a2_gh')) { const f = await getFile(hwPath(n)); text = f.text; HWsha = f.sha; }
+    else { const r = await fetch('../' + hwPath(n) + '?t=' + Date.now()); text = await r.text(); HWsha = null; }
+    const H = parseAssign(text); $('#hwJson').value = JSON.stringify(H, null, 1); hwSummary(H, n);
+    msg('#hwMsg', LS.get('a2_gh') ? 'ok' : 'info', LS.get('a2_gh') ? 'Đã tải từ GitHub.' : 'Đã tải bản trên website. Thêm GitHub key để lưu thay đổi.');
+  } catch (err) { msg('#hwMsg', 'err', esc(err.message)); }
+}
+$('#hwLoad').onclick = loadHw; $('#hwUnit').onchange = loadHw;
+$('#hwFormat').onclick = () => { try { $('#hwJson').value = JSON.stringify(JSON.parse($('#hwJson').value), null, 1); msg('#hwMsg', 'ok', 'Đã định dạng.'); } catch (err) { msg('#hwMsg', 'err', 'JSON lỗi: ' + esc(err.message)); } };
+$('#hwCheck').onclick = () => { try { const H = JSON.parse($('#hwJson').value); const e = validateHw(H); hwSummary(H, +$('#hwUnit').value); msg('#hwMsg', e.length ? 'err' : 'ok', e.length ? e.map(esc).join('<br>') : '✅ Nội dung hợp lệ.'); } catch (err) { msg('#hwMsg', 'err', 'JSON lỗi: ' + esc(err.message)); } };
+$('#hwSave').onclick = async () => {
+  const n = +$('#hwUnit').value; let H;
+  try { H = JSON.parse($('#hwJson').value); } catch (err) { msg('#hwMsg', 'err', 'JSON lỗi: ' + esc(err.message)); return; }
+  const e = validateHw(H); if (e.length) { msg('#hwMsg', 'err', e.map(esc).join('<br>')); return; }
+  msg('#hwMsg', 'info', 'Đang lưu…');
+  try {
+    if (!HWsha) { const f = await getFile(hwPath(n)); HWsha = f.sha; }
+    const r = await putFile(hwPath(n), hwHeader(n) + JSON.stringify(H, null, 1) + ';\n', HWsha, `Update Unit ${n} homework`);
+    HWsha = r.content.sha; hwSummary(H, n); msg('#hwMsg', 'ok', '✅ Đã lưu homework. Website cập nhật sau khoảng 1–2 phút.');
+  } catch (err) { msg('#hwMsg', 'err', esc(err.message)); }
+};
+$('#hwCopy').onclick = async () => { try { await navigator.clipboard.writeText($('#hwCopy').dataset.link); msg('#hwMsg', 'ok', 'Đã copy link: ' + esc($('#hwCopy').dataset.link)); } catch (e) { msg('#hwMsg', 'info', esc($('#hwCopy').dataset.link)); } };
+$('#hwShowRes').onclick = () => { $('#rUnit').value = $('#hwUnit').value; document.querySelector('.tab[data-t="res"]').click(); if (ROWS) drawResults(); else $('#rLoad').click(); };
+
+/* ---------- results ---------- */
+let ROWS = null;
+$('#rUnit').innerHTML += BUILT.map(n => `<option value="${n}">Unit ${n}</option>`).join('');
+$('#rLoad').onclick = async () => {
+  const url = SET && SET.progressUrl, key = LS.get('a2_key');
+  if (!url) return msg('#rMsg', 'err', 'Chưa nối Google Sheet – vào tab ⚙️ Cài đặt.');
+  if (!key) return msg('#rMsg', 'err', 'Chưa nhập ADMIN_KEY – vào tab ⚙️ Cài đặt.');
+  msg('#rMsg', 'info', 'Đang tải dữ liệu…');
+  try {
+    const r = await fetch(url + '?key=' + encodeURIComponent(key) + '&t=' + Date.now()); const j = await r.json();
+    if (!j.ok) throw new Error(j.error === 'wrong key' ? 'ADMIN_KEY không đúng.' : 'Không tải được dữ liệu.');
+    ROWS = j.rows; const cls = [...new Set(ROWS.map(x => x.cls).filter(Boolean))].sort();
+    $('#rCls').innerHTML = '<option value="">Tất cả lớp</option>' + cls.map(c => `<option>${esc(c)}</option>`).join('');
+    msg('#rMsg', 'ok', `Đã tải ${ROWS.length} dòng.`); drawResults();
+  } catch (err) { msg('#rMsg', 'err', esc(err.message)); }
+};
+['#rCls', '#rUnit', '#rQ'].forEach(s => $(s).addEventListener('input', () => ROWS && drawResults()));
+function aggregate() {
+  const cls = $('#rCls').value, unit = $('#rUnit').value, q = $('#rQ').value.trim().toLowerCase();
+  const units = unit ? [+unit] : BUILT; const by = {};
+  ROWS.filter(r => (!cls || r.cls === cls) && (!q || String(r.name).toLowerCase().includes(q))).forEach(r => {
+    const s = by[r.id] = by[r.id] || { id: r.id, name: r.name, cls: r.cls, last: r.t, u: {} };
+    if (new Date(r.t) > new Date(s.last)) s.last = r.t;
+    const u = +r.unit; if (!u) return;
+    const x = s.u[u] = s.u[u] || { views: 0, parts: {}, done: false, late: false, writing: '' };
+    if (r.kind === 'lesson') x.views++;
+    if (r.kind === 'hw-part') x.parts[r.part] = Math.max(x.parts[r.part] || 0, Number(r.pct) || 0);
+    if (r.kind === 'homework') { x.done = true; x.avg = r.pct; }
+    if (r.kind === 'hw-writing') x.writing = r.writing;
+    if (r.late === 'late') x.late = true;
+  });
+  return { list: Object.values(by).sort((a, b) => String(a.name).localeCompare(b.name, 'vi')), units };
+}
+function drawResults() {
+  const { list, units } = aggregate();
+  const done = list.reduce((s, st) => s + units.filter(u => st.u[u] && st.u[u].done).length, 0);
+  const avgs = []; list.forEach(st => units.forEach(u => { const x = st.u[u]; if (x) Object.values(x.parts).forEach(v => avgs.push(v)); }));
+  $('#kpis').hidden = false;
+  $('#kpis').innerHTML = `<div class="kpi"><b>${list.length}</b><span>học viên</span></div><div class="kpi"><b>${done}</b><span>homework hoàn thành</span></div><div class="kpi"><b>${avgs.length ? Math.round(avgs.reduce((a, b) => a + b, 0) / avgs.length) + '%' : '–'}</b><span>điểm TB các phần</span></div><div class="kpi"><b>${list.filter(st => units.some(u => st.u[u] && st.u[u].late)).length}</b><span>học viên nộp trễ</span></div>`;
+  const pass = n => Number((SET.units[n] || {}).passMark || SET.passMark || 80);
+  const cell = (x, n) => {
+    if (!x) return '<span class="pill none">–</span>';
+    const ps = Object.values(x.parts), best = ps.length ? Math.round(ps.reduce((a, b) => a + b, 0) / ps.length) : null;
+    const tag = x.done ? `<span class="pill ok">✓ ${best != null ? best + '%' : 'xong'}</span>` : best != null ? `<span class="pill ${best >= pass(n) ? 'mid' : 'bad'}">${best}% · ${ps.length} phần</span>` : '<span class="pill mid">đã mở bài</span>';
+    return tag + (x.late ? ' <span class="pill bad">trễ</span>' : '') + (x.writing ? ` <button class="btn ghost sm" data-w="${esc(x.writing).replace(/"/g, '&quot;')}">✍️</button>` : '');
+  };
+  $('#rTbl').hidden = false;
+  $('#rTbl').innerHTML = `<table class="r"><thead><tr><th class="l">Học viên</th><th>Lớp</th>${units.map(u => `<th>Unit ${u}</th>`).join('')}<th>Lần cuối</th></tr></thead><tbody>${list.map(st => `<tr><td class="l"><b>${esc(st.name)}</b></td><td>${esc(st.cls || '')}</td>${units.map(u => `<td>${cell(st.u[u], u)}</td>`).join('')}<td>${esc(new Date(st.last).toLocaleString('vi-VN'))}</td></tr>`).join('') || `<tr><td colspan="${units.length + 3}">Chưa có dữ liệu.</td></tr>`}</tbody></table>`;
+}
+$('#rTbl').addEventListener('click', e => { const b = e.target.closest('[data-w]'); if (!b) return; const w = $('#rWriting'); w.hidden = false; w.innerHTML = `<h2>Bài viết của học viên</h2><div class="writing">${esc(b.dataset.w)}</div>`; w.scrollIntoView({ behavior: 'smooth' }); });
+$('#rCsv').onclick = () => {
+  if (!ROWS) return msg('#rMsg', 'err', 'Hãy tải dữ liệu trước.');
+  const head = ['Time', 'Name', 'Class', 'Unit', 'Kind', 'Part', 'Score', 'Passed', 'Late', 'Words', 'Writing'];
+  const csv = [head].concat(ROWS.map(r => [r.t, r.name, r.cls, r.unit, r.kind, r.part, r.pct, r.passed, r.late, r.words, r.writing])).map(r => r.map(v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"').join(',')).join('\n');
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv' })); a.download = 'destination-a2-results.csv'; a.click();
+};
+
+/* ---------- settings tab ---------- */
+function fillSettings() { $('#pUrl').value = SET.progressUrl || ''; $('#passAll').value = SET.passMark || 80; $('#ghTok').value = LS.get('a2_gh') ? '••••••••' : ''; $('#aKey').value = LS.get('a2_key') ? '••••••' : ''; }
+fetch('apps-script.gs').then(r => r.text()).then(t => { $('#gs').textContent = t; }).catch(() => { $('#gs').textContent = 'Mở file admin/apps-script.gs trong repo.'; });
+$('#copyGs').onclick = async () => { try { await navigator.clipboard.writeText($('#gs').textContent); msg('#setMsg', 'ok', 'Đã copy code.'); } catch (e) { msg('#setMsg', 'err', 'Không copy được – hãy chọn và copy thủ công.'); } };
+$('#ghSave').onclick = async () => {
+  const v = $('#ghTok').value.trim(); if (!v || v.startsWith('•')) return msg('#ghMsg', 'err', 'Hãy dán GitHub key.');
+  LS.set('a2_gh', v); msg('#ghMsg', 'info', 'Đang kiểm tra…');
+  try { await loadSettings(true); LS.set('a2_teacher', 'true'); devInfo(); msg('#ghMsg', 'ok', '✅ Key hợp lệ. Thiết bị này đã được đánh dấu là giáo viên.'); fillSettings(); }
+  catch (err) { LS.set('a2_gh', ''); devInfo(); msg('#ghMsg', 'err', esc(err.message)); }
+};
+$('#ghDel').onclick = () => { LS.set('a2_gh', ''); fillSettings(); devInfo(); msg('#ghMsg', 'ok', 'Đã xoá key khỏi trình duyệt này.'); };
+$('#pUrlSave').onclick = async () => {
+  const v = $('#pUrl').value.trim(); if (v && !/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(v)) return msg('#setMsg', 'err', 'URL phải có dạng https://script.google.com/macros/s/…/exec');
+  msg('#setMsg', 'info', 'Đang lưu…'); try { await loadSettings(true); SET.progressUrl = v; await saveSettings('Update progress tracker URL'); msg('#setMsg', 'ok', '✅ Đã lưu URL lên website.'); } catch (err) { msg('#setMsg', 'err', esc(err.message)); }
+};
+$('#aKeySave').onclick = () => { const v = $('#aKey').value.trim(); if (!v || v.startsWith('•')) return msg('#setMsg', 'err', 'Hãy nhập ADMIN_KEY.'); LS.set('a2_key', v); fillSettings(); msg('#setMsg', 'ok', 'Đã lưu ADMIN_KEY trên trình duyệt này.'); };
+$('#passSave').onclick = async () => {
+  const v = Number($('#passAll').value); if (!(v >= 50 && v <= 100)) return msg('#passMsg', 'err', 'Nhập số từ 50 đến 100.');
+  msg('#passMsg', 'info', 'Đang lưu…'); try { await loadSettings(true); SET.passMark = v; await saveSettings('Update default pass mark'); msg('#passMsg', 'ok', '✅ Đã lưu.'); } catch (err) { msg('#passMsg', 'err', esc(err.message)); }
+};
+$('#tOff').onclick = () => { LS.set('a2_teacher', ''); devInfo(); msg('#passMsg', 'ok', 'Đã bỏ đánh dấu.'); };
+
+loadSettings(!!LS.get('a2_gh')).catch(err => { msg('#oMsg', 'err', esc(err.message)); loadSettings(false); });
+})();
+</script>
+</body>
+</html>

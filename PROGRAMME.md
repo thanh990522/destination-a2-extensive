@@ -4,54 +4,49 @@ Teacher: **Mr. Hà Chí Thanh**
 
 ## Allocation principle
 
-Keep one numbered source Unit as one integrated learning Unit. Retain the book's sequence and core language scope. Add a familiar situation and four connected skills, with speaking throughout. Pacing is flexible. The programme is organised by Unit, not by session.
+One book Unit = one integrated learning Unit. The book’s number, order and language scope stay the same. Every Unit adds a familiar situation and all four skills, with speaking throughout. Pacing is flexible: the programme is organised by Unit, not by session.
 
-For a grammar Unit, teach a small set of support vocabulary, practise it immediately, introduce one grammar point and practise that point before moving on. Grammar comes back in listening, reading, speaking and writing.
+### Vocabulary Units
+Follow the categories that the book Unit actually uses (Unit 3: nouns, verbs, phrasal verbs, phrases, adjectives and adverbs, word formation). Split large categories into sets of 3–8 items. **Each set is followed immediately by its own practice** (at least one question per taught item), then the next set begins. Word formation is taught as word-family tables, each followed by practice.
 
-For a vocabulary Unit, follow the categories actually present in the source. Unit 3, for example, contains nouns, verbs, phrasal verbs, phrases, adjectives/adverbs and word formation. Split large categories into manageable sets. For each set, teach meaning and form, check meaning, practise in context and ask learners to use the language in a short personal exchange. Then move to the next set.
+### Grammar Units
+Each grammar point is one block. **All the theory of the block comes first** (form table, uses, spelling or sound notes, comparison with a related form, “watch out”), **then all the exercises**: recognition → controlled choice → form completion → sentence writing → error correction → text completion, ending with a speaking activity. A Unit with two grammar points (Unit 1, Unit 2) has two blocks, each placed next to the listening that uses it. Grammar explanations have a Vietnamese box; everything else on slides is in English.
 
-The four-skill sequence is adaptable. The essential rule is that every skill task uses the Unit language and has its necessary unfamiliar words prepared beforehand.
+### Skills
+- **Listening**: a real recording on the closest topic (checked script and audio). Key unfamiliar words are taught and practised first; then main idea, details and a speaking follow-up.
+- **Reading**: an original text built from the Unit language; new words taught first; main idea, details, then grammar or vocabulary noticing.
+- **Speaking**: phrase bank + practice, an information gap, and a role play with a clear outcome, timer, optional recording and a 0–2 rubric (task, interaction, Unit language, pronunciation).
+- **Writing**: a model text with analysis questions, a plan, draft area with word count, checklist and download.
+- **Review**: ten-question Unit check, can-do list, book practice reference and homework.
 
 ## Standard learning sequence
 
-1. A situation, purpose and brief speaking warm-up.
-2. Small vocabulary set, immediate practice and personalisation.
-3. Next lexical set or grammar point, immediate practice and personalisation.
-4. Essential preparation for a real listening task, gist, details and a short speaking response.
-5. Essential preparation for reading, main idea, details and an exchange about the text.
-6. Speaking phrase bank, guided exchange, information gap and a communication task with a clear outcome.
-7. Writing model, plan, draft, checklist and revision.
-8. A Unit language check and self-reflection.
-
-Steps 2–3 repeat as necessary. Their practice stays directly beneath the relevant language block. They are not collected into a separate end-of-Unit exercise bank.
-
-## Unit 1: My day, my neighbourhood
-
-Source: Unit 1, printed pages 6–8. Present simple, there is / there are and it's.
-
-| Learning stage | Language and immediate practice | Integrated purpose |
+| Unit 1 (grammar) | Unit 2 (grammar) | Unit 3 (vocabulary) |
 | --- | --- | --- |
-| Welcome | Personal questions with possible answers | Establish a reason to meet a new neighbour |
-| Everyday language | Single words, practice, chunks, practice | Build language for routines |
-| Present simple | Affirmative, practice; negatives/questions, practice; frequency, practice; be versus do, practice; verb endings, practice | Ask and report information about daily life |
-| Listening: My Day | New words, practice; first-listening gist; second-listening details | Hear Natalie and Todd, then compare routines |
-| Places around me | Place nouns, practice; there is/are, practice; following with it/they, practice | Describe local places and add information |
-| Listening: My Hometown | New words, practice; gist; details | Hear Sarah describe local places and seasons, then describe a familiar place |
-| It's and reading | Impersonal it, practice; reading vocabulary, practice; original welcome message and detail questions | Read a friendly message and find useful local information |
-| Speaking workshop | Conversation chunks, practice; guided responses; A/B information gap; free conversation and peer rubric | Agree on a suitable place and time to meet |
-| Writing and review | 80–100 word message, model, checklist, editing; 10-question Unit check; self-review | Produce a personal message and revise Unit language |
+| Welcome | Welcome | Welcome |
+| Everyday words: 4 sets, each + practice | Home words: 3 sets, each + practice | Nouns: 4 sets, each + practice |
+| Present simple: theory 1–4 → exercises 1–6 → speaking | Present continuous: theory 1–4 → exercises 1–6 → speaking | Verbs, phrasal verbs: 3 sets, each + practice |
+| Listening: My Day (words → gist → details → speaking) | Listening: Where’s Mom? | Phrases: 2 sets, each + practice |
+| There is / are, it’s: theory 1–3 → exercises 1–6 → speaking | Listening: Right now (+ noticing stative verbs) | Adjectives and adverbs: 3 sets, each + practice |
+| Listening: My Hometown | Stative verbs: theory 1–2 → exercises 1–4 | Word formation: 2 tables, each + practice |
+| Reading: Welcome to Green Street | Listening: It smells great! | Listening: My English Family; Parents’ jobs |
+| Speaking: meet a neighbour | Reading: family group chat | Reading: Meet my family |
+| Writing: welcome message | Speaking: video call, spot the difference | Speaking: family tree gap, introduce someone |
+| Unit check + homework | Writing: live update · Unit check + homework | Writing: profile · Unit check + homework |
 
-The Unit includes two externally hosted human recordings. See SOURCES.md for the verified source pages and media endpoints. The reading and other tasks are original companion materials.
+## Homework
+
+Six parts per Unit: four auto-checked parts (vocabulary, grammar or word formation, a second real recording, an original reading) with a pass mark per part (default 80%, retries allowed, answers open after passing or three tries), one writing task sent to the teacher and one voice note. Results go to the teacher’s Google Sheet.
 
 ## Full Unit map
 
-The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Only Unit 1 is built. Later listening topics are selection briefs, not verified audio assignments.
+The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Units 1–3 are built. Later listening topics are selection briefs, not verified audio assignments.
 
 | Unit | Source focus | Context | Reading | Listening topic | Speaking outcome | Writing outcome |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Present simple, there is / there are, it’s | My day, my neighbourhood | A welcome message | My Day + My Hometown, ELLLO, verified | Meet a neighbour and agree on a plan | A friendly welcome message |
-| 2 | Present continuous, stative verbs | Life at home right now | A family group chat | What people are doing now | Describe a scene and find differences | A live update to a friend |
-| 3 | Family and friends | People who matter | A personal profile | Family relationships and routines | Introduce a relative and ask about a friend | A friend or family profile |
+| 1 | Present simple, there is / there are, it’s | My day, my neighbourhood | A welcome message | ELLLO Views 1554 My Day + 1571 My Hometown (verified) | Meet a neighbour and agree on a plan | A friendly welcome message |
+| 2 | Present continuous, stative verbs | Life at home right now | A family group chat | ELLLO Sound Grammar A2-03 (Family), One Minute English A2-042, Sound Grammar A2-21 (verified) | Describe a scene and find differences | A live update to a friend |
+| 3 | Family and friends | People who matter | A personal profile | ELLLO Views 1467 My English Family + Sound Grammar A2-01 Parents (verified) | Introduce a relative and ask about a friend | A friend or family profile |
 | 4 | Past simple 1 | A memorable day | A short diary entry | A past day or weekend | Tell a simple story in order | A diary entry |
 | 5 | Past simple 2 | What happened? | A short interview | Past events and questions | Interview someone about last weekend | An interview summary |
 | 6 | Leisure time | An enjoyable weekend | Weekend activity notices | Hobbies and free time | Choose an activity together | A weekend recommendation |
@@ -106,13 +101,10 @@ Speaking feedback covers message/task, interaction, Unit language and pronunciat
 
 ## Future-Unit authoring checklist
 
-- Inspect the full source Unit and verify its exact language categories.
-- Keep the original number and show the printed-page reference.
-- Teach and practise each small language set before introducing another.
-- Prepare essential unfamiliar words for each skill task.
-- Choose human audio that matches the Unit vocabulary as closely as possible.
-- Verify that the audio loads, the transcript matches and every question has a supported answer.
-- Write a familiar reading and a purposeful speaking task that reuse the Unit language.
-- Add a writing model, plan, draft space, feedback criteria and revision task.
-- Make each answer reveal independent. Keep open-task models clearly labelled as examples.
-- Check the lesson in both reading and presentation views, including a narrow viewport.
+- Inspect the full book Unit (theory and exercise pages) and keep its exact categories and scope.
+- Vocabulary: small sets, each followed at once by its own practice. Grammar: all theory of a block, then all exercises.
+- Teach the essential new words before every listening, reading, speaking and writing task.
+- Choose a real recording that matches the Unit topic; verify the MP3 or player, the script and every answer.
+- Write original exercises, reading texts and models (do not copy the publisher’s exercises).
+- Give every closed question one unambiguous key; models for open tasks are examples only.
+- Add `uNN.js`, `hwNN.js`, add the Unit to `built`, run `npm test`, then open it in the admin page.
