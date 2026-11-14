@@ -10,6 +10,7 @@
   if (!A2.canOpen(n, 'slides')) return lock(`Unit ${n} slides are not open`, 'Your teacher will open the slides in class.');
   try { await A2.loadScript(`assets/data/units/u${A2.pad(n)}.js`); } catch (e) { return lock('The slides could not load', 'Please check your internet connection.'); }
   const U = window.A2_UNITS[n];
+  A2.balanceUnit(U);
   document.title = `Slides · Unit ${n} · ${U.title}`;
   const KEY = `a2.u${n}`;
   const store = Object.assign({ ans: {}, drafts: {}, ticks: {}, scores: {} }, A2.LS.get(KEY, {}));
@@ -61,10 +62,9 @@
   function fitBody() {
     const body = deck.querySelector('.slide-body'), inner = body && body.querySelector('.fit');
     if (!inner) return;
-    const avail = body.clientHeight - 6;
-    const set = z => { inner.style.width = (100 / z) + '%'; inner.style.transform = `scale(${z})`; };
-    let z = 1.22; set(z);
-    while (inner.scrollHeight * z > avail && z > 0.6) { z -= 0.02; set(z); }
+    let z = 1.2; inner.style.zoom = z;
+    while (body.scrollHeight > body.clientHeight + 1 && z > 0.55) { z -= 0.02; inner.style.zoom = z; }
+    body.scrollTop = 0;
   }
   function foot() { return `<footer class="slide-foot"><span>Destination A2 · Unit ${A2.pad(n)} · ${esc(U.title)}</span><span class="sf-r">Mr. Hà Chí Thanh · <b>${A2.pad(cur + 1)}</b></span></footer>`; }
   function go(i) { cur = Math.max(0, Math.min(slides.length - 1, i)); render(); }

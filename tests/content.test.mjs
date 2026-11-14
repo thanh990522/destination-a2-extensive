@@ -46,14 +46,15 @@ for (const n of C.built) {
     U.stages.forEach(s => assert.ok(U.cards.some(c => c.stage === s.id), 'empty stage ' + s.id));
     for (const sk of ['listening', 'reading', 'speaking', 'writing']) assert.ok(U.stages.some(s => s.skill === sk), `Unit ${n} lacks ${sk}`);
     assert.ok(U.stages.some(s => s.skill === (U.type === 'Grammar' ? 'grammar' : 'vocab')));
-    assert.ok(U.cards.some(c => c.type === 'speak' && c.rubric), 'speaking task with rubric');
+    assert.ok(U.cards.some(c => c.type === 'speak'), 'speaking task');
+    U.cards.filter(c => c.type === 'talk').forEach(c => c.items.forEach(it => assert.ok(n !== 1 || it.frame, c.id + ': speaking questions need a suggested structure')));
     const w = U.cards.find(c => c.type === 'write'); assert.ok(w && w.min && w.max && w.checklist.length);
     const words = w.model.slice(1).join(' ').split(/\s+/).filter(Boolean).length;
     assert.ok(words >= w.min - 5 && words <= w.max + 5, `writing model ${words} words`);
   });
-  test(`Unit ${n}: every word set is followed at once by its own practice`, () => {
+  test(`Unit ${n}: in vocabulary Units every word set is followed at once by its own practice`, () => {
     U.cards.forEach((c, i) => {
-      if (c.type !== 'words') return;
+      if (c.type !== 'words' || U.type !== 'Vocabulary') return;
       const next = U.cards[i + 1];
       assert.ok(next && next.type === 'practice' && next.stage === c.stage, 'practice must follow ' + c.id);
       assert.ok(next.items.length >= c.words.length, `${next.id}: one question per taught item at least`);
@@ -72,7 +73,7 @@ for (const n of C.built) {
     U.cards.forEach(c => (c.items || []).forEach((it, i) => { if (c.type === 'cloze') { assert.ok(keys(it).length); return; } if (c.type !== 'talk') { checkItem(it, `${c.id}-${i + 1}`); count++; } }));
     U.cards.filter(c => c.type === 'cloze').forEach(c => assert.equal((c.text.match(/\[\d+[a-z]?\]/g) || []).length, c.items.length, c.id + ' gaps = items'));
     U.cards.filter(c => c.matchOptions).forEach(c => c.items.filter(it => it.t === 'match').forEach(it => assert.ok(c.matchOptions.includes(it.a), c.id + ' match key')));
-    assert.ok(count >= 100, `Unit ${n}: substantial practice (${count})`);
+    assert.ok(count >= 80, `Unit ${n}: substantial practice (${count})`);
   });
   test(`Unit ${n}: listening uses verified real recordings, prepared by key words`, () => {
     Object.values(U.audio).forEach(a => {

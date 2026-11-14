@@ -10,6 +10,7 @@
   if (!A2.canOpen(n, 'homework')) return lock(`Unit ${n} homework is not open yet`, 'Your teacher will open it after the lesson.');
   try { await A2.loadScript(`assets/data/homework/hw${A2.pad(n)}.js?t=${Date.now()}`); } catch (e) { return lock('The homework could not load', 'Please check your internet connection.'); }
   const H = window.A2_HOMEWORK[n];
+  H.parts.forEach(p => A2.balance(p.items, 'hw' + n + p.id));
   const conf = A2.unitConf(n), pass = A2.passMark(n);
   document.title = `Homework · Unit ${n} · Destination A2`;
   const KEY = `a2.hw${n}`;

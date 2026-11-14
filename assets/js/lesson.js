@@ -12,6 +12,7 @@
   if (!A2.canOpen(n, 'lesson')) return lockScreen(`Unit ${n} is not open yet`, 'Your teacher will open this lesson in class. Please check again later.');
   try { await A2.loadScript(`assets/data/units/u${A2.pad(n)}.js`); } catch (e) { return lockScreen('The lesson could not load', 'Please check your internet connection and refresh the page.'); }
   const U = window.A2_UNITS[n];
+  A2.balanceUnit(U);
   document.title = `Unit ${n} · ${U.title} · Destination A2`;
   const KEY = `a2.u${n}`;
   const store = Object.assign({ ans: {}, drafts: {}, ticks: {}, scores: {}, stage: U.stages[0].id }, A2.LS.get(KEY, {}));

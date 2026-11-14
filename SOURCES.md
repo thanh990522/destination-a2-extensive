@@ -14,7 +14,7 @@ Checked on 14 November 2026.
 
 ## Real recordings (all from ELLLO, English Listening Lesson Library Online, elllo.org)
 
-Each MP3 endpoint was downloaded and decoded (duration checked) and each question key was checked against the script on the lesson page. Audio streams from ELLLO and is not stored here; full scripts stay on the source pages.
+Each MP3 endpoint was downloaded and decoded (duration checked) and each question key was checked against the script on the lesson page. Audio streams from ELLLO and is not stored here; full scripts stay on the source pages. ELLLO refuses requests that carry another site’s Referer (HTTP 403, checked 14 November 2026), so the lesson, slide and homework pages send no referrer (`<meta name="referrer" content="no-referrer">`); playback was then confirmed in Chrome for every recording.
 
 | Unit | Use | Lesson | Audio |
 | --- | --- | --- | --- |

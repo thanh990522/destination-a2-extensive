@@ -23,7 +23,11 @@ Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9*
 - **Nghe**: dùng audio thật (ELLLO) sát chủ đề nhất; **luôn dạy từ mới + luyện tập trước khi nghe**, nghe ý chính → nghe chi tiết → nói sau khi nghe.
 - **Đọc, nói, viết**: đều có bước dạy từ/cụm từ cần thiết trước, rồi mới làm nhiệm vụ. Phần nói có phrase bank, information gap, role play (đồng hồ, ghi âm, rubric). Phần viết có bài mẫu, dàn ý, checklist, đếm từ.
 - Nội dung slide hoàn toàn bằng tiếng Anh, **trừ nghĩa tiếng Việt và giải thích ngữ pháp** (khung “VI”).
-- **Mỗi câu hỏi có nút con mắt 👁 riêng** để hiện đáp án câu đó; ngoài ra có nút Check, All answers, Reset.
+- **Mỗi câu hỏi có nút con mắt 👁 riêng** để hiện đáp án câu đó; ngoài ra có nút Check, All answers, Reset. Khi đáp án làm slide dài ra, slide cho cuộn lên xuống.
+- Từ vựng dạng **flip card**: bấm vào thẻ mới hiện nghĩa tiếng Việt và ví dụ (có nút “Flip all cards”).
+- Câu hỏi nói luôn có **cấu trúc gợi ý** (“Try: …”) ngay dưới câu hỏi; bài nối ở phần Speaking là **2 cột, bấm trái rồi bấm phải** để nối.
+- Vị trí đáp án đúng được **đảo đều giữa A/B/C** ở mọi bài tự soạn và homework; bài tập trong sách giữ nguyên thứ tự của sách.
+- Audio ELLLO chặn phát khi trình duyệt gửi địa chỉ trang khác (hotlink). Các trang bài học dùng `<meta name="referrer" content="no-referrer">` nên audio phát được trực tiếp.
 
 ## Trình chiếu
 

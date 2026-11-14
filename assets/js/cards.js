@@ -49,22 +49,29 @@
   R.talk = (c, U, mode, part) => `
     <div class="talk ${c.art ? 'with-art' : ''}">
       ${c.art ? `<div class="talk-art">${c.art.map(e => ic(e, 'lg')).join('')}</div>` : ''}
-      <div>${lead(c)}${A2.renderItems(range(c, part).map(p => Object.assign({ t: 'say' }, p)), c.id, { offset: part ? part.from : 0, cls: 'say-list' })}
+      <div>${lead(c)}${A2.renderItems(range(c, part).map(p => Object.assign({ t: 'say' }, p)), c.id, { offset: part ? part.from : 0, cls: 'say-list', cols: c.cols !== false && (c.items || []).length > 2 })}
       ${c.useful ? `<div class="useful"><b>Useful language</b>${c.useful.map(u => `<span>${md(u)}</span>`).join('')}</div>` : ''}${note(c)}</div>
     </div>`;
 
   R.words = (c, U, mode, part) => {
     const list = part ? c.words.slice(part.from, part.to) : c.words;
-    return `${lead(c)}<div class="words ${list.length > 6 ? 'many' : ''}">${list.map(([e, w, ipa, pos, mean, ex]) => `
-      <article class="word">
-        <div class="word-pic">${ic(e, 'lg')}</div>
-        <div class="word-main">
-          <div class="word-top"><h3>${esc(w)}</h3><button type="button" class="say" data-say="${esc(w)}" aria-label="Hear ${esc(w)}">${A2.speakerSvg}</button></div>
-          <p class="word-meta">${pos ? `<span class="pos">${esc(pos)}</span>` : ''}${ipa ? `<span class="ipa">${esc(ipa)}</span>` : ''}</p>
-          <p class="word-vi">${esc(mean)}</p>
-          ${ex ? `<p class="word-ex">${md(ex)}</p>` : ''}
+    return `${lead(c)}<div class="words flips ${list.length > 6 ? 'many' : ''}">${list.map(([e, w, ipa, pos, mean, ex]) => `
+      <article class="word flip" data-flip tabindex="0" role="button" aria-label="${esc(w)}: tap to see the meaning">
+        <div class="flip-in">
+          <div class="face front">
+            <div class="word-pic">${ic(e, 'lg')}</div>
+            <h3>${esc(w)}</h3>
+            <p class="word-meta">${pos ? `<span class="pos">${esc(pos)}</span>` : ''}${ipa ? `<span class="ipa">${esc(ipa)}</span>` : ''}</p>
+            <button type="button" class="say" data-say="${esc(w)}" aria-label="Hear ${esc(w)}">${A2.speakerSvg}</button>
+          </div>
+          <div class="face back">
+            <p class="word-vi">${esc(mean)}</p>
+            ${ex ? `<p class="word-ex">${md(ex)}</p>` : ''}
+            <span class="back-w">${esc(w)}</span>
+          </div>
         </div>
-      </article>`).join('')}</div>${note(c)}`;
+      </article>`).join('')}</div>
+      <div class="row flip-row"><button type="button" class="btn sm ghost" data-flipall>↻ Flip all cards</button></div>${note(c)}`;
   };
 
   const gBlock = b => {
@@ -77,6 +84,8 @@
     if (b.hint) return `<aside class="ghint">${ic('💡', 'sm')}<div><b>${md(b.hint.title || 'Helpful hint')}</b>${b.hint.text ? `<p>${md(b.hint.text)}</p>` : ''}${b.hint.list ? `<ul>${b.hint.list.map(x => `<li>${md(x)}</li>`).join('')}</ul>` : ''}${b.hint.ex ? b.hint.ex.map(x => `<p class="gex">${md(x)}</p>`).join('') : ''}</div></aside>`;
     if (b.watch) return `<aside class="gwatch">${ic('⚠️', 'sm')}<div><b>Watch out!</b>${b.watch.text ? `<p>${md(b.watch.text)}</p>` : ''}${b.watch.ex ? b.watch.ex.map(x => `<p class="gex">${md(x)}</p>`).join('') : ''}</div></aside>`;
     if (b.groups) return `<div class="ggroups">${b.groups.map(([e, h, words, v]) => `<div class="ggroup">${ic(e, 'md')}<b>${md(h)}</b><p>${md(words)}</p>${v ? `<small>${md(v)}</small>` : ''}</div>`).join('')}</div>`;
+    if (b.formulas) return `<div class="gformulas">${b.formulas.map(([lab, f, ex, v]) => `<div class="gf-row"><span class="gf-lab">${md(lab)}</span><div class="gf-main"><div class="gf-box">${md(f)}</div>${ex ? `<p class="gex">${md(ex)}</p>` : ''}${v ? `<p class="gvi">${md(v)}</p>` : ''}</div></div>`).join('')}</div>`;
+    if (b.chips) return `<div class="gchips"><b>${md(b.chips.title)}</b><div>${b.chips.list.map(x => `<span>${md(x)}</span>`).join('')}</div></div>`;
     if (b.vi) return vi(b.vi);
     if (b.text) return `<p class="gtext">${md(b.text)}</p>`;
     return '';
@@ -87,6 +96,14 @@
     const items = range(c, part);
     const graded = items.filter(i => !['say', 'open'].includes(i.t)).length;
     return `${lead(c)}${bank(c)}${example(c)}<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0, cols: c.cols, matchOptions: c.matchOptions, abc: c.abc })}${graded ? A2.checkBar(setId(c, part), graded) : ''}</div>${transfer(c)}${note(c)}`;
+  };
+
+  R.pairs = (c) => {
+    const right = c.right || c.items.map(i => i.a);
+    return `${lead(c)}<div class="set pairs" data-set="${c.id}" data-pairs="${c.id}">
+      <ol class="pairs-l">${c.items.map((it, i) => { const id = `${c.id}-${i + 1}`; it.t = 'match'; return `<li class="item pl" data-item="${id}" data-ml="${id}"><span class="num">${i + 1}</span><div class="qbody"><p class="qtext">${md(it.q)}</p><p class="chosen" data-chosen="${id}"></p><div class="ans" id="ans-${id}" hidden><span class="ans-k">Answer</span> <b>${md(it.a)}</b></div></div><button class="eye" type="button" data-eye="${id}" aria-label="Show this answer" aria-expanded="false">${A2.eye}</button></li>`; }).join('')}</ol>
+      <div class="pairs-r">${right.map((r, k) => `<button type="button" class="pr" data-mr="${esc(r)}"><i>${'abcdefghij'[k]}</i>${md(r)}<span class="pr-n"></span></button>`).join('')}</div>
+    </div>${A2.checkBar(c.id, c.items.length)}`;
   };
 
   R.cloze = (c) => {
@@ -166,8 +183,24 @@
 
   /* --- interactions common to both views: speak, role cards, models, timer, recorder, ticks --- */
   A2.bindCommon = (root, store, save) => {
+    let active = null;
+    const paint = () => A2.paintPairs(root, store);
     root.addEventListener('click', async e => {
       const s = e.target.closest('[data-say]'); if (s) { A2.speak(s.dataset.say); return; }
+      const fa = e.target.closest('[data-flipall]');
+      if (fa) { const cards = [...root.querySelectorAll('[data-flip]')]; const on = cards.some(x => !x.classList.contains('flipped')); cards.forEach(x => x.classList.toggle('flipped', on)); return; }
+      const fl = e.target.closest('[data-flip]'); if (fl && !e.target.closest('.say')) { fl.classList.toggle('flipped'); return; }
+      const pl = e.target.closest('[data-ml]');
+      if (pl && !e.target.closest('.eye')) { root.querySelectorAll('.pl.sel').forEach(x => x.classList.remove('sel')); active = pl.dataset.ml; pl.classList.add('sel'); return; }
+      const pr = e.target.closest('[data-mr]');
+      if (pr && active) {
+        Object.keys(store.ans).forEach(k => { if (store.ans[k] === pr.dataset.mr && k.startsWith(active.replace(/-\d+$/, '-'))) delete store.ans[k]; });
+        store.ans[active] = pr.dataset.mr; const li = root.querySelector(`[data-ml="${CSS.escape(active)}"]`); li.classList.remove('sel', 'ok', 'bad');
+        const next = li.nextElementSibling; active = null; paint(); save();
+        if (next && !store.ans[next.dataset.ml]) { active = next.dataset.ml; next.classList.add('sel'); }
+        return;
+      }
+      if (e.target.closest('[data-reset]')) setTimeout(paint, 0);
       const r = e.target.closest('[data-role]');
       if (r) { const b = root.querySelector('#role-' + CSS.escape(r.dataset.role)); b.hidden = !b.hidden; r.setAttribute('aria-expanded', String(!b.hidden)); return; }
       const m = e.target.closest('[data-model]');
@@ -207,7 +240,15 @@
       const t = e.target.closest('[data-tick]'); if (t) { store.ticks = store.ticks || {}; store.ticks[t.dataset.tick] = t.checked; save(); }
     });
   };
+  A2.paintPairs = (root, store) => {
+    root.querySelectorAll('[data-pairs]').forEach(box => {
+      const used = {};
+      box.querySelectorAll('[data-ml]').forEach((li, i) => { const v = store.ans[li.dataset.ml]; const ch = li.querySelector('[data-chosen]'); ch.textContent = v ? '→ ' + v : ''; li.classList.toggle('done', !!v); if (v) used[v] = i + 1; });
+      box.querySelectorAll('[data-mr]').forEach(b => { const n = used[b.dataset.mr]; b.classList.toggle('used', !!n); b.querySelector('.pr-n').textContent = n || ''; });
+    });
+  };
   A2.restoreCommon = (root, store) => {
+    A2.paintPairs(root, store);
     root.querySelectorAll('[data-draft]').forEach(d => { const v = (store.drafts || {})[d.dataset.draft]; if (v) { d.value = v; const wc = root.querySelector(`[data-wc="${CSS.escape(d.dataset.draft)}"]`); if (wc) wc.textContent = A2.words(v) + ' words'; } });
     root.querySelectorAll('[data-tick]').forEach(t => { t.checked = !!(store.ticks || {})[t.dataset.tick]; });
   };
