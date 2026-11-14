@@ -25,7 +25,7 @@ test('all lesson and question IDs are unique and each closed question has an una
   assert.ok(qs.size>=80,'substantial Unit practice');
 });
 test('each vocabulary or grammar block has immediate practice before the next language block',()=>{
-  U.slides.forEach((s,i)=>{if(['vocab','grammar'].includes(s.kind)){const next=U.slides[i+1];assert.equal(next.kind,'quiz',s.id);assert.equal(next.stage,s.stage,s.id);assert.ok(next.questions.length,s.id);}});
+  U.slides.forEach((s,i)=>{if(['vocab','grammar'].includes(s.kind)){const next=U.slides[i+1];assert.equal(next.kind,'quiz',s.id);assert.equal(next.stage,s.stage,s.id);assert.ok(next.questions.length,s.id);if(s.kind==='vocab')assert.ok(next.questions.length>=s.words.length,'Each taught item needs immediate practice: '+s.id);}});
 });
 test('the Unit has all four skills, two sourced recordings and a final speaking/writing outcome',()=>{
   assert.equal(Object.keys(U.audio).length,2);

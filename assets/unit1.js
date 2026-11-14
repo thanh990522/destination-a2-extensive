@@ -34,7 +34,9 @@ window.UNIT1 = {
       {id:'v1',text:'The first meal of the day is ___.',answer:'breakfast'},
       {id:'v2',text:'I ___ in a flat near the park.',answer:'live'},
       {id:'v3',text:'I ___ English with my teacher.',answer:'study'},
-      {id:'v4',text:'After dinner, I read in the ___.',answer:'evening'}
+      {id:'v4',text:'After dinner, I read in the ___.',answer:'evening'},
+      {id:'v5',text:'I ___ in a bank. That is my job.',answer:'work'},
+      {id:'v6',text:'Children learn from their teachers at ___.',answer:'school'}
     ]},
     {id:'daily-chunks',stage:'routines',kind:'vocab',tag:'SUPPORT VOCABULARY · CHUNKS',title:'Useful everyday chunks',lead:'Learn the whole chunk. Say one true sentence about yourself.',words:[
       ['⏰','wake up','/weɪk ʌp/','tỉnh giấc','I wake up at six.'],['🛏️','get up','/ɡet ʌp/','ra khỏi giường','I get up at six thirty.'],['🍳','have breakfast','/hæv ˈbrekfəst/','ăn sáng','I have breakfast at home.'],['📱','check my emails','/tʃek maɪ ˈiːmeɪlz/','kiểm tra email','I check my emails after breakfast.'],['📰','read the news','/riːd ðə njuːz/','đọc tin tức','I read the news on my phone.'],['🌜','go to bed','/ɡəʊ tə bed/','đi ngủ','I go to bed at ten.']
@@ -43,7 +45,9 @@ window.UNIT1 = {
       {id:'c1',text:'I wake ___ at six, but I stay in bed until six thirty.',answer:'up'},
       {id:'c2',text:'I ___ breakfast before I leave home.',answer:'have'},
       {id:'c3',text:'I ___ my emails on my phone.',answer:'check'},
-      {id:'c4',text:'At ten at night, I go to ___.',answer:'bed'}
+      {id:'c4',text:'At ten at night, I go to ___.',answer:'bed'},
+      {id:'c5',text:'I wake up at six, but I ___ up and leave my bed at six thirty.',answer:'get'},
+      {id:'c6',text:'I ___ the news to find out what is happening.',answer:'read'}
     ],transfer:'Tell your partner about your morning. Use at least three chunks.'},
 
     {id:'simple-positive',stage:'simple',kind:'grammar',tag:'GRAMMAR 01 · PRESENT SIMPLE',title:'Every day, every week',lead:'Use the present simple for routines, usual situations, states and general facts.',rules:[
@@ -107,7 +111,10 @@ window.UNIT1 = {
     {id:'listen-day-word-practice',stage:'listen1',kind:'quiz',tag:'PRACTICE · BEFORE LISTENING',title:'Check the key language',questions:[
       {id:'ldv1',text:'Twelve o’clock in the middle of the day is ___.',answer:'noon'},
       {id:'ldv2',text:'Students can eat lunch in the school ___.',answer:'canteen'},
-      {id:'ldv3',text:'Someone who likes early mornings is a morning ___.',answer:'person'}
+      {id:'ldv3',text:'Someone who likes early mornings is a morning ___.',answer:'person'},
+      {id:'ldv4',text:'A period of learning with a teacher is a ___.',answer:'lesson'},
+      {id:'ldv5',text:'After a long day, I am ___ and need to rest.',answer:'tired'},
+      {id:'ldv6',text:'A warm drink made with chocolate is ___.',answer:'hot chocolate'}
     ]},
     {id:'listen-day-gist',stage:'listen1',kind:'quiz',tag:'LISTENING 01 · MAIN IDEA',title:'A real conversation: My Day',audio:'day',lead:'Listen once without reading the transcript. Choose the main topic.',questions:[
       {id:'ld1',text:'Natalie mainly describes her…',options:['ordinary daily life','holiday plans','new neighbourhood'],answer:'ordinary daily life',why:'She moves through the parts of her day.'}
@@ -133,7 +140,9 @@ window.UNIT1 = {
       {id:'pv1',text:'You borrow books from a ___.',options:['library','cinema','bus stop'],answer:'library'},
       {id:'pv2',text:'You watch a film at a ___.',options:['park','cinema','supermarket'],answer:'cinema'},
       {id:'pv3',text:'You wait for a bus at a ___.',answer:'bus stop'},
-      {id:'pv4',text:'You buy food for home at a ___.',options:['cinema','library','supermarket'],answer:'supermarket'}
+      {id:'pv4',text:'You buy food for home at a ___.',options:['cinema','library','supermarket'],answer:'supermarket'},
+      {id:'pv5',text:'You enjoy a walk among trees and paths in a ___.',options:['park','cinema','library'],answer:'park'},
+      {id:'pv6',text:'You meet a friend for coffee at a ___.',options:['café','bus stop','library'],answer:'café'}
     ]},
     {id:'there',stage:'places',kind:'grammar',tag:'GRAMMAR 05 · THERE IS / THERE ARE',title:'What is near your home?',rules:[
       ['There is + a / an + singular noun','There is a park near my home.','Dùng there is với danh từ đếm được số ít.'],
@@ -165,7 +174,9 @@ window.UNIT1 = {
       {id:'htv1',text:'A large building with many shops is a ___.',answer:'mall'},
       {id:'htv2',text:'A place with many trees is a ___.',options:['forest','lake','cinema'],answer:'forest'},
       {id:'htv3',text:'Summer is a ___.',answer:'season'},
-      {id:'htv4',text:'A place with little danger is ___.',answer:'safe'}
+      {id:'htv4',text:'A place with little danger is ___.',answer:'safe'},
+      {id:'htv5',text:'The town you come from is your ___.',answer:'hometown'},
+      {id:'htv6',text:'An area of water surrounded by land is a ___.',options:['forest','mall','lake'],answer:'lake'}
     ]},
     {id:'listen-town-gist',stage:'listen2',kind:'quiz',tag:'LISTENING 02 · MAIN IDEA',title:'A real conversation: My Hometown',audio:'town',lead:'Listen once. What is Sarah’s main purpose?',questions:[
       {id:'lt1',text:'She mainly…',options:['describes her hometown','explains her job','books a holiday'],answer:'describes her hometown',why:'The conversation covers local places and life there.'}
@@ -202,7 +213,10 @@ window.UNIT1 = {
     {id:'reading-word-practice',stage:'read',kind:'quiz',tag:'PRACTICE · BEFORE READING',title:'Ready to read',questions:[
       {id:'rv1',text:'You pay nothing for a ___ activity.',answer:'free'},
       {id:'rv2',text:'If you walk to school, you go on ___.',answer:'foot'},
-      {id:'rv3',text:'A place with little noise is ___.',answer:'quiet'}
+      {id:'rv3',text:'A place with little noise is ___.',answer:'quiet'},
+      {id:'rv4',text:'The area around your home is your ___.',answer:['neighbourhood','neighborhood']},
+      {id:'rv5',text:'A school, house or block of flats is a ___.',answer:'building'},
+      {id:'rv6',text:'After secondary school, Ben studies at ___.',options:['college','the bus stop','the park'],answer:'college'}
     ]},
     {id:'reading-text',stage:'read',kind:'reading',tag:'READING · MAIN IDEA AND DETAILS',title:'Welcome to Green Street',lead:'Read Linh’s message. Choose the best answer. Find the sentence that helps you.',paragraphs:[
       ['1','Hi Alex, welcome to Green Street! I’m Linh, your new neighbour. I live in the blue building next to the café. I work at a school, and I usually leave home at seven. My brother studies at college. He doesn’t get up early, but he always makes breakfast for us on Sundays.'],
@@ -225,7 +239,10 @@ window.UNIT1 = {
     ]},
     {id:'conversation-tools-practice',stage:'speak',kind:'quiz',tag:'PRACTICE · CONVERSATION TOOLS',title:'What do you say next?',questions:[
       {id:'ct1',text:'Your partner speaks too quietly. Say…',options:['Sorry, can you say that again?','Let’s meet at ten.','That sounds nice.'],answer:'Sorry, can you say that again?'},
-      {id:'ct2',text:'You answer a question and want to ask your partner the same thing. Say…',options:['It is Friday.','What about you?','There is a café.'],answer:'What about you?'}
+      {id:'ct2',text:'You answer a question and want to ask your partner the same thing. Say…',options:['It is Friday.','What about you?','There is a café.'],answer:'What about you?'},
+      {id:'ct3',text:'Your partner suggests a pleasant walk. Give a positive reaction.',options:['That sounds nice.','What about you?','Sorry, can you say that again?'],answer:'That sounds nice.'},
+      {id:'ct4',text:'Suggest a meeting at ten.',options:['What about you?','Let’s meet at ten.','That sounds nice.'],answer:'Let’s meet at ten.'},
+      {id:'ct5',text:'I can meet on Saturday because I am ___.',answer:'free'}
     ]},
     {id:'guided-speaking',stage:'speak',kind:'talk',tag:'SPEAKING 01 · GUIDED PRACTICE',title:'A real answer needs a little more',lead:'Student A asks. Student B answers and adds one detail. Swap roles.',prompts:[
       ['What time do you usually get up?','I usually get up at six. I have breakfast at home. What about you?'],
