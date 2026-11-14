@@ -339,3 +339,10 @@ u{text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underli
 .pr:hover{border-color:var(--blue)}.pr i{font-style:normal;font-weight:900;color:var(--k)}.pr.used{background:var(--sky);border-color:var(--blue)}
 .pr-n{margin-left:auto;background:var(--navy);color:var(--yellow);border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:12px;font-weight:900;flex:none}.pr-n:empty{display:none}
 @media (max-width:700px){.pairs,.grammar.two{grid-template-columns:1fr}.gf-row{grid-template-columns:1fr}}
+
+/* evidence highlight in reading texts */
+.evi{border-radius:4px;transition:background .2s}
+.evi sup{display:none}
+.evi.on{background:#FFE58A;box-shadow:0 0 0 2px #FFE58A}
+.evi.on sup{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--navy);color:var(--yellow);font-size:11px;font-weight:900;margin-right:3px;vertical-align:super}
+.t-mc .opts .opt[data-v="True"],.t-mc .opts .opt[data-v="False"],.t-mc .opts .opt[data-v="Not given"]{min-width:88px;text-align:center}

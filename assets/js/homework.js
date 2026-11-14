@@ -29,7 +29,7 @@
     const revealed = st.passed || st.attempts >= 3;
     let body = '';
     if (p.audio) body += (Array.isArray(p.audio) ? p.audio : [p.audio]).map(key => A2.player(H.audio[key], key)).join('') + (p.glossary ? `<p class="gloss"><b>Words you may hear:</b> ${md(p.glossary)}</p>` : '');
-    if (p.text) body += `<div class="text-card hw-text">${p.text.title ? `<h3>${ic(p.text.icon || '📄', 'sm')} ${md(p.text.title)}</h3>` : ''}${p.text.paragraphs.map((x, i) => `<p><span class="pn">${i + 1}</span>${md(x)}</p>`).join('')}</div>`;
+    if (p.text) body += `<div class="text-card hw-text">${p.text.title ? `<h3>${ic(p.text.icon || '📄', 'sm')} ${md(p.text.title)}</h3>` : ''}${p.text.paragraphs.map((x, i) => `<p><span class="pn">${i + 1}</span>${A2.withEvidence(x, p.items, `hw-${p.id}`)}</p>`).join('')}</div>`;
     if (p.bank) body += `<div class="bank">${p.bank.map(w => `<span>${esc(w)}</span>`).join('')}</div>`;
     if (p.items) body += `<div class="set ${revealed ? '' : 'no-eye'}" data-set="hw-${p.id}">${A2.renderItems(p.items, `hw-${p.id}`, { matchOptions: p.matchOptions, cols: p.cols })}</div>`;
     if (p.type === 'writing') body += `<div class="task big">${ic('📝', 'md')}<div><b>Your task</b><p>${md(p.task)}</p></div></div>${p.plan ? `<div class="plan"><b>Plan</b><ol>${p.plan.map(x => `<li>${md(x)}</li>`).join('')}</ol></div>` : ''}

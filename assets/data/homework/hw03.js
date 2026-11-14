@@ -246,71 +246,100 @@ window.A2_HOMEWORK[3] = {
   },
   {
    "id": "reading",
-   "title": "Reading",
+   "title": "Reading (B1)",
    "icon": "📖",
-   "instructions": "Read the article. Answer the questions.",
+   "instructions": "Read the article. Answer the questions about the details. Level: B1.",
    "text": {
-    "title": "Twins: how alike are they?",
-    "icon": "👯",
+    "title": "Oldest, youngest or only child?",
+    "icon": "🧒",
     "paragraphs": [
-     "Linh and Lan are twins. They are sixteen and they live in Đà Nẵng with their parents and their grandfather. They look alike: they both have dark, straight hair and big brown eyes. Even their friends sometimes make mistakes!",
-     "But their personalities are very different. Linh is talkative and loves sport. She plays volleyball regularly. Lan is quiet and prefers books. She is very clever and wants to be a scientist when she grows up.",
-     "Do they ever argue? “Occasionally,” says Lan. “Linh is messy and I’m tidy, and we share a bedroom!” But they get on really well. “She’s my best friend,” says Linh. “We tell each other all our secrets.”"
+     "Does your position in the family influence your personality? Many people believe it does. We asked three readers what they think.",
+     "Minh, 24, is the oldest of four. ‘As the oldest, I had to look after my younger brothers when my parents were at work. I think that’s why I’m quite organised and responsible today. My friends say I’m a bit bossy, though, and they’re probably right!’",
+     "Hạnh, 19, is an only child. ‘People often think only children are lonely or spoiled, but that wasn’t my experience. My parents were quite strict, and I spent a lot of time with my cousins, who lived in the same building. I get on well with adults, and I’m comfortable doing things on my own.’",
+     "Tom, 31, is the youngest of three. ‘Being the youngest was great fun. Everyone looked after me, and I could always make people laugh. The downside is that my older sisters still treat me like a child. When we argue, they never take me seriously!’",
+     "Psychologists disagree about how much birth order really matters. Some say that other things, such as friends and school, are far more important. But all three readers agree on one thing: their brothers, sisters and cousins are a big part of who they are."
     ]
    },
    "items": [
     {
-     "q": "Who do the twins live with?",
+     "q": "Why did Minh look after his younger brothers?",
      "o": [
-      "their parents and their grandfather",
-      "their aunt and uncle",
-      "their grandparents"
+      "His parents were at work.",
+      "His brothers were ill.",
+      "He wanted to be a teacher."
      ],
-     "a": "their parents and their grandfather"
+     "a": "His parents were at work.",
+     "ev": "I had to look after my younger brothers when my parents were at work"
     },
     {
-     "q": "What hair do they have?",
+     "q": "How do Minh’s friends describe him?",
      "o": [
-      "dark, straight hair",
-      "light, curly hair",
-      "dyed hair"
+      "a bit bossy",
+      "very lazy",
+      "quite shy"
      ],
-     "a": "dark, straight hair"
+     "a": "a bit bossy",
+     "ev": "My friends say I’m a bit bossy"
     },
     {
-     "q": "Who loves sport?",
+     "q": "Hạnh felt lonely as a child.",
      "o": [
-      "Linh",
-      "Lan",
-      "both"
+      "True",
+      "False",
+      "Not given"
      ],
-     "a": "Linh"
+     "a": "False",
+     "ev": "but that wasn’t my experience"
     },
     {
-     "q": "What does Lan want to be?",
+     "q": "Who did Hạnh spend a lot of time with?",
      "a": [
-      "a scientist",
-      "scientist"
+      "her cousins",
+      "cousins",
+      "with her cousins"
      ],
-     "show": "a scientist"
+     "show": "her cousins",
+     "ev": "I spent a lot of time with my cousins, who lived in the same building"
     },
     {
-     "q": "How often do they argue?",
+     "q": "Hạnh says she is comfortable…",
      "o": [
-      "occasionally",
-      "every day",
-      "never"
+      "doing things on her own",
+      "speaking in public",
+      "living with her cousins"
      ],
-     "a": "occasionally"
+     "a": "doing things on her own",
+     "ev": "I’m comfortable doing things on my own"
     },
     {
-     "q": "Why do they sometimes argue?",
+     "q": "What was good about being the youngest for Tom?",
      "o": [
-      "Linh is messy and Lan is tidy.",
-      "They both love sport.",
-      "They have different friends."
+      "Everyone looked after him.",
+      "He had his own room.",
+      "His sisters did his homework."
      ],
-     "a": "Linh is messy and Lan is tidy."
+     "a": "Everyone looked after him.",
+     "ev": "Everyone looked after me"
+    },
+    {
+     "q": "Tom’s sisters are older than thirty-five.",
+     "o": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "a": "Not given",
+     "why": "The text says they are older than Tom, but not how old they are."
+    },
+    {
+     "q": "All psychologists agree that birth order is very important.",
+     "o": [
+      "True",
+      "False",
+      "Not given"
+     ],
+     "a": "False",
+     "ev": "Psychologists disagree about how much birth order really matters."
     }
    ]
   },

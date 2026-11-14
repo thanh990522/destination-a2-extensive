@@ -32,7 +32,7 @@ Each grammar point is one block. **All the theory of the block comes first** (fo
 | Grammar | Present simple form and use · spelling, adverbs, time phrases · there is / there are · it’s → **Book exercises A, B, C, D, E, F** (pp. 7–8, exact) → Find someone who… |
 | Listening 1: My Day | Pre: new words · check → While: main idea · details → Post: speaking |
 | Listening 2: My Hometown | Pre: new words · check → While: main idea · details → Post: speaking |
-| Reading: Welcome to Green Street | Pre: new words · check → While: main idea · details |
+| Reading: My street | Text 1 (A2): pre-reading words → True/False details · Text 2 (A2+/B1): pre-reading words → note completion, one or two words. Answers highlight the evidence in the text. |
 | Speaking: Meet a neighbour | Pre: phrases · match → information gap → role play |
 | Writing: A welcome message | Pre: model text → task |
 | Review | Unit check · can-do and homework |
@@ -54,7 +54,7 @@ Each grammar point is one block. **All the theory of the block comes first** (fo
 
 ## Homework
 
-Six parts per Unit: four auto-checked parts (vocabulary, grammar or word formation, a second real recording, an original reading) with a pass mark per part (default 80%, retries allowed, answers open after passing or three tries), one writing task sent to the teacher and one voice note. Results go to the teacher’s Google Sheet.
+Six parts per Unit: four auto-checked parts (vocabulary, grammar or word formation, a second real recording, an original B1–B1+ reading with detail questions incl. True/False/Not given and evidence highlighting) with a pass mark per part (default 80%, retries allowed, answers open after passing or three tries), one writing task sent to the teacher and one voice note. Results go to the teacher’s Google Sheet.
 
 ## Full Unit map
 
