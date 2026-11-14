@@ -70,3 +70,37 @@ html,body{height:100%;overflow:hidden;background:#0B1F5C}
 
 .slide .words.many .word-pic{width:84px;height:84px}.slide .words.many .word-pic .ic{width:66px;height:66px}
 .slide .words.many .word h3{font-size:25px}.slide .words.many .word-vi{font-size:19px}.slide .words.many .word-ex{font-size:17px}
+
+/* v2: clean, one card per slide */
+.slide-body{overflow:hidden;padding-right:0}
+.fit{transform-origin:0 0}
+.slide .note,.slide .transfer{display:none}
+.slide .card-head{padding-right:200px}
+.slide .card-head h2{font-size:42px}
+.slide .booktag{font-size:16px;padding:6px 14px}
+.cover-slide .cover{grid-template-columns:1.25fr .75fr;align-items:center}
+.cover-slide .cover h1{font-size:72px}
+.cover-slide .cover-path{padding:22px 24px}.cover-slide .cover-path li{padding:10px 14px}.cover-slide .cover-path li b{font-size:20px}
+.slide .cloze{line-height:2.2}
+.slide .items.cols{column-gap:14px}
+.slide .item{padding:10px 14px}
+.slide .split.listen{grid-template-columns:.75fr 1.25fr}
+.slide .audio-src{font-size:14px}
+.slide.type-cloze .cloze{line-height:1.95;padding:12px 16px}
+.slide .cloze .eye.mini{width:24px;height:24px}.slide .cloze .eye.mini svg{width:13px;height:13px}
+.slide .bank{padding:8px 10px;margin-bottom:10px}
+.cover-slide .cover-path{align-self:center}
+/* listening: player bar on top, questions full width */
+.slide .split.listen{grid-template-columns:1fr;gap:14px}
+.slide .split.listen .audio-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:12px 18px}
+.slide .split.listen .pl{margin-top:0}.slide .split.listen .audio-src{margin:0}
+.slide .split.listen .main .lead{margin:0 0 10px}
+/* reading: balanced columns, compact short answers */
+.slide .split.read{grid-template-columns:1fr 1fr}
+.slide .t-short .qbody{display:flex;flex-wrap:wrap;align-items:center;column-gap:12px}
+.slide .t-short .qtext{flex:1 1 55%}.slide .t-short .line{flex:1 1 35%;margin-top:0}
+.slide .t-short .ans{flex-basis:100%}
+/* long letters in two columns */
+.slide.type-cloze .cloze{columns:2;column-gap:34px}
+.slide.type-cloze .cloze p{break-inside:avoid-column}
+.slide.type-wrap .wrap-card{align-items:start}

@@ -16,34 +16,9 @@
   const save = () => A2.LS.set(KEY, store);
   const itemsById = A2.itemsIndex(U);
 
-  /* build the slide list */
-  const per = c => {
-    if (c.type === 'words') return 8;
-    if (c.type === 'talk') return 4;
-    if (c.type === 'listen') return c.perSlide || 5;
-    if (c.type === 'read') return c.perSlide || 4;
-    if (c.type === 'practice') {
-      if (c.perSlide) return c.perSlide;
-      const long = c.items.some(i => ['write', 'error', 'order', 'open', 'match'].includes(i.t));
-      if (long) return 4;
-      if (c.items.every(i => i.t === 'pick' || /\{[^}]+\|[^}]+\}/.test(i.q || ''))) return 8;
-      return c.cols ? 8 : 6;
-    }
-    return 0;
-  };
+  /* one card = one slide: no dividers, no splitting */
   const slides = [];
-  U.stages.forEach(st => {
-    const cards = U.cards.filter(c => c.stage === st.id);
-    if (st.skill !== 'start') slides.push({ divider: st });
-    cards.forEach(c => {
-      const list = c.type === 'words' ? c.words : c.items;
-      const max = per(c);
-      if (max && list && list.length > max) {
-        const of = Math.ceil(list.length / max), size = Math.ceil(list.length / of);
-        for (let k = 0; k < of; k++) slides.push({ card: c, part: { from: k * size, to: Math.min(list.length, (k + 1) * size), k: k + 1, of } });
-      } else slides.push({ card: c });
-    });
-  });
+  U.stages.forEach(st => U.cards.filter(c => c.stage === st.id).forEach(c => slides.push({ card: c })));
 
   root.innerHTML = `
     <div class="deck-wrap"><div class="deck" id="deck" role="region" aria-roledescription="slide" aria-live="polite"></div></div>
@@ -74,14 +49,22 @@
       const c = s.card; sk = A2.stageOf(U, c.stage).skill;
       html = c.type === 'cover'
         ? `<div class="slide cover-slide sk-${sk}">${A2.renderCard(c, U, 'slide')}${foot()}</div>`
-        : `<div class="slide sk-${sk} type-${c.type}">${A2.cardHead(c, U, s.part)}<div class="slide-body">${A2.renderCard(c, U, 'slide', s.part)}</div>${foot()}</div>`;
+        : `<div class="slide sk-${sk} type-${c.type}">${A2.cardHead(c, U, s.part)}<div class="slide-body"><div class="fit">${A2.renderCard(c, U, 'slide', s.part)}</div></div>${foot()}</div>`;
     }
     deck.innerHTML = html;
     q.restore(); A2.restoreCommon(deck, store);
     document.getElementById('pos').textContent = `${cur + 1} / ${slides.length}`;
     document.getElementById('bar').style.width = ((cur + 1) / slides.length) * 100 + '%';
     history.replaceState(null, '', `?u=${n}#s=${cur + 1}`);
-    fit();
+    fit(); fitBody();
+  }
+  function fitBody() {
+    const body = deck.querySelector('.slide-body'), inner = body && body.querySelector('.fit');
+    if (!inner) return;
+    const avail = body.clientHeight - 6;
+    const set = z => { inner.style.width = (100 / z) + '%'; inner.style.transform = `scale(${z})`; };
+    let z = 1.22; set(z);
+    while (inner.scrollHeight * z > avail && z > 0.6) { z -= 0.02; set(z); }
   }
   function foot() { return `<footer class="slide-foot"><span>Destination A2 · Unit ${A2.pad(n)} · ${esc(U.title)}</span><span class="sf-r">Mr. Hà Chí Thanh · <b>${A2.pad(cur + 1)}</b></span></footer>`; }
   function go(i) { cur = Math.max(0, Math.min(slides.length - 1, i)); render(); }
