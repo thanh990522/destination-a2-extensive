@@ -4,6 +4,14 @@ An integrated English programme with a focus on everyday speaking.
 
 **Teacher: Mr. Hà Chí Thanh**
 
+## Open the published course
+
+- [Live course and Unit 1](https://thanh990522.github.io/destination-a2-extensive/)
+- [Unit 1 teaching slides](https://thanh990522.github.io/destination-a2-extensive/slides.html)
+- [42-Unit programme](https://thanh990522.github.io/destination-a2-extensive/#programme)
+
+Unit 1 contains **52 interactive teaching cards, 104 practice questions and 41 support vocabulary items**, with immediate practice for every item.
+
 ## Ready now
 
 - A 42-Unit programme map based on the supplied book's contents.
