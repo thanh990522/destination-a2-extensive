@@ -9,7 +9,10 @@ One book Unit = one integrated learning Unit. The book’s number, order and lan
 ### Vocabulary Units
 Follow the categories that the book Unit actually uses (Unit 3: nouns, verbs, phrasal verbs, phrases, adjectives and adverbs, word formation). Split large categories into sets of 3–8 items. **Each set is followed immediately by its own practice** (at least one question per taught item), then the next set begins. Word formation is taught as word-family tables, each followed by practice.
 
-### Grammar Units
+### Grammar Units (model: Unit 1)
+Teach the whole grammar of the Unit first from the book’s theory page, then do the **book’s own grammar exercises, quoted exactly** (Unit 1: A–F, pages 7–8), then move to the skills. New words are taught in the **pre-stage of each skill** (pre → while → post), not in a separate vocabulary block. One card = one slide. Units 2–3 below still use the earlier allocation and will be converted.
+
+### Grammar Units (earlier allocation, Units 2–3)
 Each grammar point is one block. **All the theory of the block comes first** (form table, uses, spelling or sound notes, comparison with a related form, “watch out”), **then all the exercises**: recognition → controlled choice → form completion → sentence writing → error correction → text completion, ending with a speaking activity. A Unit with two grammar points (Unit 1, Unit 2) has two blocks, each placed next to the listening that uses it. Grammar explanations have a Vietnamese box; everything else on slides is in English.
 
 ### Skills
@@ -21,18 +24,33 @@ Each grammar point is one block. **All the theory of the block comes first** (fo
 
 ## Standard learning sequence
 
-| Unit 1 (grammar) | Unit 2 (grammar) | Unit 3 (vocabulary) |
-| --- | --- | --- |
-| Welcome | Welcome | Welcome |
-| Everyday words: 4 sets, each + practice | Home words: 3 sets, each + practice | Nouns: 4 sets, each + practice |
-| Present simple: theory 1–4 → exercises 1–6 → speaking | Present continuous: theory 1–4 → exercises 1–6 → speaking | Verbs, phrasal verbs: 3 sets, each + practice |
-| Listening: My Day (words → gist → details → speaking) | Listening: Where’s Mom? | Phrases: 2 sets, each + practice |
-| There is / are, it’s: theory 1–3 → exercises 1–6 → speaking | Listening: Right now (+ noticing stative verbs) | Adjectives and adverbs: 3 sets, each + practice |
-| Listening: My Hometown | Stative verbs: theory 1–2 → exercises 1–4 | Word formation: 2 tables, each + practice |
-| Reading: Welcome to Green Street | Listening: It smells great! | Listening: My English Family; Parents’ jobs |
-| Speaking: meet a neighbour | Reading: family group chat | Reading: Meet my family |
-| Writing: welcome message | Speaking: video call, spot the difference | Speaking: family tree gap, introduce someone |
-| Unit check + homework | Writing: live update · Unit check + homework | Writing: profile · Unit check + homework |
+**Unit 1 (new model, 35 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Welcome | Cover · warm-up |
+| Grammar | Present simple form and use · spelling, adverbs, time phrases · there is / there are · it’s → **Book exercises A, B, C, D, E, F** (pp. 7–8, exact) → Find someone who… |
+| Listening 1: My Day | Pre: new words · check → While: main idea · details → Post: speaking |
+| Listening 2: My Hometown | Pre: new words · check → While: main idea · details → Post: speaking |
+| Reading: Welcome to Green Street | Pre: new words · check → While: main idea · details |
+| Speaking: Meet a neighbour | Pre: phrases · match → information gap → role play |
+| Writing: A welcome message | Pre: model text → task |
+| Review | Unit check · can-do and homework |
+
+**Units 2–3 (earlier allocation)**
+
+| Unit 2 (grammar) | Unit 3 (vocabulary) |
+| --- | --- |
+| Welcome | Welcome |
+| Home words: 3 sets, each + practice | Nouns: 4 sets, each + practice |
+| Present continuous: theory 1–4 → exercises 1–6 → speaking | Verbs, phrasal verbs: 3 sets, each + practice |
+| Listening: Where’s Mom? | Phrases: 2 sets, each + practice |
+| Listening: Right now | Adjectives and adverbs: 3 sets, each + practice |
+| Stative verbs: theory 1–2 → exercises 1–4 | Word formation: 2 tables, each + practice |
+| Listening: It smells great! | Listening: My English Family; Parents’ jobs |
+| Reading: family group chat | Reading: Meet my family |
+| Speaking: video call, spot the difference | Speaking: family tree gap, introduce someone |
+| Writing: live update · Unit check + homework | Writing: profile · Unit check + homework |
 
 ## Homework
 
@@ -105,6 +123,6 @@ Speaking feedback covers message/task, interaction, Unit language and pronunciat
 - Vocabulary: small sets, each followed at once by its own practice. Grammar: all theory of a block, then all exercises.
 - Teach the essential new words before every listening, reading, speaking and writing task.
 - Choose a real recording that matches the Unit topic; verify the MP3 or player, the script and every answer.
-- Write original exercises, reading texts and models (do not copy the publisher’s exercises).
+- Grammar Units: quote the book’s grammar exercises exactly (instructions, items, word boxes); write original reading texts, skill tasks and models.
 - Give every closed question one unambiguous key; models for open tasks are examples only.
 - Add `uNN.js`, `hwNN.js`, add the Unit to `built`, run `npm test`, then open it in the admin page.

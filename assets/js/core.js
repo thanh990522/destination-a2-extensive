@@ -154,7 +154,7 @@
     let body = '';
     if (t === 'mc' || t === 'tf') {
       const opts2 = t === 'tf' ? (item.o || ['True', 'False']) : item.o;
-      body = `<p class="qtext">${A2.md(item.q || '')}</p><div class="opts" role="group">${opts2.map(o => `<button type="button" class="opt" data-q="${id}" data-v="${esc(o)}">${A2.md(o)}</button>`).join('')}</div>`;
+      body = `<p class="qtext">${A2.md(item.q || '')}</p><div class="opts" role="group">${opts2.map((o, k) => `<button type="button" class="opt" data-q="${id}" data-v="${esc(o)}">${opts.abc ? `<i class="abc">${'ABCDE'[k]}</i>` : ''}${A2.md(o)}</button>`).join('')}</div>`;
     } else if (t === 'pick') {
       const html = A2.md(item.q).replace(/\{([^}]+)\}/, (m, g) => `<span class="pick" role="group">${g.split('|').map(o => `<button type="button" class="opt mini" data-q="${id}" data-v="${esc(o.trim())}">${o.trim()}</button>`).join('<i>/</i>')}</span>`);
       body = `<p class="qtext">${html}</p>`;
@@ -164,7 +164,7 @@
       body = `<p class="qtext">${parts[0]}<input class="gap" data-q="${id}" style="width:${w}ch" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Answer ${n}">${parts.slice(1).join('___')}</p>${item.hint ? `<span class="hint">${A2.md(item.hint)}</span>` : ''}`;
     } else if (t === 'write' || t === 'error' || t === 'order' || t === 'short') {
       const lead = t === 'error' ? `<span class="tagmini">Find and correct the mistake</span>` : t === 'order' ? `<span class="tagmini">Put the words in order</span>` : '';
-      body = `${lead}<p class="qtext">${A2.md(item.q)}</p><input class="line" data-q="${id}" autocomplete="off" autocapitalize="sentences" spellcheck="false" placeholder="${t === 'error' ? 'Write the correct words' : 'Write your answer'}" aria-label="Answer ${n}">`;
+      body = `${lead}<p class="qtext">${A2.md(item.q)}</p><input class="line" data-q="${id}" autocomplete="off" autocapitalize="sentences" spellcheck="false" placeholder="${t === 'error' ? 'Write the correct words' : t === 'short' ? 'Answer' : 'Write your answer'}" aria-label="Answer ${n}">`;
     } else if (t === 'match') {
       body = `<p class="qtext">${A2.md(item.q)}</p><select class="sel" data-q="${id}" aria-label="Match ${n}"><option value="">Choose…</option>${(opts.matchOptions || item.o || []).map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join('')}</select>`;
     } else if (t === 'open' || t === 'say') {
@@ -174,7 +174,7 @@
   };
   A2.renderItems = (items, prefix, opts = {}) => {
     const matchOptions = opts.matchOptions;
-    return `<ol class="items ${opts.cols ? 'cols' : ''} ${opts.cls || ''}" ${opts.start ? `start="${opts.start}"` : ''}>${items.map((it, i) => A2.renderItem(it, `${prefix}-${(opts.offset || 0) + i + 1}`, (opts.offset || 0) + i + 1, { matchOptions })).join('')}</ol>`;
+    return `<ol class="items ${opts.cols ? 'cols' : ''} ${opts.cls || ''}" ${opts.start ? `start="${opts.start}"` : ''}>${items.map((it, i) => A2.renderItem(it, `${prefix}-${(opts.offset || 0) + i + 1}`, (opts.offset || 0) + i + 1, { matchOptions, abc: opts.abc })).join('')}</ol>`;
   };
   A2.checkBar = (id, total) => `<div class="checkbar" data-checkbar="${id}"><button type="button" class="btn sm" data-check="${id}">✓ Check</button><button type="button" class="btn sm ghost" data-showall="${id}">${A2.eye} All answers</button><button type="button" class="btn sm ghost" data-reset="${id}">↺ Reset</button><span class="score" data-score="${id}" aria-live="polite">${total ? `– / ${total}` : ''}</span></div>`;
 
@@ -250,7 +250,7 @@
     const src = a.type === 'soundcloud'
       ? `<iframe class="sc" title="${esc(a.title)} – audio player" allow="autoplay" loading="lazy" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${esc(a.track)}&color=%231d4ed8&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=false"></iframe>`
       : `<div class="pl" data-player="${key}"><button type="button" class="pl-play" data-pl="toggle" aria-label="Play or pause">▶</button><div class="pl-mid"><div class="pl-bar" data-pl="seek"><span></span></div><div class="pl-time"><span data-pl="cur">0:00</span> / <span data-pl="dur">${esc(a.length || '–:––')}</span></div></div><button type="button" class="pl-btn" data-pl="back" title="Back 5 seconds">↺ 5s</button><button type="button" class="pl-btn" data-pl="rate" title="Speed">1×</button><audio preload="none" src="${esc(a.src)}"></audio></div>`;
-    return `<div class="audio-card"><div class="audio-head">${A2.icon('🎧', 'md')}<div><b>${esc(a.title)}</b><small>${esc(a.speakers || '')}${a.level ? ' · ' + esc(a.level) : ''}${a.length ? ' · ' + esc(a.length) : ''}</small></div></div>${src}<p class="audio-src">Real recording: <a href="${esc(a.page)}" target="_blank" rel="noopener">${esc(a.provider || 'ELLLO')}</a>. Open the script only after your second listen.</p></div>`;
+    return `<div class="audio-card"><div class="audio-head">${A2.icon('🎧', 'md')}<div><b>${esc(a.title)}</b><small>${esc(a.speakers || '')}${a.level ? ' · ' + esc(a.level) : ''}${a.length ? ' · ' + esc(a.length) : ''}</small></div></div>${src}<p class="audio-src">Source: <a href="${esc(a.page)}" target="_blank" rel="noopener">${esc(a.provider || 'ELLLO')}</a></p></div>`;
   };
   const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '–:––');
   document.addEventListener('click', e => {

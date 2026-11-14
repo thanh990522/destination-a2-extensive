@@ -29,20 +29,16 @@
 
   const R = {};
 
-  R.cover = (c, U, mode) => `
+  R.cover = (c, U) => `
     <div class="cover">
       <div class="cover-copy">
         <p class="kicker">DESTINATION A2 · UNIT ${A2.pad(U.n)} · ${esc(U.type.toUpperCase())}</p>
         <h1>${md(c.title || U.title)}</h1>
         <p class="cover-focus">${md(U.focus)}</p>
-        ${c.lead ? `<p class="lead">${md(c.lead)}</p>` : ''}
         <ul class="goals">${(U.goals || []).map(g => `<li>${ic('✅', 'xs')}<span>${md(g)}</span></li>`).join('')}</ul>
         <div class="teacher-line"><span class="avatar">HT</span><div><b>Mr. Hà Chí Thanh</b><small>${esc(U.book)}</small></div></div>
       </div>
-      <div class="cover-art" aria-hidden="true">
-        <div class="cover-hero">${ic(c.hero || '🏡', 'hero')}</div>
-        ${(c.chips || U.chips || []).map(([e, t], i) => `<span class="float f${i % 8}">${ic(e, 'sm')}${esc(t)}</span>`).join('')}
-      </div>
+      <div class="cover-path"><p class="kicker">IN THIS UNIT</p><ol>${U.stages.filter(s => s.skill !== 'start').map((s, i) => `<li class="sk-${s.skill}"><span class="cp-n">${i + 1}</span>${ic(s.icon, 'sm')}<span><b>${md(s.name)}</b><small>${esc((SKILL[s.skill] || [''])[0])}</small></span></li>`).join('')}</ol></div>
     </div>`;
 
   R.divider = (st, U) => {
@@ -90,15 +86,15 @@
   R.practice = (c, U, mode, part) => {
     const items = range(c, part);
     const graded = items.filter(i => !['say', 'open'].includes(i.t)).length;
-    return `${lead(c)}${bank(c)}${example(c)}<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0, cols: c.cols, matchOptions: c.matchOptions })}${graded ? A2.checkBar(setId(c, part), graded) : ''}</div>${transfer(c)}${note(c)}`;
+    return `${lead(c)}${bank(c)}${example(c)}<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0, cols: c.cols, matchOptions: c.matchOptions, abc: c.abc })}${graded ? A2.checkBar(setId(c, part), graded) : ''}</div>${transfer(c)}${note(c)}`;
   };
 
   R.cloze = (c) => {
     let i = 0;
-    const html = md(c.text).replace(/\[(\d+)\]/g, () => {
+    const html = md(c.text).replace(/\[(\d+)[a-z]?\]/g, (m, label) => {
       const it = c.items[i]; const id = `${c.id}-${++i}`; it.t = 'gap';
       const w = Math.max(6, Math.min(16, Math.max(...A2.answers(it).map(a => String(a).length)) + 2));
-      return `<span class="item cz" data-item="${id}"><sup>${i}</sup><input class="gap" data-q="${id}" style="width:${w}ch" autocomplete="off" spellcheck="false" aria-label="Gap ${i}">${it.hint ? `<em class="czh">(${esc(it.hint)})</em>` : ''}<button class="eye mini" type="button" data-eye="${id}" aria-label="Show answer ${i}" aria-expanded="false">${A2.eye}</button><span class="ans inline" id="ans-${id}" hidden><b>${md(A2.shown(it))}</b></span></span>`;
+      return `<span class="item cz" data-item="${id}"><sup>${label}</sup><input class="gap" data-q="${id}" style="width:${w}ch" autocomplete="off" spellcheck="false" aria-label="Gap ${i}">${it.hint ? `<em class="czh">(${esc(it.hint)})</em>` : ''}<button class="eye mini" type="button" data-eye="${id}" aria-label="Show answer ${i}" aria-expanded="false">${A2.eye}</button><span class="ans inline" id="ans-${id}" hidden><b>${md(A2.shown(it))}</b></span></span>`;
     });
     return `${lead(c)}${bank(c)}<div class="set" data-set="${c.id}"><div class="cloze ${c.style || 'letter'}">${c.textTitle ? `<p class="cz-title">${md(c.textTitle)}</p>` : ''}<p>${html.replace(/<br><br>/g, '</p><p>')}</p></div>${A2.checkBar(c.id, c.items.length)}</div>${transfer(c)}${note(c)}`;
   };
@@ -107,8 +103,8 @@
     const a = U.audio[c.audio];
     const items = range(c, part);
     return `<div class="split listen">
-      <div class="side">${A2.player(a, c.audio)}${c.task ? `<div class="task">${ic(c.taskIcon || '🎯', 'sm')}<p>${md(c.task)}</p></div>` : ''}${c.glossary ? `<p class="gloss"><b>Words you may hear:</b> ${md(c.glossary)}</p>` : ''}</div>
-      <div class="main">${lead(c)}<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0 })}${A2.checkBar(setId(c, part), items.filter(i => !['say', 'open'].includes(i.t)).length)}</div>${transfer(c)}${note(c)}</div></div>`;
+      <div class="side">${A2.player(a, c.audio)}</div>
+      <div class="main">${c.task ? `<p class="lead">${md(c.task)}</p>` : lead(c)}<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0, cols: c.cols })}${A2.checkBar(setId(c, part), items.filter(i => !['say', 'open'].includes(i.t)).length)}</div>${transfer(c)}${note(c)}</div></div>`;
   };
 
   R.read = (c, U, mode, part) => {
@@ -163,8 +159,9 @@
   A2.cardHead = (c, U, part) => {
     const st = A2.stageOf(U, c.stage);
     const label = c.tag || (SKILL[st.skill] || [''])[0].toUpperCase();
+    const book = c.book ? `<span class="booktag">📘 Book · Exercise ${esc(c.book)}${c.page ? ' · p. ' + c.page : ''}</span>` : '';
     const pt = part && part.of > 1 ? ` <span class="part">${part.k}/${part.of}</span>` : '';
-    return `<header class="card-head sk-${st.skill}"><span class="tag">${ic(c.icon || st.icon, 'xs')}${esc(label)}${pt}</span><h2>${md(c.title || '')}</h2></header>`;
+    return `<header class="card-head sk-${st.skill}"><div class="tagrow"><span class="tag">${ic(c.icon || st.icon, 'xs')}${esc(label)}${pt}</span>${book}</div><h2>${md(c.title || '')}</h2></header>`;
   };
 
   /* --- interactions common to both views: speak, role cards, models, timer, recorder, ticks --- */

@@ -10,7 +10,7 @@ Giảng viên: **Mr. Hà Chí Thanh**
 
 | Unit | Loại | Nội dung | Thẻ bài học | Câu hỏi | Audio thật |
 | --- | --- | --- | --- | --- | --- |
-| 1 · My day, my neighbourhood | Grammar | Present simple · there is / there are · it’s | 54 | 200+ | ELLLO 1554, 1571 |
+| 1 · My day, my neighbourhood | Grammar | Present simple · there is / there are · it’s · **bài tập sách A–F (tr. 7–8) trích nguyên văn** | 35 (= 35 slide) | 115+ | ELLLO 1554, 1571 |
 | 2 · Life at home right now | Grammar | Present continuous · stative verbs | 51 | 190+ | ELLLO A2-03, A2-042, A2-21 |
 | 3 · People who matter | Vocabulary | Family and friends | 51 | 160+ | ELLLO 1467, A2-01 |
 
@@ -19,7 +19,7 @@ Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9*
 ## Cách phân bổ trong mỗi Unit
 
 - **Unit từ vựng**: học theo đúng các nhóm của sách (Nouns, Verbs, Phrasal verbs, Phrases, Adjectives/Adverbs, Word formation), chia nhỏ từng bộ. **Học xong bộ nào làm bài tập bộ đó ngay**, rồi mới sang bộ tiếp theo.
-- **Unit ngữ pháp**: mỗi chủ điểm ngữ pháp **học hết lý thuyết trước** (Form → Uses → Spelling/Notes → So sánh), **sau đó mới làm chuỗi bài tập** (nhận biết → kiểm soát → viết câu → sửa lỗi → đoạn văn) và nói.
+- **Unit ngữ pháp** (mẫu mới: Unit 1): **dạy toàn bộ ngữ pháp trước** theo trang lý thuyết của sách, **làm bài tập ngữ pháp trong sách** (trích đúng 100%), rồi mới sang từng kỹ năng; **từ mới được dạy ở phần pre** của mỗi kỹ năng (pre → while → post). Unit 2–3 sẽ được chuyển sang mẫu này.
 - **Nghe**: dùng audio thật (ELLLO) sát chủ đề nhất; **luôn dạy từ mới + luyện tập trước khi nghe**, nghe ý chính → nghe chi tiết → nói sau khi nghe.
 - **Đọc, nói, viết**: đều có bước dạy từ/cụm từ cần thiết trước, rồi mới làm nhiệm vụ. Phần nói có phrase bank, information gap, role play (đồng hồ, ghi âm, rubric). Phần viết có bài mẫu, dàn ý, checklist, đếm từ.
 - Nội dung slide hoàn toàn bằng tiếng Anh, **trừ nghĩa tiếng Việt và giải thích ngữ pháp** (khung “VI”).
@@ -27,7 +27,7 @@ Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9*
 
 ## Trình chiếu
 
-`→ / ← / Space` chuyển slide · `F` toàn màn hình · `M` danh sách slide · `Esc` dừng audio. Bài dài tự chia thành nhiều slide (1/2, 2/2). Nút 🔊 cạnh mỗi từ đọc mẫu bằng giọng của trình duyệt.
+`→ / ← / Space` chuyển slide · `F` toàn màn hình · `M` danh sách slide · `Esc` dừng audio. Mỗi thẻ/bài tập nằm gọn trong **1 slide** (tự co giãn cho vừa khung), không có slide chia đoạn, không có ghi chú giáo viên. Nút 🔊 cạnh mỗi từ đọc mẫu bằng giọng của trình duyệt.
 
 ## Trang quản lý (admin)
 

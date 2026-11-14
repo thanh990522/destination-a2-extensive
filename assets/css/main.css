@@ -292,3 +292,13 @@ u{text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underli
 @media (max-width:1000px){.hero{grid-template-columns:1fr}.hero h1{font-size:40px}.hero-art{min-height:300px}.hero-circle{width:240px;height:240px}.skills{grid-template-columns:1fr 1fr}.ugrid{grid-template-columns:1fr 1fr}.principles{grid-template-columns:1fr}}
 @media (max-width:640px){.ugrid,.skills{grid-template-columns:1fr}.hero h1{font-size:34px}}
 .vi-badge{flex:none;background:#F59E0B;color:#fff;font-weight:900;font-size:11px;border-radius:6px;padding:2px 6px;margin-top:2px}
+
+/* v2: cover path, book tag, option letters */
+.cover-path{background:var(--sky);border-radius:22px;padding:18px 20px;align-self:stretch}
+.cover-path ol{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px}
+.cover-path li{display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:8px 12px;border-left:6px solid var(--k)}
+.cover-path li b{display:block;color:var(--navy);line-height:1.2}.cover-path li small{color:var(--k);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.cp-n{width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--yellow);font-weight:900;font-size:12px;display:grid;place-items:center;flex:none}
+.tagrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.booktag{display:inline-flex;align-items:center;gap:4px;background:var(--yellow-s);color:#7A5B00;border:1px solid #F3DE95;font-weight:900;font-size:12.5px;border-radius:999px;padding:4px 12px}
+.abc{font-style:normal;font-weight:900;color:var(--k);margin-right:6px}.opt.on .abc{color:var(--yellow)}

@@ -70,9 +70,9 @@ for (const n of C.built) {
   test(`Unit ${n}: every closed question has one unambiguous key`, () => {
     let count = 0;
     U.cards.forEach(c => (c.items || []).forEach((it, i) => { if (c.type === 'cloze') { assert.ok(keys(it).length); return; } if (c.type !== 'talk') { checkItem(it, `${c.id}-${i + 1}`); count++; } }));
-    U.cards.filter(c => c.type === 'cloze').forEach(c => assert.equal((c.text.match(/\[\d+\]/g) || []).length, c.items.length, c.id + ' gaps = items'));
+    U.cards.filter(c => c.type === 'cloze').forEach(c => assert.equal((c.text.match(/\[\d+[a-z]?\]/g) || []).length, c.items.length, c.id + ' gaps = items'));
     U.cards.filter(c => c.matchOptions).forEach(c => c.items.filter(it => it.t === 'match').forEach(it => assert.ok(c.matchOptions.includes(it.a), c.id + ' match key')));
-    assert.ok(count >= 120, `Unit ${n}: substantial practice (${count})`);
+    assert.ok(count >= 100, `Unit ${n}: substantial practice (${count})`);
   });
   test(`Unit ${n}: listening uses verified real recordings, prepared by key words`, () => {
     Object.values(U.audio).forEach(a => {
