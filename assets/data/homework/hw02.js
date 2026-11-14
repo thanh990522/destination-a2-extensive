@@ -232,73 +232,102 @@ window.A2_HOMEWORK[2] = {
   },
   {
    "id": "reading",
-   "title": "Reading",
+   "title": "Reading (B1)",
    "icon": "📖",
-   "instructions": "Read the description of a photo. Answer the questions.",
+   "instructions": "Read the article. Answer the questions about the details. Level: B1.",
    "text": {
-    "title": "Photo of the week: Sunday at the market",
-    "icon": "📸",
+    "title": "Home is where the Wi-Fi is",
+    "icon": "💻",
     "paragraphs": [
-     "In this photo, my family is at Bến Thành Market on a Sunday morning. It’s very busy. My mum is buying fruit from a friendly old lady. She always buys mangoes here because they taste wonderful.",
-     "My dad isn’t shopping. He’s sitting at a small café and he’s drinking iced coffee. He hates shopping! My little brother is standing next to him. He’s eating a bánh mì and he’s smiling at the camera.",
-     "And me? I’m not in the photo, because I’m taking it! I love this picture. It reminds me of happy weekends with my family."
+     "Right now, in a small rented flat near My Khe Beach in Đà Nẵng, Lukas Weber is answering emails from his clients in Berlin. It is two in the afternoon for him, but it is still early morning in Germany. Lukas is a web designer, and this year he is living and working in Vietnam.",
+     "Lukas is one of thousands of ‘digital nomads’ – people who work online and move from country to country. ‘I don’t own a house or a car,’ he says. ‘Everything I need is in two suitcases.’ At the moment he is renting his flat by the month, which costs less than a room in his home city.",
+     "His routine is very different from his old office life. He usually goes for a swim at six, works until lunch in a café with fast internet, and then takes a long break when it is too hot. In the evenings he is learning Vietnamese with an online teacher. ‘I understand much more than I can say,’ he laughs.",
+     "Not everything is easy. Lukas misses his family, especially on birthdays, and the time difference means that meetings often happen late at night. He also admits that some local people find his lifestyle strange. ‘My landlord thinks I’m on a very long holiday,’ he says.",
+     "Will he stay? He isn’t sure. ‘Right now, I love it here. But this kind of life doesn’t last for ever. One day I’ll want a real home again.’"
     ]
    },
    "items": [
     {
-     "q": "Where is the family?",
+     "q": "What is Lukas doing at the start of the article?",
      "o": [
-      "at a market",
-      "at the beach",
-      "at home"
+      "answering emails from clients",
+      "swimming at the beach",
+      "having lunch in a café"
      ],
-     "a": "at a market"
+     "a": "answering emails from clients",
+     "ev": "Lukas Weber is answering emails from his clients in Berlin"
     },
     {
-     "q": "What is Mum doing?",
+     "q": "What time of day is it in Germany?",
      "o": [
-      "buying fruit",
-      "drinking coffee",
-      "taking a photo"
+      "early morning",
+      "two in the afternoon",
+      "late at night"
      ],
-     "a": "buying fruit"
+     "a": "early morning",
+     "ev": "it is still early morning in Germany"
     },
     {
-     "q": "Why does Mum always buy mangoes here?",
+     "q": "Lukas owns a car in Germany.",
      "o": [
-      "They taste wonderful.",
-      "They are cheap.",
-      "The lady is her sister."
+      "True",
+      "False",
+      "Not given"
      ],
-     "a": "They taste wonderful."
+     "a": "False",
+     "ev": "I don’t own a house or a car"
     },
     {
-     "q": "Why isn’t Dad shopping?",
+     "q": "How does Lukas rent his flat?",
      "o": [
-      "He hates shopping.",
-      "He’s tired.",
-      "He’s working."
+      "by the month",
+      "by the year",
+      "by the week"
      ],
-     "a": "He hates shopping."
+     "a": "by the month",
+     "ev": "he is renting his flat by the month"
     },
     {
-     "q": "What is the brother eating?",
+     "q": "Where does Lukas usually work in the morning?",
      "a": [
-      "a bánh mì",
-      "bánh mì",
-      "banh mi",
-      "a banh mi"
+      "in a café",
+      "a café",
+      "café",
+      "cafe",
+      "in a cafe"
      ],
-     "show": "a bánh mì"
+     "show": "in a café",
+     "ev": "works until lunch in a café with fast internet"
     },
     {
-     "q": "Why isn’t the writer in the photo?",
+     "q": "Lukas can speak Vietnamese better than he can understand it.",
      "o": [
-      "The writer is taking the photo.",
-      "The writer is at home.",
-      "The writer is in the café."
+      "True",
+      "False",
+      "Not given"
      ],
-     "a": "The writer is taking the photo."
+     "a": "False",
+     "ev": "I understand much more than I can say"
+    },
+    {
+     "q": "Why do Lukas’s meetings often happen late at night?",
+     "o": [
+      "because of the time difference",
+      "because he swims in the morning",
+      "because his clients are busy"
+     ],
+     "a": "because of the time difference",
+     "ev": "the time difference means that meetings often happen late at night"
+    },
+    {
+     "q": "What does his landlord think?",
+     "o": [
+      "that Lukas is on a very long holiday",
+      "that Lukas works too hard",
+      "that Lukas will buy the flat"
+     ],
+     "a": "that Lukas is on a very long holiday",
+     "ev": "My landlord thinks I’m on a very long holiday"
     }
    ]
   },

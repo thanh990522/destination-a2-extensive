@@ -6,7 +6,7 @@ window.A2_UNITS[1] = {
   n: 1, type: 'Grammar', title: 'My day, my neighbourhood',
   focus: 'Present simple · there is / there are · it’s',
   book: 'Destination A2 · Unit 1 · pages 6–8',
-  goals: ['Use the present simple, **there is / there are** and **it’s** correctly.', 'Understand two real conversations about a day and a hometown.', 'Read a message from a new neighbour.', 'Meet a neighbour, make a plan and write a welcome message.'],
+  goals: ['Use the present simple, **there is / there are** and **it’s** correctly.', 'Understand two real conversations about a day and a hometown.', 'Read two texts about streets and neighbourhoods for details.', 'Meet a neighbour, make a plan and write a welcome message.'],
   audio: {
     day: { title: 'My Day', speakers: 'Natalie and Todd', level: 'A2', length: '4:12', provider: 'ELLLO Views #1554', src: 'https://elllo.org/Audio/A1551/1554-Nat-Verbs-Schedule.mp3', page: 'https://elllo.org/english/1551/1554-Nat-Verbs-Schedule.htm' },
     town: { title: 'My Hometown', speakers: 'Sarah and John', level: 'A2', length: '2:34', provider: 'ELLLO Views #1571', src: 'https://www.elllo.org/Audio/A1551/1571-John-There-is-are-Hometowns.mp3', page: 'https://www.elllo.org/english/1551/1571-Sarah-There-is-are-Hometowns.htm' }
@@ -16,7 +16,7 @@ window.A2_UNITS[1] = {
     { id: 'grammar', skill: 'grammar', icon: '🧩', name: 'Grammar', caption: 'Present simple, there is / there are, it’s: all the rules first, then the book exercises A–F.' },
     { id: 'l1', skill: 'listening', icon: '🎧', name: 'Listening 1: My Day', caption: 'Pre-listening words → main idea → details → speaking.' },
     { id: 'l2', skill: 'listening', icon: '🏞️', name: 'Listening 2: My Hometown', caption: 'Pre-listening words → main idea → details → speaking.' },
-    { id: 'read', skill: 'reading', icon: '📖', name: 'Reading: Welcome to Green Street', caption: 'Pre-reading words → read for the main idea → read for details.' },
+    { id: 'read', skill: 'reading', icon: '📖', name: 'Reading: My street', caption: 'Two texts, from easier to harder. Pre-reading words, then read for details.' },
     { id: 'speak', skill: 'speaking', icon: '💬', name: 'Speaking: Meet a neighbour', caption: 'Useful phrases → information gap → role play.' },
     { id: 'write', skill: 'writing', icon: '✍️', name: 'Writing: A welcome message', caption: 'Model text → plan, write and check.' },
     { id: 'review', skill: 'review', icon: '🏁', name: 'Review', caption: 'Unit check, can-do list and homework.' }
@@ -183,33 +183,52 @@ window.A2_UNITS[1] = {
         { q: 'What’s the weather like?', frame: 'It’s ___. There are ___ seasons.', model: 'It’s hot all year. There are two seasons: the dry season and the rainy season.' },
         { q: 'Is it a good place for families? Why?', frame: 'Yes, it is. / No, it isn’t. It’s ___ and there are ___.', model: 'Yes, it is. It’s safe and there are good schools.' }] },
 
-    /* ---------- READING ---------- */
-    { id: 'r-w', stage: 'read', type: 'words', tag: 'Reading · pre-reading', title: 'New words for ==the message==',
+    /* ---------- READING: two texts, easier → harder, details only, two question types ---------- */
+    { id: 'r-w1', stage: 'read', type: 'words', tag: 'Reading 1 · pre-reading', title: 'New words for ==Text 1==',
       words: [
         ['🏘️', 'neighbourhood', '/ˈneɪbəhʊd/', 'noun', 'khu phố', 'My **neighbourhood** is quiet.'],
-        ['🙋', 'neighbour', '/ˈneɪbə/', 'noun', 'hàng xóm', 'Linh is my new **neighbour**.'],
         ['🏢', 'building', '/ˈbɪldɪŋ/', 'noun', 'tòa nhà', 'I live in the blue **building**.'],
         ['➡️', 'next to', '/ˈnekst tə/', 'preposition', 'bên cạnh', 'The café is **next to** the bank.'],
         ['🤫', 'quiet', '/ˈkwaɪət/', 'adjective', 'yên tĩnh', 'The park is **quiet** before eight.'],
         ['🚶', 'on foot', '/ɒn ˈfʊt/', 'phrase', 'đi bộ', 'I go to the library **on foot**.'],
-        ['🆓', 'free', '/friː/', 'adjective', 'miễn phí', 'The club is **free**.'],
-        ['🎓', 'college', '/ˈkɒlɪdʒ/', 'noun', 'trường cao đẳng / đại học', 'My brother studies at **college**.']] },
-    { id: 'r-text', stage: 'read', type: 'read', tag: 'Reading · while reading', title: 'Task 1: ==main idea==', lead: 'Read Linh’s message. Choose the answers.', textTitle: 'Hi Alex, welcome to Green Street!', textIcon: '💌',
+        ['🆓', 'free', '/friː/', 'adjective', 'miễn phí', 'The club is **free**.']] },
+    { id: 'r-t1', stage: 'read', type: 'read', tag: 'Reading 1 · while reading', title: 'Text 1: ==True or False?==', lead: 'Read Linh’s message. Are the sentences true or false?', textTitle: 'Hi Alex, welcome to Green Street!', textIcon: '💌',
       text: [
         'I’m Linh, your new neighbour. I live in the blue building next to the café. I work at a school, and I usually leave home at seven. My brother studies at college. He doesn’t get up early, but he always makes breakfast for us on Sundays.',
         'There is a small park near our building, and there are two cafés on our street. The park is quiet before eight, so I often walk there in the morning. There isn’t a cinema here, but there is a library. It opens at nine. I go there on foot on Saturdays.',
-        'It’s easy to get to the library from our building. It’s about one kilometre away. The reading club meets there every Saturday at ten. It’s free, and the people are friendly. Do you like reading? What do you usually do at weekends? See you soon! Linh'],
+        'It’s easy to get to the library from our building. It’s about one kilometre away. The reading club meets there every Saturday at ten. It’s free, and the people are friendly. Do you like reading? See you soon! Linh'],
       items: [
-        { q: 'What is the message mainly about?', o: ['Linh’s new job', 'Life on Green Street and an invitation', 'A holiday'], a: 'Life on Green Street and an invitation' },
-        { q: 'Which place is NOT on Green Street?', o: ['a library', 'a park', 'a cinema'], a: 'a cinema' },
-        { q: 'When does Linh’s brother make breakfast?', o: ['every morning', 'on Sundays', 'on Saturdays'], a: 'on Sundays' }] },
-    { id: 'r-det', stage: 'read', type: 'read', textRef: 'r-text', tag: 'Reading · while reading', title: 'Task 2: ==details==', lead: 'Write short answers.',
+        { q: 'Linh lives in the building next to the café.', o: ['True', 'False'], a: 'True', ev: 'I live in the blue building next to the café.' },
+        { q: 'Linh’s brother gets up early every day.', o: ['True', 'False'], a: 'False', ev: 'He doesn’t get up early' },
+        { q: 'Linh often walks in the park in the morning.', o: ['True', 'False'], a: 'True', ev: 'so I often walk there in the morning' },
+        { q: 'There is a cinema on Green Street.', o: ['True', 'False'], a: 'False', ev: 'There isn’t a cinema here' },
+        { q: 'The library opens at ten o’clock.', o: ['True', 'False'], a: 'False', ev: 'It opens at nine.', why: 'The reading club meets at ten.' },
+        { q: 'You don’t pay for the reading club.', o: ['True', 'False'], a: 'True', ev: 'It’s free' }] },
+    { id: 'r-w2', stage: 'read', type: 'words', tag: 'Reading 2 · pre-reading', title: 'New words for ==Text 2==',
+      words: [
+        ['🛒', 'street vendor', '/striːt ˈvendə/', 'noun', 'người bán hàng rong', '**Street vendors** sell food on the pavement.'],
+        ['🚶', 'pavement', '/ˈpeɪvmənt/', 'noun', 'vỉa hè', 'Don’t park on the **pavement**.'],
+        ['🧍', 'queue', '/kjuː/', 'noun', 'hàng người xếp hàng', 'There is a long **queue** at the shop.'],
+        ['🧾', 'customer', '/ˈkʌstəmə/', 'noun', 'khách hàng', 'Our first **customers** come at six.'],
+        ['🌙', 'night shift', '/naɪt ʃɪft/', 'noun', 'ca đêm', 'He works the **night shift**.'],
+        ['😴', 'have a nap', '/hæv ə næp/', 'phrase', 'ngủ trưa, chợp mắt', 'I **have a nap** after lunch.'],
+        ['🔢', 'dozens of', '/ˈdʌznz əv/', 'phrase', 'hàng chục', 'There are **dozens of** small hotels.'],
+        ['🎸', 'live music', '/laɪv ˈmjuːzɪk/', 'noun', 'nhạc sống', 'There is **live music** every night.']] },
+    { id: 'r-t2', stage: 'read', type: 'read', tag: 'Reading 2 · while reading', title: 'Text 2: ==complete the notes==', lead: 'Read the article. Write **one or two words** from the text in each gap.', textTitle: 'One street, twenty-four hours', textIcon: '🌃', perSlide: 8,
+      text: [
+        'I live on Phạm Ngũ Lão, a long, busy street in District 1 of Hồ Chí Minh City. My family runs a small noodle shop on the ground floor of our house, so I know the street very well. It never really sleeps.',
+        'The day starts early. At about five o’clock, street vendors arrive with their carts and set up on the pavement. There is a bánh mì seller opposite our house who always has a long queue of office workers before seven. My mother opens our shop at half past five, and our first customers are usually taxi drivers who are finishing their night shifts.',
+        'In the afternoon, the street is quieter because it is very hot. Many shop owners close their doors for an hour and have a nap. Tourists are the only people who walk around in the midday sun. There are dozens of small hotels and travel agencies here, so we see visitors from all over the world.',
+        'At night, everything changes again. Bars and restaurants put tables and chairs on the pavement, and there is live music until late. It is noisy, of course, and it isn’t easy to sleep before midnight. But I wouldn’t like to live anywhere else. For me, the noise is the sound of home.'],
       items: [
-        { q: 'What time does Linh usually leave home?', a: ['at seven', 'seven', '7', 'at 7', 'seven o’clock'], show: 'at seven' },
-        { q: 'When is the park quiet?', a: ['before eight', 'before 8', 'before eight o’clock'], show: 'before eight' },
-        { q: 'How does Linh go to the library?', a: ['on foot', 'she walks', 'she goes on foot', 'walking'], show: 'on foot' },
-        { q: 'How far is the library from their building?', a: ['about one kilometre', 'one kilometre', '1 km', 'about 1 km', 'about one kilometer'], show: 'about one kilometre' },
-        { q: 'How much does the reading club cost?', a: ['nothing', 'it’s free', 'free', 'it is free'], show: 'Nothing. It’s free.' }] },
+        { q: 'The noodle shop is on the ___ of the family’s house.', a: ['ground floor'], ev: 'on the ground floor of our house' },
+        { q: 'Street vendors arrive at about ___.', a: ['five o’clock', 'five', '5', '5 o’clock', '5.00'], show: 'five o’clock', ev: 'At about five o’clock, street vendors arrive' },
+        { q: 'Office workers queue at the ___ seller opposite the house.', a: ['bánh mì', 'banh mi'], ev: 'There is a bánh mì seller opposite our house' },
+        { q: 'The shop’s first customers are usually ___.', a: ['taxi drivers'], ev: 'our first customers are usually taxi drivers' },
+        { q: 'In the afternoon, many shop owners have a ___.', a: ['nap'], ev: 'have a nap' },
+        { q: 'Visitors stay in the many small ___ on the street.', a: ['hotels'], ev: 'There are dozens of small hotels and travel agencies here' },
+        { q: 'At night, there is ___ until late.', a: ['live music'], ev: 'there is live music until late' },
+        { q: 'For the writer, the noise is “the sound of ___”.', a: ['home'], ev: 'the noise is the sound of home' }] },
 
     /* ---------- SPEAKING ---------- */
     { id: 'sp-w', stage: 'speak', type: 'words', tag: 'Speaking · pre-speaking', title: 'Phrases for ==meeting a neighbour==',

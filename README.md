@@ -24,6 +24,7 @@ Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9*
 - **Đọc, nói, viết**: đều có bước dạy từ/cụm từ cần thiết trước, rồi mới làm nhiệm vụ. Phần nói có phrase bank, information gap, role play (đồng hồ, ghi âm, rubric). Phần viết có bài mẫu, dàn ý, checklist, đếm từ.
 - Nội dung slide hoàn toàn bằng tiếng Anh, **trừ nghĩa tiếng Việt và giải thích ngữ pháp** (khung “VI”).
 - **Mỗi câu hỏi có nút con mắt 👁 riêng** để hiện đáp án câu đó; ngoài ra có nút Check, All answers, Reset. Khi đáp án làm slide dài ra, slide cho cuộn lên xuống.
+- **Reading** có 2 bài đọc khác nhau, khó dần, chỉ hỏi chi tiết, mỗi bài một dạng câu hỏi (Unit 1: True/False và điền từ vào ghi chú). Khi bấm mắt hoặc All answers, **câu chứa thông tin trong bài đọc được tô vàng** kèm số câu hỏi. Bài đọc trong homework ở mức **B1–B1+** (có True/False/Not given) và cũng tô vàng bằng chứng khi mở đáp án.
 - Từ vựng dạng **flip card**: bấm vào thẻ mới hiện nghĩa tiếng Việt và ví dụ (có nút “Flip all cards”).
 - Câu hỏi nói luôn có **cấu trúc gợi ý** (“Try: …”) ngay dưới câu hỏi; bài nối ở phần Speaking là **2 cột, bấm trái rồi bấm phải** để nối.
 - Vị trí đáp án đúng được **đảo đều giữa A/B/C** ở mọi bài tự soạn và homework; bài tập trong sách giữ nguyên thứ tự của sách.

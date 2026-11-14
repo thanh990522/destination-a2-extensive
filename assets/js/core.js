@@ -145,7 +145,7 @@
   A2.balance = (items, seed) => {
     const h = hash(seed);
     (items || []).forEach((it, i) => {
-      if (it.fixed) return;
+      if (it.fixed || (it.o && it.o.every(o => /^(true|false|not given)$/i.test(o)))) return;
       const keys = A2.answers(it).map(A2.norm);
       const reorder = list => {
         const n = list.length, pat = PAT[n]; if (!pat) return list;
@@ -158,6 +158,20 @@
     });
   };
   A2.balanceUnit = U => (U.cards || []).forEach(c => { if (!c.book && c.type !== 'cloze') A2.balance(c.items, U.n + c.id); });
+
+  /* ---------- evidence: wrap the sentence that answers each question ---------- */
+  A2.withEvidence = (raw, items, prefix, offset = 0) => {
+    const hits = [];
+    (items || []).forEach((it, i) => {
+      if (!it.ev) return; const k = raw.indexOf(it.ev);
+      if (k >= 0 && !hits.some(h => k < h.e && k + it.ev.length > h.s)) hits.push({ s: k, e: k + it.ev.length, id: `${prefix}-${offset + i + 1}`, n: offset + i + 1 });
+    });
+    hits.sort((a, b) => a.s - b.s);
+    let out = '', pos = 0;
+    hits.forEach(h => { out += A2.md(raw.slice(pos, h.s)) + `<span class="evi" data-ev="${h.id}"><sup>${h.n}</sup>${A2.md(raw.slice(h.s, h.e))}</span>`; pos = h.e; });
+    return out + A2.md(raw.slice(pos));
+  };
+  const showEv = (root, id, on) => root.querySelectorAll(`[data-ev="${CSS.escape(id)}"]`).forEach(x => x.classList.toggle('on', on));
 
   /* ---------- question rendering ---------- */
   const eyeBtn = (id, label = 'Show this answer') => `<button class="eye" type="button" data-eye="${id}" aria-expanded="false" aria-controls="ans-${id}" title="${label}" aria-label="${label}">${A2.eye}</button>`;
@@ -220,7 +234,7 @@
       const eye = e.target.closest('[data-eye]');
       if (eye) {
         const box = root.querySelector('#ans-' + CSS.escape(eye.dataset.eye)); if (!box) return;
-        box.hidden = !box.hidden; eye.setAttribute('aria-expanded', String(!box.hidden)); eye.innerHTML = box.hidden ? A2.eye : A2.eyeOff; eye.classList.toggle('on', !box.hidden); return;
+        box.hidden = !box.hidden; eye.setAttribute('aria-expanded', String(!box.hidden)); eye.innerHTML = box.hidden ? A2.eye : A2.eyeOff; eye.classList.toggle('on', !box.hidden); showEv(root, eye.dataset.eye, !box.hidden); return;
       }
       const chk = e.target.closest('[data-check]');
       if (chk) { A2.grade(root, chk.dataset.check, store, itemsById); save(); return; }
@@ -228,7 +242,7 @@
       if (all) {
         const scope = root.querySelector(`[data-set="${CSS.escape(all.dataset.showall)}"]`) || root;
         const boxes = [...scope.querySelectorAll('.ans')]; const open = boxes.some(b => b.hidden);
-        boxes.forEach(b => { b.hidden = !open; });
+        boxes.forEach(b => { b.hidden = !open; showEv(root, b.id.replace(/^ans-/, ''), open); });
         scope.querySelectorAll('[data-eye]').forEach(b => { b.innerHTML = open ? A2.eyeOff : A2.eye; b.classList.toggle('on', open); b.setAttribute('aria-expanded', String(open)); });
         return;
       }
@@ -237,7 +251,7 @@
         const scope = root.querySelector(`[data-set="${CSS.escape(rs.dataset.reset)}"]`) || root;
         scope.querySelectorAll('[data-q]').forEach(el => { delete store.ans[el.dataset.q]; if (el.classList.contains('opt')) el.classList.remove('on'); else el.value = ''; });
         scope.querySelectorAll('.item').forEach(li => li.classList.remove('ok', 'bad'));
-        scope.querySelectorAll('.ans').forEach(b => { b.hidden = true; });
+        scope.querySelectorAll('.ans').forEach(b => { b.hidden = true; showEv(root, b.id.replace(/^ans-/, ''), false); });
         scope.querySelectorAll('[data-eye]').forEach(b => { b.innerHTML = A2.eye; b.classList.remove('on'); });
         const sc = root.querySelector(`[data-score="${CSS.escape(rs.dataset.reset)}"]`); if (sc) sc.textContent = sc.textContent.replace(/^\S+/, '–');
         save();

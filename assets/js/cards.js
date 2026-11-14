@@ -128,7 +128,7 @@
     const items = range(c, part);
     const t = c.textRef ? U.cards.find(x => x.id === c.textRef) : c;
     return `<div class="split read">
-      <div class="side text-card ${t.style || ''}">${t.textTitle ? `<h3>${ic(t.textIcon || '📄', 'sm')} ${md(t.textTitle)}</h3>` : ''}${(t.text || []).map((p, i) => `<p>${t.numbered === false ? '' : `<span class="pn">${i + 1}</span>`}${md(p)}</p>`).join('')}</div>
+      <div class="side text-card ${t.style || ''}">${t.textTitle ? `<h3>${ic(t.textIcon || '📄', 'sm')} ${md(t.textTitle)}</h3>` : ''}${(t.text || []).map((p, i) => `<p>${t.numbered === false ? '' : `<span class="pn">${i + 1}</span>`}${t === c ? A2.withEvidence(p, c.items, c.id) : md(p)}</p>`).join('')}</div>
       <div class="main">${lead(c)}${items.length ? `<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0 })}${A2.checkBar(setId(c, part), items.filter(i => !['say', 'open'].includes(i.t)).length)}</div>` : ''}${transfer(c)}${note(c)}</div></div>`;
   };
 

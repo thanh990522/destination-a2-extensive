@@ -86,6 +86,11 @@ for (const n of C.built) {
       assert.ok(stageCards.findIndex(x => x.type === 'words') < stageCards.indexOf(c), c.id + ': key words come before listening');
     });
   });
+  test(`Unit ${n}: every evidence quote is found in its reading text`, () => {
+    U.cards.filter(c => c.type === 'read' && !c.textRef).forEach(c => c.items.forEach(it => { if (it.ev) assert.ok(c.text.join(' ').includes(it.ev), c.id + ': ' + it.ev); }));
+    const H = ctx.window.A2_HOMEWORK[n];
+    H.parts.filter(p => p.text).forEach(p => p.items.forEach(it => { if (it.ev) assert.ok(p.text.paragraphs.join(' ').includes(it.ev), p.id + ': ' + it.ev); }));
+  });
   test(`Unit ${n}: homework parts are valid`, () => {
     const H = ctx.window.A2_HOMEWORK[n];
     assert.equal(H.unit, n); assert.ok(H.parts.length >= 5);

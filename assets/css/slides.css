@@ -114,3 +114,4 @@ html,body{height:100%;overflow:hidden;background:#0B1F5C}
 .slide .gf-box{font-size:26px;padding:10px 22px}.slide .gchips span{font-size:20px}.slide .gchips>b{font-size:20px}
 .slide .frame{font-size:20px}
 .slide .pr{font-size:21px;padding:12px 14px}.slide .chosen{font-size:19px}
+.slide .split.read .side{position:sticky;top:0}

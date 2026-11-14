@@ -227,75 +227,101 @@ window.A2_HOMEWORK[1] = {
   },
   {
    "id": "reading",
-   "title": "Reading",
+   "title": "Reading (B1)",
    "icon": "📖",
-   "instructions": "Read about Mr Tùng. Answer the questions.",
+   "instructions": "Read the article. Answer the questions about the details. Level: B1.",
    "text": {
-    "title": "A day in the life of a baker",
-    "icon": "🥖",
+    "title": "Night owls: life on the late shift",
+    "icon": "🌙",
     "paragraphs": [
-     "Mr Tùng is a baker in Hội An. He gets up at three o’clock every morning, when everyone in the town is asleep. He doesn’t have breakfast at home. He goes straight to his bakery on foot. It’s only five minutes away.",
-     "There are two big ovens in the bakery, and there is a small café next to it. Mr Tùng makes bread, cakes and bánh mì. His wife opens the café at six. She sells coffee and sandwiches to tourists and local people.",
-     "Mr Tùng usually finishes work at one in the afternoon. He has lunch with his family and then he sleeps for two hours. He never goes to bed after nine. “It’s hard work,” he says, “but I love the smell of fresh bread!”"
+     "For most people in Hà Nội, the working day starts at around eight and finishes at five. For Trang, a 29-year-old nurse at a large city hospital, it is the other way round. She works the night shift four times a week, so her ‘morning’ begins when everyone else is having dinner.",
+     "Trang usually wakes up at about four in the afternoon. She doesn’t have breakfast in the usual sense; instead, she cooks a proper meal of rice, vegetables and fish, because she knows she won’t have time to eat properly at work. She leaves home at half past six and takes a bus that is almost empty, which she says is one of the few advantages of her timetable.",
+     "Her shift runs from seven in the evening until seven the next morning. There are fewer doctors on duty at night, so nurses often have to make quick decisions on their own. ‘It’s tiring, but it’s never boring,’ she explains. ‘Things happen at three in the morning that you would never see during the day.’",
+     "The hardest part, Trang admits, is her social life. Her friends usually meet at weekends, and she is often too tired to join them. She also finds it difficult to sleep during the day, because her street is full of noise from motorbikes and a nearby market. To solve this, she wears earplugs and has thick curtains in her bedroom.",
+     "Despite the difficulties, Trang has no plans to change jobs. ‘The patients need us just as much at night,’ she says. ‘Someone has to be there.’"
     ]
    },
    "items": [
     {
-     "q": "What time does Mr Tùng get up?",
+     "q": "When does Trang’s working ‘morning’ begin?",
+     "o": [
+      "when other people are having dinner",
+      "at eight o’clock",
+      "at five in the morning"
+     ],
+     "a": "when other people are having dinner",
+     "ev": "her ‘morning’ begins when everyone else is having dinner"
+    },
+    {
+     "q": "Why does Trang cook a full meal before work?",
+     "o": [
+      "She won’t have time to eat properly at work.",
+      "She doesn’t like hospital food.",
+      "Her family eats with her."
+     ],
+     "a": "She won’t have time to eat properly at work.",
+     "ev": "because she knows she won’t have time to eat properly at work"
+    },
+    {
+     "q": "What does Trang like about her journey to work?",
+     "o": [
+      "The bus is almost empty.",
+      "She can walk there.",
+      "The bus is very fast."
+     ],
+     "a": "The bus is almost empty.",
+     "ev": "takes a bus that is almost empty"
+    },
+    {
+     "q": "How many hours is one of Trang’s shifts?",
      "a": [
-      "at three",
-      "three",
-      "3",
-      "at 3",
-      "at three o’clock",
-      "three o’clock"
+      "12",
+      "twelve",
+      "12 hours",
+      "twelve hours"
      ],
-     "show": "at three o’clock"
+     "show": "12 hours",
+     "ev": "Her shift runs from seven in the evening until seven the next morning"
     },
     {
-     "q": "How does he go to the bakery?",
+     "q": "Why do nurses often make decisions on their own at night?",
      "o": [
-      "on foot",
-      "by bus",
-      "by motorbike"
+      "There are fewer doctors on duty.",
+      "The patients are asleep.",
+      "The hospital is closed."
      ],
-     "a": "on foot"
+     "a": "There are fewer doctors on duty.",
+     "ev": "There are fewer doctors on duty at night"
     },
     {
-     "q": "How far is the bakery from his home?",
+     "q": "Trang thinks her job is boring.",
      "o": [
-      "five minutes",
-      "fifteen minutes",
-      "one kilometre"
+      "True",
+      "False",
+      "Not given"
      ],
-     "a": "five minutes"
+     "a": "False",
+     "ev": "it’s never boring"
     },
     {
-     "q": "What is next to the bakery?",
+     "q": "Trang’s friends also work night shifts.",
      "o": [
-      "a small café",
-      "a bus stop",
-      "a supermarket"
+      "True",
+      "False",
+      "Not given"
      ],
-     "a": "a small café"
+     "a": "Not given",
+     "why": "The text says her friends meet at weekends, but not what jobs they do."
     },
     {
-     "q": "Who opens the café?",
-     "a": [
-      "his wife",
-      "Mr Tùng’s wife",
-      "his wife does"
-     ],
-     "show": "his wife"
-    },
-    {
-     "q": "What does he do after lunch?",
+     "q": "What helps Trang to sleep during the day?",
      "o": [
-      "He sleeps for two hours.",
-      "He goes back to work.",
-      "He goes to the beach."
+      "earplugs and thick curtains",
+      "a quiet street",
+      "sleeping pills"
      ],
-     "a": "He sleeps for two hours."
+     "a": "earplugs and thick curtains",
+     "ev": "she wears earplugs and has thick curtains in her bedroom"
     }
    ]
   },
