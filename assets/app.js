@@ -24,7 +24,7 @@
   }
   function renderCourseRows(){
     const rows=C.units.filter(r=>(courseType==='All'||r[1]===courseType)&&r.join(' ').toLowerCase().includes(courseQuery.toLowerCase()));
-    document.querySelector('#course-count').textContent=`${rows.length} Units`;
+    document.querySelector('#course-count').textContent=`${rows.length} ${rows.length===1?'Unit':'Units'}`;
     document.querySelector('#course-rows').innerHTML=rows.length?rows.map(r=>`<tr><td>${r[0]===1?'<a href="#unit-1">Unit 1 ↗</a>':'Unit '+r[0]}<small><span class="pill ${r[0]===1?'':'planned'}">${r[0]===1?'Ready':'Planned'}</span></small></td><td><strong>${esc(r[2])}</strong><small>${esc(r[1])} · Book p. ${r[9]}</small><small>${esc(r[3])}</small></td>${[4,5,6,7,8].map(i=>`<td>${esc(r[i])}${i===6&&r[0]!==1?'<small>Topic brief. Audio not selected yet.</small>':''}</td>`).join('')}</tr>`).join(''):'<tr><td colspan="7" class="empty">No matching Units. Try another word.</td></tr>';
   }
   function guide(){
@@ -116,6 +116,7 @@
     try{recordingStream=await navigator.mediaDevices.getUserMedia({audio:true});const parts=[];recorder=new MediaRecorder(recordingStream);recorder.ondataavailable=e=>{if(e.data.size)parts.push(e.data);};recorder.onstop=()=>{const blob=new Blob(parts,{type:recorder.mimeType||'audio/webm'});if(recordingURL)URL.revokeObjectURL(recordingURL);recordingURL=URL.createObjectURL(blob);const ext=blob.type.includes('mp4')?'m4a':'webm';document.querySelector('#recording-output').innerHTML=`<audio controls src="${recordingURL}" aria-label="Your speaking recording"></audio><a class="button secondary" style="margin-top:12px;font-size:.75rem" href="${recordingURL}" download="Unit_1_Speaking.${ext}">Download my recording</a>`;status.textContent='Recording ready. Download it before leaving this view.';recordingStream.getTracks().forEach(t=>t.stop());};recorder.start();document.querySelector('[data-action="record"]').disabled=true;document.querySelector('[data-action="stop-record"]').disabled=false;status.textContent='Recording… Press Stop when you finish.';}catch{status.textContent='Microphone access was not available. You can still do the speaking task without recording.';}
   }
   document.addEventListener('click',async e=>{
+    if(e.target.closest('.skip-link')){e.preventDefault();root.focus();root.scrollIntoView({block:'start'});return;}
     const b=e.target.closest('[data-action]');if(!b)return;const a=b.dataset.action;
     if(a==='reveal'){const id=b.dataset.id,box=document.getElementById('answer-'+id);if(!box)return;if(revealed.has(id))revealed.delete(id);else revealed.add(id);box.hidden=!revealed.has(id);b.setAttribute('aria-expanded',revealed.has(id));b.querySelector('.eye-label').textContent=revealed.has(id)?'Hide':'Show';}
     if(a==='choose'){const id=b.dataset.id;state.answers[id]=b.dataset.value;save();delete results[id];b.parentElement.querySelectorAll('.option').forEach(o=>o.setAttribute('aria-pressed',o===b));b.closest('.question').querySelector('.feedback')?.remove();const score=b.closest('.slide-card')?.querySelector('.score');if(score)score.textContent='';}
