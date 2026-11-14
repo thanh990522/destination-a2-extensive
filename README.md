@@ -1,71 +1,63 @@
 # Destination A2 Extensive
 
-An integrated English programme with a focus on everyday speaking.
+Chương trình tiếng Anh A2 tích hợp 4 kỹ năng, trọng tâm **nói giao tiếp**, xây dựng trên giáo trình *Destination A2 (Grammar and Vocabulary)*.
+Giảng viên: **Mr. Hà Chí Thanh**
 
-**Teacher: Mr. Hà Chí Thanh**
+- Trang học viên: <https://thanh990522.github.io/destination-a2-extensive/>
+- Trang quản lý (giáo viên): <https://thanh990522.github.io/destination-a2-extensive/admin/>
 
-## Open the published course
+## Đã có
 
-- [Live course and Unit 1](https://thanh990522.github.io/destination-a2-extensive/)
-- [Unit 1 teaching slides](https://thanh990522.github.io/destination-a2-extensive/slides.html)
-- [42-Unit programme](https://thanh990522.github.io/destination-a2-extensive/#programme)
+| Unit | Loại | Nội dung | Thẻ bài học | Câu hỏi | Audio thật |
+| --- | --- | --- | --- | --- | --- |
+| 1 · My day, my neighbourhood | Grammar | Present simple · there is / there are · it’s | 54 | 200+ | ELLLO 1554, 1571 |
+| 2 · Life at home right now | Grammar | Present continuous · stative verbs | 51 | 190+ | ELLLO A2-03, A2-042, A2-21 |
+| 3 · People who matter | Vocabulary | Family and friends | 51 | 160+ | ELLLO 1467, A2-01 |
 
-Unit 1 contains **52 interactive teaching cards, 104 practice questions and 41 support vocabulary items**, with immediate practice for every item.
+Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9** (`slides.html?u=1`) dùng cùng dữ liệu, và **homework 6 phần** (`homework.html?u=1`). Units 4–42 có sẵn khung chương trình (xem `PROGRAMME.md`).
 
-## Ready now
+## Cách phân bổ trong mỗi Unit
 
-- A 42-Unit programme map based on the supplied book's contents.
-- Unit 1: **My day, my neighbourhood**.
-- Book focus: present simple, there is / there are and it's, printed pages 6–8.
-- Lesson view and an interactive slide presentation using the same lesson content.
-- Separate answer-reveal buttons for every closed question and each model response.
-- Two real ELLLO listening recordings with preparation and original comprehension tasks.
-- Original reading, guided speaking, information gap, free conversation, writing model, editing and Unit check.
-- Browser-local answers, draft, progress and self-checks. Downloadable work and an optional local speaking recorder.
+- **Unit từ vựng**: học theo đúng các nhóm của sách (Nouns, Verbs, Phrasal verbs, Phrases, Adjectives/Adverbs, Word formation), chia nhỏ từng bộ. **Học xong bộ nào làm bài tập bộ đó ngay**, rồi mới sang bộ tiếp theo.
+- **Unit ngữ pháp**: mỗi chủ điểm ngữ pháp **học hết lý thuyết trước** (Form → Uses → Spelling/Notes → So sánh), **sau đó mới làm chuỗi bài tập** (nhận biết → kiểm soát → viết câu → sửa lỗi → đoạn văn) và nói.
+- **Nghe**: dùng audio thật (ELLLO) sát chủ đề nhất; **luôn dạy từ mới + luyện tập trước khi nghe**, nghe ý chính → nghe chi tiết → nói sau khi nghe.
+- **Đọc, nói, viết**: đều có bước dạy từ/cụm từ cần thiết trước, rồi mới làm nhiệm vụ. Phần nói có phrase bank, information gap, role play (đồng hồ, ghi âm, rubric). Phần viết có bài mẫu, dàn ý, checklist, đếm từ.
+- Nội dung slide hoàn toàn bằng tiếng Anh, **trừ nghĩa tiếng Việt và giải thích ngữ pháp** (khung “VI”).
+- **Mỗi câu hỏi có nút con mắt 👁 riêng** để hiện đáp án câu đó; ngoài ra có nút Check, All answers, Reset.
 
-Learning is organised **by Unit**, with flexible pacing. Units are not divided into sessions.
+## Trình chiếu
 
-## Open the lesson
+`→ / ← / Space` chuyển slide · `F` toàn màn hình · `M` danh sách slide · `Esc` dừng audio. Bài dài tự chia thành nhiều slide (1/2, 2/2). Nút 🔊 cạnh mỗi từ đọc mẫu bằng giọng của trình duyệt.
 
-Open `index.html` in a modern browser. No installation is required. External fonts and listening recordings need internet access. The lesson content, illustration, exercises and slide navigation are local.
+## Trang quản lý (admin)
 
-Use **Unit 1** for the lesson. **Teach slides** switches to one card at a time. The arrow keys navigate slides when focus is outside interactive controls. Use **Lesson view** to see a complete learning stage, with each language block followed by its practice.
+1. **⚙️ Cài đặt → GitHub key**: tạo Fine-grained token chỉ cho repo này, quyền *Contents: Read and write*. Key chỉ lưu trên trình duyệt của thầy. Thiết bị có key hợp lệ được đánh dấu “giáo viên” (luôn xem được bài đang khoá).
+2. **🔓 Đóng / mở bài**: bật/tắt riêng Bài học, Slide, Homework cho từng Unit; đặt hạn nộp, điểm đạt riêng, lời nhắn → **Lưu**. Website cập nhật sau 1–2 phút.
+3. **📝 Homework**: xem cấu trúc, xem trước, copy link gửi học viên, chỉnh câu hỏi (JSON có kiểm tra lỗi trước khi lưu).
+4. **📊 Kết quả học viên**: nối Google Sheet bằng `admin/apps-script.gs` (hướng dẫn trong tab Cài đặt). Xem từng học viên × Unit: điểm từng phần, hoàn thành, nộp trễ, đọc bài viết, xuất CSV.
 
-The eye beside a question reveals only that answer. Model answers for speaking and writing are examples, not the only valid responses. The classroom speaking rubric requires human feedback. There is no automatic AI grading.
+Homework: phần 1–4 tự chấm, mỗi phần cần đạt điểm (mặc định 80%), chưa đạt thì làm lại; đáp án mở khi đạt hoặc sau 3 lần. Phần 5 (viết) gửi bài cho giáo viên qua Google Sheet; phần 6 là voice note.
 
-## GitHub Pages
+> Khoá bài là khoá phía trình duyệt (website tĩnh), đủ dùng cho lớp học nhưng không phải bảo mật tuyệt đối.
 
-The repository includes `.github/workflows/pages.yml`. In repository **Settings → Pages → Build and deployment**, select **GitHub Actions**. The workflow tests and builds the site into `dist`, then deploys that folder. A successful deployment returns the actual Pages URL.
-
-For a manual local build:
+## Phát triển
 
 ```sh
-npm test
-npm run build
+npm test        # kiểm tra dữ liệu: ID, đáp án, thứ tự "lý thuyết trước – bài tập sau", bài tập ngay sau mỗi bộ từ, audio, homework
+npm run build   # tạo thư mục dist (GitHub Actions tự chạy khi push lên main)
+python3 tools/icons.py <fluentui-emoji-checkout>   # tạo lại bộ icon 3D khi thêm emoji mới
 ```
 
-Node 18 or later is sufficient for the build and data checks. There are no runtime packages to install.
-
-## Files
-
-| File | Purpose |
+| Tệp | Vai trò |
 | --- | --- |
-| `assets/unit1.js` | Structured Unit 1 content and answer keys |
-| `assets/curriculum.js` | All 42 Unit outlines and Review outcomes |
-| `assets/app.js` | Lesson view, slides, interaction and local saving |
-| `assets/style.css` | Responsive lesson and presentation styling |
-| `PROGRAMME.md` | Programme allocation and authoring rules |
-| `SOURCES.md` | Source register and material boundaries |
-| `tests/content.test.mjs` | Content-integrity checks |
+| `assets/data/units/uNN.js` | Nội dung từng Unit (stages + cards) |
+| `assets/data/homework/hwNN.js` | Homework từng Unit (JSON, sửa được từ admin) |
+| `assets/data/settings.js` | Đóng/mở, hạn nộp, điểm đạt, URL Google Sheet (admin ghi) |
+| `assets/data/course.js` | Bản đồ 42 Unit, 14 Review; danh sách Unit đã soạn (`built`) |
+| `assets/js/core.js`, `cards.js` | Câu hỏi, chấm điểm, nút mắt, audio, thẻ dùng chung |
+| `assets/js/lesson.js`, `slides.js`, `homework.js`, `home.js` | Các trang |
+| `admin/index.html`, `admin/apps-script.gs` | Trang quản lý và script Google Sheet |
 
-## Extending the course
+**Thêm Unit mới**: tạo `uNN.js` và `hwNN.js` theo mẫu Unit 1–3, thêm số Unit vào `built` trong `course.js`, chạy `npm test`, rồi mở bài trong admin.
 
-Review the full source Unit first. Keep the original Unit number and scope. For vocabulary Units, use the categories actually present in that Unit. Teach a small word group and practise it immediately before the next group. Prepare the essential unfamiliar language for every skill. Select and verify human audio, including the recording, transcript and question answers. Add a clear speaking outcome, a reading and a writing task.
-
-The outlines for Units 2–42 are plans, not complete lessons. Their listening topics are briefs for later source selection. Only the two recordings in Unit 1 have been selected and verified in this version.
-
-## Sources and use
-
-See [SOURCES.md](SOURCES.md). These are independently authored companion materials. The book PDF, complete publisher exercises and ELLLO recordings are not redistributed. External source material remains with its respective owner.
-
-No API key, student account or external database is required. Saved work belongs to the current browser. A recording must be downloaded before leaving the recording view.
+Nguồn và bản quyền: xem [SOURCES.md](SOURCES.md).

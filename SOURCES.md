@@ -4,58 +4,36 @@ Checked on 14 November 2026.
 
 ## Supplied book
 
-**English Exam Preparation: Grammar and Vocabulary, Level A2**, edited by Maria Verbitskaya, Malcolm Mann and Steve Taylore-Knowles. Supplied as `Des_A2_English_Print_Clear.pdf`.
+**English Exam Preparation: Grammar and Vocabulary, Level A2** (Macmillan, eds. Maria Verbitskaya, Malcolm Mann, Steve Taylore-Knowles), supplied as `Des_A2_English_Print_Clear.pdf`. The PDF is not part of this repository.
 
-- The contents pages list 42 Units, 14 Reviews and two Progress Tests.
-- Unit 1 is **Present simple, there is / there are, it's**, printed pages 6–8.
-- Unit 2 is **Present continuous, stative verbs**. These are not the main focus of Unit 1.
-- The contents pages and the complete Unit 1 theory and practice pages were visually inspected.
-- Unit 3's vocabulary overview was inspected to confirm the book's category structure.
-- The programme map follows the contents. Detailed scope, vocabulary and exercises for later Units still require review of each full source Unit.
+- Units 1–3 were inspected page by page: Unit 1 (pages 6–8), Unit 2 (pages 9–11), Unit 3 (pages 12–15).
+- Grammar scope (forms, uses, helpful hints, watch-out notes, the stative-verb list) and the Unit 3 word lists by category follow the book.
+- All explanations, example sentences, exercises, reading texts, writing models and homework were newly written for this companion course. Lessons refer students to the book pages for extra practice instead of reproducing the publisher’s exercises.
 
-The source PDF is not part of this repository. Grammar explanations, exercises, reading and communication tasks in this version were newly authored for the companion course. Routine and place vocabulary in Unit 1 is labelled as support vocabulary because the source Unit is a grammar Unit.
+## Real recordings (all from ELLLO, English Listening Lesson Library Online, elllo.org)
 
-## Listening 1: My Day
+Each MP3 endpoint was downloaded and decoded (duration checked) and each question key was checked against the script on the lesson page. Audio streams from ELLLO and is not stored here; full scripts stay on the source pages.
 
-- Provider: English Listening Lesson Library Online (ELLLO).
-- Lesson: Views 1554, My Day.
-- Speakers: Natalie and Todd.
-- Level: A2 on the current lesson page.
-- Source and transcript: https://elllo.org/english/1551/1554-Nat-Verbs-Schedule.htm
-- Recording URL observed on that page: https://elllo.org/Audio/A1551/1554-Nat-Verbs-Schedule.mp3
-- Additional source teaching notes: https://elllo.org/lessons/LP-1554-Nat-Verbs-Schedule.html
-- The content concerns waking, breakfast, school and evening routines.
-- Question keys were checked against the source transcript. The recording endpoint returned a complete, decodable MP3 during verification.
+| Unit | Use | Lesson | Audio |
+| --- | --- | --- | --- |
+| 1 | Listening 1 | Views #1554 *My Day* – <https://elllo.org/english/1551/1554-Nat-Verbs-Schedule.htm> | `https://elllo.org/Audio/A1551/1554-Nat-Verbs-Schedule.mp3` (4:12) |
+| 1 | Listening 2 | Views #1571 *My Hometown* – <https://www.elllo.org/english/1551/1571-Sarah-There-is-are-Hometowns.htm> | `https://www.elllo.org/Audio/A1551/1571-John-There-is-are-Hometowns.mp3` (2:34) |
+| 1 | Homework | Sound Grammar A2-01, Conversation 4 – <https://elllo.org/book/A2/A2-01-Present-Simple.html> | `…/SoundGrammar/A2-Audio4x/A2-01-4-Present-Simple-House.mp3` (0:52) |
+| 2 | Listening 1 | Sound Grammar A2-03, Conversation 2 – <https://elllo.org/book/A2/A2-03-Present-Continuous.html> | `…/A2-03-2-Present-Continuous-Family.mp3` (0:38) |
+| 2 | Listening 2 | One Minute English A2-042 *What are you doing right now?* – <https://elllo.org/video/A2BEG/A2-042-ELISABETH-WHAT-DOING-RIGHT-NOW.htm> | `https://elllo.org/Audio/1ME-A2BEG/A2-042-ELISABETH-WHAT-DOING-RIGHT-NOW.mp3` (1:01) |
+| 2 | Listening 3 | Sound Grammar A2-21, Conversation 1 – <https://elllo.org/book/A2/A2-21-Stative-Verbs.html> | `…/A2-21-1-Stative-Verbs-Smells-Good.mp3` (0:22) |
+| 2 | Homework | Sound Grammar A2-03, Conversation 3 | `…/A2-03-3-Present-Continuous-Encounter.mp3` (0:41) |
+| 3 | Listening 1 | Views #1467 *My English Family* – <https://elllo.org/english/1451/1467-Katie-Family.htm> | ELLLO SoundCloud player, track 344025702 (no direct MP3 on the page; track title confirmed through SoundCloud oEmbed) |
+| 3 | Listening 2 | Sound Grammar A2-01, Conversation 3 | `…/A2-01-3-Present-Simple-Parents.mp3` (0:37) |
+| 3 | Homework | Sound Grammar A2-19, Conversations 2 and 4 – <https://elllo.org/book/A2/A2-19-Expressing-Similarity.html> | `…/A2-19-2-Also-As-Well-Too.mp3` (0:14), `…/A2-19-4-Also-As-Well-Too.mp3` (0:16) |
 
-## Listening 2: My Hometown
+`…` = `https://elllo.org/Audio/SoundGrammar/A2-Audio4x/`. The previous version’s SoundCloud fallback for *My Day* (track 492104013) pointed to a different ELLLO lesson (*Daily Schedule*) and has been removed.
 
-- Provider: ELLLO.
-- Lesson: Views 1571, My Hometown.
-- Speakers: Sarah and John. The selected task focuses on Sarah's description.
-- Level: A2 on the current lesson page.
-- Source and transcript: https://www.elllo.org/english/1551/1571-Sarah-There-is-are-Hometowns.htm
-- Recording URL observed on that page: https://www.elllo.org/Audio/A1551/1571-John-There-is-are-Hometowns.mp3
-- Additional source teaching notes: https://www.elllo.org/lessons/LP-1571-Places-Around-Town.html
-- The task concerns local places, food choices, seasons and safety as described by the speaker.
-- Question keys were checked against the source transcript. The recording endpoint returned a complete, decodable MP3 during verification.
+Comprehension questions and short explanations are original. No permission to redistribute ELLLO audio or scripts is claimed; use follows the provider’s terms, which may change.
 
-These are recordings of human speakers in graded natural conversations. They are not represented as unscripted broadcasts. Audio streams from ELLLO and is not stored here. Each track also has an optional inline SoundCloud source player as a fallback. The full transcripts remain on the source pages. The site uses newly authored comprehension questions and short paraphrased answer explanations.
+## Design, icons and fonts
 
-No permission to redistribute the source recordings or their complete transcripts is claimed. Availability and provider terms may change. Public or commercial reuse should follow the provider's terms.
-
-## Design reference
-
-- User-owned reference: https://thanh990522.github.io/communication-foundation/
-- Source inspected through the connected GitHub repository, `thanh990522/communication-foundation`, including `index.html` and the course-index structure in `assets/sessions.js`.
-- Adapted design ideas: blue/yellow identity, a clear course index, teacher attribution and interactive lesson materials.
-- The new course follows the user's correction: organisation by Unit, without a session schedule.
-
-## Artwork and icons
-
-- `assets/neighbourhood.webp`: original illustration generated for this project, depicting an everyday Vietnamese neighbourhood. Decorative scene, not a geographic map or evidence source.
-- Small learning icons use Unicode emoji. Interface eye and favicon graphics are simple code-native icons.
-- Optional web fonts: DM Sans and Manrope from Google Fonts, with Arial/sans-serif fallbacks.
-
-## Scope of verification
-
-The implementation includes all Unit 1 lesson cards, question keys, 42 programme rows, answer reveals, draft saving and presentation navigation. The full 42-Unit lesson library is not claimed to exist. Later audio assignments are not yet selected.
+- Design reference: the user’s own course <https://thanh990522.github.io/communication-foundation/> (blue and yellow identity, admin with GitHub-API open/close, Google Apps Script progress sheet, auto-checked homework with a pass mark).
+- Icons and illustrations: **Microsoft Fluent Emoji 3D** (<https://github.com/microsoft/fluentui-emoji>, MIT licence), resized to WebP by `tools/icons.py`. Emoji without a Fluent image fall back to the system emoji.
+- Font: Be Vietnam Pro (Google Fonts, SIL Open Font Licence).
+- Word pronunciation uses the browser’s built-in speech voice; it is not a recording.
