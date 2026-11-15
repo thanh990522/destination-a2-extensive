@@ -62,6 +62,15 @@
   function fitBody() {
     const body = deck.querySelector('.slide-body'), inner = body && body.querySelector('.fit');
     if (!inner) return;
+    const split = inner.querySelector(':scope > .split.read');
+    if (split) {
+      /* reading: the text and the questions fit (and scroll) separately, so the passage stays large */
+      inner.style.zoom = 1; split.style.height = body.clientHeight - 4 + 'px';
+      const fitCol = (col, max, min) => { let z = max; col.style.zoom = z; while (col.scrollHeight > col.clientHeight + 1 && z > min) { z -= 0.02; col.style.zoom = z; } col.scrollTop = 0; };
+      fitCol(split.querySelector('.side'), 1.1, 0.8);
+      fitCol(split.querySelector('.main'), 1, 0.72);
+      body.scrollTop = 0; return;
+    }
     let z = 1.2; inner.style.zoom = z;
     while (body.scrollHeight > body.clientHeight + 1 && z > 0.55) { z -= 0.02; inner.style.zoom = z; }
     body.scrollTop = 0;
@@ -75,6 +84,8 @@
   }
   window.addEventListener('resize', fit);
   document.addEventListener('click', e => {
+    const eye = e.target.closest('[data-eye]');
+    if (eye) setTimeout(() => { const ev = deck.querySelector(`.split.read .evi.on[data-ev="${CSS.escape(eye.dataset.eye)}"]`); if (ev) ev.scrollIntoView({ block: 'center', behavior: 'smooth' }); }, 30);
     const a = e.target.closest('[data-act]');
     if (a) {
       const act = a.dataset.act;
