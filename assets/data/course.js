@@ -10,7 +10,8 @@ window.COURSE = {
   3,
   4,
   5,
-  6
+  6,
+  101
  ],
  "principles": [
   [
@@ -38,7 +39,7 @@ window.COURSE = {
    "Writing rehearses or follows the speaking task. Use a model, a short plan, a checklist and a revision step."
   ]
  ],
- "note": "Units 1–6 are complete integrated lessons with slides and homework. Units 7–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
+ "note": "Units 1–6 and Review 1 are complete (Units with lessons, slides and homework; Reviews with the book review, extra challenge exercises and a 100-question homework). Units 7–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
  "units": [
   [
    1,
@@ -546,7 +547,7 @@ window.COURSE = {
   ]
  ],
  "reviews": [
-  "Introduce a person, their routine and what they are doing now.",
+  "Book Review 1 (pp. 16–17) + extra vocabulary and grammar challenges · homework: 50 vocabulary + 50 grammar questions.",
   "Tell a past story and agree on a leisure activity.",
   "Explain an incident during a sports activity.",
   "Discuss school experiences and a recent achievement.",

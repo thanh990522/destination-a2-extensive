@@ -32,7 +32,7 @@
   R.cover = (c, U) => `
     <div class="cover">
       <div class="cover-copy">
-        <p class="kicker">DESTINATION A2 · UNIT ${A2.pad(U.n)} · ${esc(U.type.toUpperCase())}</p>
+        <p class="kicker">DESTINATION A2 · ${A2.tag(U.n)} · ${esc(U.type.toUpperCase())}</p>
         <h1>${md(c.title || U.title)}</h1>
         <p class="cover-focus">${md(U.focus)}</p>
         <ul class="goals">${(U.goals || []).map(g => `<li>${ic('✅', 'xs')}<span>${md(g)}</span></li>`).join('')}</ul>
@@ -95,7 +95,7 @@
   R.practice = (c, U, mode, part) => {
     const items = range(c, part);
     const graded = items.filter(i => !['say', 'open'].includes(i.t)).length;
-    return `${lead(c)}${bank(c)}${example(c)}<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0, cols: c.cols, matchOptions: c.matchOptions, abc: c.abc })}${graded ? A2.checkBar(setId(c, part), graded) : ''}</div>${transfer(c)}${note(c)}`;
+    return `${lead(c)}${bank(c)}${example(c)}<div class="set" data-set="${setId(c, part)}">${A2.renderItems(items, c.id, { offset: part ? part.from : 0, numStart: c.numStart, cols: c.cols, matchOptions: c.matchOptions, abc: c.abc })}${graded ? A2.checkBar(setId(c, part), graded) : ''}</div>${transfer(c)}${note(c)}`;
   };
 
   R.pairs = (c) => {
@@ -168,7 +168,7 @@
 
   R.wrap = (c, U) => `<div class="wrap-card"><div class="cando"><h3>${ic('🏆', 'sm')} I can…</h3>${(c.cando || []).map((x, i) => `<label><input type="checkbox" data-tick="${c.id}-${i}"> ${md(x)}</label>`).join('')}</div>
       <div class="next">${c.book ? `<div class="task">${ic('📘', 'sm')}<p><b>Book practice</b><br>${md(c.book)}</p></div>` : ''}
-      <a class="btn y big" href="${A2.base}homework.html?u=${U.n}">${ic('🏠', 'xs')} Open Unit ${U.n} homework</a>
+      <a class="btn y big" href="${A2.base}homework.html?u=${U.n}">${ic('🏠', 'xs')} Open ${A2.name(U.n)} homework</a>
       ${c.extra ? `<p class="note">${md(c.extra)}</p>` : ''}</div></div>`;
 
   A2.renderCard = (c, U, mode, part) => (R[c.type] ? R[c.type](c, U, mode, part) : `<p>Unknown card type: ${esc(c.type)}</p>`);

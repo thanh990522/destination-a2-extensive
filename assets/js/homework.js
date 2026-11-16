@@ -6,13 +6,13 @@
   const n = A2.unitParam();
   await A2.loadSettings();
   const lock = (t, m) => { root.innerHTML = `<div class="lock"><div class="lock-box">${ic('🔒', 'hero')}<h1>${esc(t)}</h1><p>${esc(m)}</p><a class="btn" href="index.html">← All Units</a></div></div>`; };
-  if (!A2.built(n)) return lock(`Unit ${n} homework is coming soon`, 'Your teacher is still preparing it.');
-  if (!A2.canOpen(n, 'homework')) return lock(`Unit ${n} homework is not open yet`, 'Your teacher will open it after the lesson.');
+  if (!A2.built(n)) return lock(`${A2.name(n)} homework is coming soon`, 'Your teacher is still preparing it.');
+  if (!A2.canOpen(n, 'homework')) return lock(`${A2.name(n)} homework is not open yet`, 'Your teacher will open it after the lesson.');
   try { await A2.loadScript(`assets/data/homework/hw${A2.pad(n)}.js?t=${Date.now()}`); } catch (e) { return lock('The homework could not load', 'Please check your internet connection.'); }
   const H = window.A2_HOMEWORK[n];
   H.parts.forEach(p => A2.balance(p.items, 'hw' + n + p.id));
   const conf = A2.unitConf(n), pass = A2.passMark(n);
-  document.title = `Homework · Unit ${n} · Destination A2`;
+  document.title = `Homework · ${A2.name(n)} · Destination A2`;
   const KEY = `a2.hw${n}`;
   const store = Object.assign({ ans: {}, parts: {}, drafts: {}, ticks: {}, done: false }, A2.LS.get(KEY, {}));
   const save = () => A2.LS.set(KEY, store);
@@ -54,11 +54,11 @@
     const total = H.parts.length, done = H.parts.filter(p => pstate(p.id).passed).length;
     root.innerHTML = `
       <header class="topbar"><a class="brand" href="index.html">${ic('🧭', 'sm')}<span>DESTINATION <b>A2</b></span></a>
-        <div class="top-title"><span class="unit-pill">HOMEWORK · UNIT ${A2.pad(n)}</span><b>${esc(H.title)}</b></div>
+        <div class="top-title"><span class="unit-pill">HOMEWORK · ${A2.tag(n)}</span><b>${esc(H.title)}</b></div>
         <nav class="top-actions"><a class="btn sm ghost" href="lesson.html?u=${n}">${ic('📘', 'xs')} Lesson</a>${A2.studentChip()}</nav></header>
       ${A2.isTeacher() && !conf.homework ? `<div class="banner">${ic('🧑‍🏫', 'xs')} Teacher view: this homework is closed for students.</div>` : ''}
       <main class="hw">
-        <section class="hw-hero"><div><p class="kicker">UNIT ${A2.pad(n)} · ${esc(H.unitTitle || '')}</p><h1>${md(H.heading || 'Homework')}</h1><p class="lead">${md(H.intro || '')}</p>
+        <section class="hw-hero"><div><p class="kicker">${A2.tag(n)} · ${esc(H.unitTitle || '')}</p><h1>${md(H.heading || 'Homework')}</h1><p class="lead">${md(H.intro || '')}</p>
           <div class="hw-meta">${due ? `<span class="chip ${late ? 'late' : ''}">${ic('📅', 'xs')} Due ${esc(due.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }))}${late ? ' · late' : ''}</span>` : ''}<span class="chip">${ic('🎯', 'xs')} Pass mark ${pass}% per part</span><span class="chip">${ic('🧩', 'xs')} ${total} parts</span></div>
           ${conf.note ? `<p class="note">${ic('📌', 'xs')}<span><b>Teacher’s note:</b> ${esc(conf.note)}</span></p>` : ''}</div>
           <div class="hw-progress"><div class="ring" style="--p:${Math.round((done / total) * 100)}"><b>${done}/${total}</b><small>parts done</small></div></div></section>

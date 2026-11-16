@@ -13,6 +13,7 @@ Giảng viên: **Mr. Hà Chí Thanh**
 | 1 · My day, my neighbourhood | Grammar | Present simple · there is / there are · it’s · **bài tập sách A–F (tr. 7–8) trích nguyên văn** | 31 (= 31 slide) | 115+ | ELLLO 1554, 1571 |
 | 2 · Life at home right now | Grammar | Present continuous · stative verbs · **bài tập sách A–F (tr. 10–11) trích nguyên văn** | 32 (= 32 slide) | 120+ | ELLLO A2-03, A2-042, A2-21 |
 | 3 · People who matter | Vocabulary | Family and friends · **bài tập sách A–I (tr. 13–15) trích nguyên văn** | 43 (= 43 slide) | 130+ | ELLLO 1467, A2-01 |
+| **Review 1** · Units 1–3 | Review | **Chỉ bài tập sách A–F (tr. 16–17, 50 câu, giữ số câu 1–50)** · cuối phần Vocabulary và Grammar có 3 bài **Extra** nâng cao mỗi phần · homework 50 câu từ vựng + 50 câu ngữ pháp | 14 (= 14 slide) | 109 + 100 homework | – |
 | 4 · A memorable day | Grammar | Past simple 1 (regular verbs, -ed spelling & sounds) · **bài tập sách A–F (tr. 19–20) trích nguyên văn** | 33 (= 33 slide) | 130 | ELLLO A2-06, A2-023 |
 | 5 · What happened? | Grammar | Past simple 2 (was / were, irregular verbs) · **bài tập sách A–F (tr. 22–23) trích nguyên văn** | 33 (= 33 slide) | 125 | ELLLO A2-014, A2-07, A2-049 |
 | 6 · An enjoyable weekend | Vocabulary | Leisure time · **bài tập sách A–I (tr. 25–27) trích nguyên văn** | 41 (= 41 slide) | 136 | ELLLO 928, 918 |
@@ -21,6 +22,7 @@ Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9*
 
 ## Cách phân bổ trong mỗi Unit
 
+- **Review** (mẫu: Review 1): chỉ làm bài tập trong sách, theo thứ tự Vocabulary (bài sách → Extra từ vựng nâng cao) rồi Grammar (bài sách → Extra ngữ pháp nâng cao). Homework chỉ có 2 phần: Vocabulary 50 câu, Grammar 50 câu. Review được đánh số 101–114 trong hệ thống (Review 1 = `lesson.html?u=101`), có hàng riêng trong trang admin để đóng/mở.
 - **Unit từ vựng** (mẫu: Unit 3, 6): học theo đúng các nhóm của sách (Nouns, Verbs + Phrasal verbs, Phrases, Adjectives/Adverbs, Word formation) bằng flip card; **học xong nhóm nào làm ngay bài tập trong sách của nhóm đó** (trích đúng 100%: A–B, C–D, E, F–G, H–I), rồi mới sang nhóm tiếp theo và sau cùng là 4 kỹ năng.
 - **Unit ngữ pháp** (mẫu: Unit 1, 2, 4, 5): **dạy toàn bộ ngữ pháp trước** theo trang lý thuyết của sách, **làm bài tập ngữ pháp trong sách** (trích đúng 100%), rồi mới sang từng kỹ năng; **từ mới được dạy ở phần pre** của mỗi kỹ năng (pre → while → post).
 - **Nghe**: dùng audio thật (ELLLO) sát chủ đề nhất; **luôn dạy từ mới (flip card) trước khi nghe**, nghe chi tiết (mỗi bài một dạng: điền ghi chú, True/False, trắc nghiệm, “Who…?”) → nói sau khi nghe có cấu trúc gợi ý.

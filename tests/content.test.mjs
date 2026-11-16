@@ -33,11 +33,11 @@ function checkItem(it, where) {
 test('the programme keeps the 42 Units, 14 Reviews and lists the built Units', () => {
   assert.equal(C.units.length, 42); assert.equal(C.reviews.length, 14);
   C.units.forEach((u, i) => { assert.equal(u[0], i + 1); assert.equal(u.length, 10); });
-  assert.deepEqual([...C.built], [1, 2, 3, 4, 5, 6]);
+  assert.deepEqual([...C.built], [1, 2, 3, 4, 5, 6, 101]);
   assert.match(C.units[0][2], /Present simple/); assert.match(C.units[1][2], /Present continuous/); assert.match(C.units[2][2], /Family and friends/);
 });
 
-for (const n of C.built) {
+for (const n of C.built.filter(n => n < 100)) {
   const U = ctx.window.A2_UNITS[n];
   test(`Unit ${n}: structure, IDs and four skills`, () => {
     assert.equal(U.n, n);
@@ -109,9 +109,34 @@ for (const n of C.built) {
   });
 }
 
+for (const n of C.built.filter(n => n > 100)) {
+  const U = ctx.window.A2_UNITS[n], H = ctx.window.A2_HOMEWORK[n];
+  test(`Review ${n - 100}: book exercises first, then extra, in vocabulary and grammar`, () => {
+    assert.equal(U.n, n); assert.equal(U.type, 'Review');
+    ['vocab', 'grammar'].forEach(st => {
+      const cs = U.cards.filter(c => c.stage === st);
+      const firstExtra = cs.findIndex(c => !c.book);
+      assert.ok(firstExtra > 0, st + ': book exercises first');
+      assert.ok(cs.slice(firstExtra).every(c => !c.book), st + ': extra after all book exercises');
+      assert.ok(cs.slice(firstExtra).length >= 2, st + ': extra challenge exercises');
+    });
+    const bookItems = U.cards.filter(c => c.book).reduce((s, c) => s + c.items.length, 0);
+    assert.equal(bookItems, 50, 'the book review has 50 questions');
+    let numbered = 1;
+    U.cards.filter(c => c.book).forEach(c => { assert.equal(c.numStart, numbered, c.id + ' keeps the book numbering'); numbered += c.items.length; });
+    U.cards.forEach(c => (c.items || []).forEach((it, i) => { if (c.type === 'cloze') assert.ok(keys(it).length); else checkItem(it, `${c.id}-${i + 1}`); }));
+    U.cards.filter(c => c.type === 'cloze').forEach(c => assert.equal((c.text.match(/\[\d+[a-z]?\]/g) || []).length, c.items.length, c.id + ' gaps = items'));
+  });
+  test(`Review ${n - 100}: homework is vocabulary and grammar, 50 questions each`, () => {
+    assert.equal(H.unit, n);
+    assert.deepEqual([...H.parts.map(p => p.id)], ['vocab', 'grammar']);
+    H.parts.forEach(p => { assert.equal(p.items.length, 50, p.id); p.items.forEach((it, i) => checkItem(it, `hw${n} ${p.id}-${i + 1}`)); });
+  });
+}
+
 test('settings and icons are consistent', () => {
   const S = ctx.window.A2_SETTINGS;
   assert.ok(S.passMark >= 50 && S.passMark <= 100);
-  for (const [k, v] of Object.entries(S.units)) { assert.ok(+k >= 1 && +k <= 42); ['lesson', 'slides', 'homework'].forEach(f => assert.equal(typeof v[f], 'boolean')); }
+  for (const [k, v] of Object.entries(S.units)) { assert.ok((+k >= 1 && +k <= 42) || (+k >= 101 && +k <= 114)); ['lesson', 'slides', 'homework'].forEach(f => assert.equal(typeof v[f], 'boolean')); }
   for (const f of Object.values(ctx.window.A2_ICONS)) assert.ok(existsSync(new URL('../assets/icons/' + f, import.meta.url)), f);
 });

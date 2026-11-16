@@ -25,6 +25,14 @@
         : `<p class="uplan">${ic('🗺️', 'xs')} Planned: ${esc(u[7])}</p>`}
     </article>`;
   };
+  const reviewBox = g => {
+    const r = 100 + g.review, label = `Review ${g.review} · Units ${g.units[0][0]}–${g.units[g.units.length - 1][0]}`;
+    if (!A2.built(r)) return `<div class="review">${ic('🔁', 'sm')}<div><b>${label}</b><small>${esc(C.reviews[g.review - 1] || '')}</small></div></div>`;
+    const btn = (what, href, text, cls) => (A2.canOpen(r, what) ? `<a class="btn sm ${cls}" href="${href}">${text}</a>` : `<span class="btn sm disabled" aria-disabled="true">🔒 ${text.replace(/<[^>]+>/g, '').trim()}</span>`);
+    const hw = hwState(r), done = hw && hw.done;
+    return `<div class="review built">${ic('🔁', 'sm')}<div><b>${label}</b><small>Book review exercises + extra challenge · Homework: 50 vocabulary + 50 grammar questions${done ? ' · 🏆 done' : ''}</small></div>
+      <div class="ubtns">${btn('lesson', `lesson.html?u=${r}`, `${ic('📘', 'xs')} Review`, '')}${btn('slides', `slides.html?u=${r}`, `${ic('🖥️', 'xs')} Slides`, 'ghost')}${btn('homework', `homework.html?u=${r}`, `${ic('🏠', 'xs')} Homework`, 'y')}</div></div>`;
+  };
   const groups = [];
   for (let i = 0; i < 42; i += 3) groups.push({ units: C.units.slice(i, i + 3), review: i / 3 + 1 });
 
@@ -36,7 +44,7 @@
       <section class="hero"><div class="hero-copy"><p class="kicker">A2 ENGLISH · FOUR SKILLS · SPEAKING FIRST</p><h1>Speak English for <mark>everyday life</mark>.</h1>
         <p class="lead">One Unit at a time: learn the words, master the grammar, hear real people and talk with confidence.</p>
         <div class="hero-stats"><span>${ic('📘', 'xs')} 42 Units</span><span>${ic('✅', 'xs')} ${C.built.length} ready</span><span>${ic('🔓', 'xs')} ${open} open now</span><span>${ic('🎧', 'xs')} Real recordings</span></div>
-        <div class="row">${C.built.map(n => A2.canOpen(n, 'lesson') ? `<a class="btn" href="lesson.html?u=${n}">Start Unit ${n} →</a>` : '').find(Boolean) || ''}<a class="btn ghost" href="#units">See all Units</a></div></div>
+        <div class="row">${C.built.map(n => A2.canOpen(n, 'lesson') ? `<a class="btn" href="lesson.html?u=${n}">Start ${A2.name(n)} →</a>` : '').find(Boolean) || ''}<a class="btn ghost" href="#units">See all Units</a></div></div>
         <div class="hero-art" aria-hidden="true"><div class="hero-circle">${ic('🙋', 'hero')}</div>${[['🎧', 'Listen'], ['💬', 'Speak'], ['📖', 'Read'], ['✍️', 'Write'], ['📚', 'Words'], ['🧩', 'Grammar']].map(([e, t], i) => `<span class="float f${i}">${ic(e, 'sm')}${t}</span>`).join('')}</div></section>
       <section class="skills">${[['📚', 'Words in small sets', 'Every set has practice straight away.'], ['🧩', 'Grammar step by step', 'All the rules first, then six exercises.'], ['🎧', 'Real voices', 'Real recordings, with key words taught first.'], ['💬', 'Speaking every Unit', 'Information gaps, role plays and voice notes.']].map(([e, t, s]) => `<div>${ic(e, 'md')}<p><b>${t}</b><small>${s}</small></p></div>`).join('')}</section>
       <section id="units"><div class="sec-head"><div><p class="kicker">YOUR LEARNING JOURNEY</p><h2>Units and reviews</h2></div>
@@ -44,7 +52,7 @@
         ${groups.map(g => {
           const cards = g.units.filter(u => filter === 'all' || (filter === 'open' ? A2.canOpen(u[0], 'lesson') : u[1] === filter));
           if (!cards.length) return '';
-          return `<div class="group"><div class="ugrid">${cards.map(card).join('')}</div><div class="review">${ic('🔁', 'sm')}<div><b>Review ${g.review} · Units ${g.units[0][0]}–${g.units[g.units.length - 1][0]}</b><small>${esc(C.reviews[g.review - 1] || '')}</small></div></div>${g.review === 7 ? `<div class="review test">${ic('🏅', 'sm')}<div><b>Progress Test 1</b><small>Units 1–21</small></div></div>` : g.review === 14 ? `<div class="review test">${ic('🏅', 'sm')}<div><b>Progress Test 2</b><small>Units 22–42</small></div></div>` : ''}</div>`;
+          return `<div class="group"><div class="ugrid">${cards.map(card).join('')}</div>${reviewBox(g)}${g.review === 7 ? `<div class="review test">${ic('🏅', 'sm')}<div><b>Progress Test 1</b><small>Units 1–21</small></div></div>` : g.review === 14 ? `<div class="review test">${ic('🏅', 'sm')}<div><b>Progress Test 2</b><small>Units 22–42</small></div></div>` : ''}</div>`;
         }).join('')}
       </section>
       <section id="programme" class="programme"><div class="sec-head"><div><p class="kicker">THE WHOLE PROGRAMME</p><h2>42 Units · four connected skills</h2><p class="lead">${esc(C.note)}</p></div></div>

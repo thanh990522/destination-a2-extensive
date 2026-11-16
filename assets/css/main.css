@@ -349,3 +349,7 @@ u{text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underli
 
 /* a word box inside a list of items (one box per group, e.g. Unit 6 A) */
 .items .boxrow{grid-column:1/-1;list-style:none}.items .boxrow .bank{margin:2px 0 0;display:inline-flex}
+
+/* reviews */
+.review.built{flex-wrap:wrap;background:#FFF6D6;border-style:solid}.review.built>div:nth-child(2){flex:1;min-width:220px}.review.built .ubtns{margin:0}
+.items .secrow{margin:10px 0 0;font-weight:900;color:var(--navy);font-size:15px;border-bottom:2px solid var(--line, #E3E8F4);padding-bottom:4px}

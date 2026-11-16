@@ -6,12 +6,12 @@
   const n = A2.unitParam();
   await A2.loadSettings();
   const lock = (t, m) => { root.innerHTML = `<div class="lock"><div class="lock-box">${ic('🔒', 'hero')}<h1>${esc(t)}</h1><p>${esc(m)}</p><a class="btn" href="index.html">← All Units</a></div></div>`; };
-  if (!A2.built(n)) return lock(`Unit ${n} is coming soon`, 'These slides are still being prepared.');
-  if (!A2.canOpen(n, 'slides')) return lock(`Unit ${n} slides are not open`, 'Your teacher will open the slides in class.');
+  if (!A2.built(n)) return lock(`${A2.name(n)} is coming soon`, 'These slides are still being prepared.');
+  if (!A2.canOpen(n, 'slides')) return lock(`${A2.name(n)} slides are not open`, 'Your teacher will open the slides in class.');
   try { await A2.loadScript(`assets/data/units/u${A2.pad(n)}.js`); } catch (e) { return lock('The slides could not load', 'Please check your internet connection.'); }
   const U = window.A2_UNITS[n];
   A2.balanceUnit(U);
-  document.title = `Slides · Unit ${n} · ${U.title}`;
+  document.title = `Slides · ${A2.name(n)} · ${U.title}`;
   const KEY = `a2.u${n}`;
   const store = Object.assign({ ans: {}, drafts: {}, ticks: {}, scores: {} }, A2.LS.get(KEY, {}));
   const save = () => A2.LS.set(KEY, store);
@@ -31,7 +31,7 @@
       <button class="dbtn" data-act="full" title="Full screen (F)">⛶</button>
     </nav>
     <div class="deck-progress"><span id="bar"></span></div>
-    <div class="overview" id="overview" hidden><div class="ov-head"><b>Unit ${n} · ${esc(U.title)}</b><button class="dbtn" data-act="menu">✕ Close</button></div><div class="ov-grid">${slides.map((s, i) => {
+    <div class="overview" id="overview" hidden><div class="ov-head"><b>${A2.name(n)} · ${esc(U.title)}</b><button class="dbtn" data-act="menu">✕ Close</button></div><div class="ov-grid">${slides.map((s, i) => {
       const st = s.divider || A2.stageOf(U, s.card.stage);
       const t = s.divider ? s.divider.name : (s.card.type === 'cover' ? U.title : s.card.title);
       return `<button class="ov-item sk-${st.skill || 'start'}" data-go="${i}"><span>${i + 1}</span>${ic(s.divider ? s.divider.icon : (s.card.icon || st.icon), 'sm')}<b>${md(t || '')}</b>${s.part ? `<small>${s.part.k}/${s.part.of}</small>` : ''}</button>`;
@@ -75,7 +75,7 @@
     while (body.scrollHeight > body.clientHeight + 1 && z > 0.55) { z -= 0.02; inner.style.zoom = z; }
     body.scrollTop = 0;
   }
-  function foot() { return `<footer class="slide-foot"><span>Destination A2 · Unit ${A2.pad(n)} · ${esc(U.title)}</span><span class="sf-r">Mr. Hà Chí Thanh · <b>${A2.pad(cur + 1)}</b></span></footer>`; }
+  function foot() { return `<footer class="slide-foot"><span>Destination A2 · ${A2.name(n)} · ${esc(U.title)}</span><span class="sf-r">Mr. Hà Chí Thanh · <b>${A2.pad(cur + 1)}</b></span></footer>`; }
   function go(i) { cur = Math.max(0, Math.min(slides.length - 1, i)); render(); }
   function fit() {
     const sc = Math.min(window.innerWidth / 1600, (window.innerHeight - 4) / 900);
