@@ -4,9 +4,9 @@ window.A2_SETTINGS = {
  "progressUrl": "",
  "units": {
   "1": {
-   "lesson": false,
-   "slides": false,
-   "homework": false,
+   "lesson": true,
+   "slides": true,
+   "homework": true,
    "due": "",
    "note": "",
    "passMark": ""
