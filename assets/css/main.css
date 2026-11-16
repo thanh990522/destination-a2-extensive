@@ -346,3 +346,6 @@ u{text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underli
 .evi.on{background:#FFE58A;box-shadow:0 0 0 2px #FFE58A}
 .evi.on sup{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--navy);color:var(--yellow);font-size:11px;font-weight:900;margin-right:3px;vertical-align:super}
 .t-mc .opts .opt[data-v="True"],.t-mc .opts .opt[data-v="False"],.t-mc .opts .opt[data-v="Not given"]{min-width:88px;text-align:center}
+
+/* a word box inside a list of items (one box per group, e.g. Unit 6 A) */
+.items .boxrow{grid-column:1/-1;list-style:none}.items .boxrow .bank{margin:2px 0 0;display:inline-flex}

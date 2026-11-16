@@ -208,7 +208,7 @@
   };
   A2.renderItems = (items, prefix, opts = {}) => {
     const matchOptions = opts.matchOptions;
-    return `<ol class="items ${opts.cols ? 'cols' : ''} ${opts.cls || ''}" ${opts.start ? `start="${opts.start}"` : ''}>${items.map((it, i) => A2.renderItem(it, `${prefix}-${(opts.offset || 0) + i + 1}`, (opts.offset || 0) + i + 1, { matchOptions, abc: opts.abc })).join('')}</ol>`;
+    return `<ol class="items ${opts.cols ? 'cols' : ''} ${opts.cls || ''}" ${opts.start ? `start="${opts.start}"` : ''}>${items.map((it, i) => (it.box ? `<li class="boxrow"><div class="bank" aria-label="Word box">${it.box.map(w => `<span>${esc(w)}</span>`).join('')}</div></li>` : '') + A2.renderItem(it, `${prefix}-${(opts.offset || 0) + i + 1}`, (opts.offset || 0) + i + 1, { matchOptions, abc: opts.abc })).join('')}</ol>`;
   };
   A2.checkBar = (id, total) => `<div class="checkbar" data-checkbar="${id}"><button type="button" class="btn sm" data-check="${id}">✓ Check</button><button type="button" class="btn sm ghost" data-showall="${id}">${A2.eye} All answers</button><button type="button" class="btn sm ghost" data-reset="${id}">↺ Reset</button><span class="score" data-score="${id}" aria-live="polite">${total ? `– / ${total}` : ''}</span></div>`;
 

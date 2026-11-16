@@ -7,7 +7,10 @@ window.COURSE = {
  "built": [
   1,
   2,
-  3
+  3,
+  4,
+  5,
+  6
  ],
  "principles": [
   [
@@ -35,7 +38,7 @@ window.COURSE = {
    "Writing rehearses or follows the speaking task. Use a model, a short plan, a checklist and a revision step."
   ]
  ],
- "note": "Units 1–3 are complete integrated lessons with slides and homework. Units 4–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
+ "note": "Units 1–6 are complete integrated lessons with slides and homework. Units 7–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
  "units": [
   [
    1,
@@ -78,10 +81,10 @@ window.COURSE = {
    "Grammar",
    "Past simple 1",
    "A memorable day",
-   "Past actions and time expressions",
-   "A short diary entry",
-   "A past day or weekend",
-   "Tell a simple story in order",
+   "Regular past forms, -ed spelling and sounds, time expressions, sequencers",
+   "A diary entry · a school-trip blog",
+   "ELLLO Sound Grammar A2-06 (Chores, Old friends), One Minute English A2-023 (Last night) (verified)",
+   "Tell the story of a memorable day in order",
    "A diary entry",
    18
   ],
@@ -90,9 +93,9 @@ window.COURSE = {
    "Grammar",
    "Past simple 2",
    "What happened?",
-   "Irregular past forms and follow-up questions",
-   "A short interview",
-   "Past events and questions",
+   "Was / were, irregular past forms, interview questions",
+   "A magazine interview · a news story",
+   "ELLLO One Minute English A2-014 (My day), A2-049 (Weekend), Sound Grammar A2-07 (Brazil trip) (verified)",
    "Interview someone about last weekend",
    "An interview summary",
    21
@@ -102,9 +105,9 @@ window.COURSE = {
    "Vocabulary",
    "Leisure time",
    "An enjoyable weekend",
-   "The Unit’s own lexical categories, practised separately",
-   "Weekend activity notices",
-   "Hobbies and free time",
+   "Leisure nouns, verbs, phrasal verbs, phrases, word families",
+   "Weekend activity notices · a hobby article",
+   "ELLLO Views #928 (Free time in Wales), #918 (Films, books and concerts) (verified)",
    "Choose an activity together",
    "A weekend recommendation",
    24

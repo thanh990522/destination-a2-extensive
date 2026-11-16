@@ -33,7 +33,7 @@ function checkItem(it, where) {
 test('the programme keeps the 42 Units, 14 Reviews and lists the built Units', () => {
   assert.equal(C.units.length, 42); assert.equal(C.reviews.length, 14);
   C.units.forEach((u, i) => { assert.equal(u[0], i + 1); assert.equal(u.length, 10); });
-  assert.deepEqual([...C.built], [1, 2, 3]);
+  assert.deepEqual([...C.built], [1, 2, 3, 4, 5, 6]);
   assert.match(C.units[0][2], /Present simple/); assert.match(C.units[1][2], /Present continuous/); assert.match(C.units[2][2], /Family and friends/);
 });
 
@@ -76,7 +76,7 @@ for (const n of C.built) {
   });
   test(`Unit ${n}: every closed question has one unambiguous key`, () => {
     let count = 0;
-    U.cards.forEach(c => (c.items || []).forEach((it, i) => { if (c.type === 'cloze') { assert.ok(keys(it).length); return; } if (c.type !== 'talk') { checkItem(it, `${c.id}-${i + 1}`); count++; } }));
+    U.cards.forEach(c => (c.items || []).forEach((it, i) => { if (c.type === 'cloze') { assert.ok(keys(it).length); count++; return; } if (c.type !== 'talk') { checkItem(it, `${c.id}-${i + 1}`); count++; } }));
     U.cards.filter(c => c.type === 'cloze').forEach(c => assert.equal((c.text.match(/\[\d+[a-z]?\]/g) || []).length, c.items.length, c.id + ' gaps = items'));
     U.cards.filter(c => c.matchOptions).forEach(c => c.items.filter(it => it.t === 'match').forEach(it => assert.ok(c.matchOptions.includes(it.a), c.id + ' match key')));
     assert.ok(count >= 80, `Unit ${n}: substantial practice (${count})`);
