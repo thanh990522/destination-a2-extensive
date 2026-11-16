@@ -6,15 +6,15 @@ Teacher: **Mr. Hà Chí Thanh**
 
 One book Unit = one integrated learning Unit. The book’s number, order and language scope stay the same. Every Unit adds a familiar situation and all four skills, with speaking throughout. Pacing is flexible: the programme is organised by Unit, not by session.
 
-### Vocabulary Units (model: Unit 3)
+### Vocabulary Units (model: Units 3 and 6)
 Follow the categories that the book Unit actually uses (Unit 3: nouns, verbs and phrasal verbs, phrases, adjectives and adverbs, word formation). Each category is taught with **flip cards** (3–8 items per slide, Vietnamese meaning and example on the back), and is followed at once by **the book’s own exercises for that category, quoted exactly** (Unit 3: A–B after nouns, C–D after verbs, E after phrases, F–G after adjectives and adverbs, H–I after the word-family tables). Then the skills, each with its own pre-stage words.
 
-### Grammar Units (model: Units 1 and 2)
+### Grammar Units (model: Units 1, 2, 4 and 5)
 Teach the whole grammar of the Unit first from the book’s theory page (sentence formulas in highlighted frames, uses, helpful hints, watch-out notes, a Vietnamese box), then do the **book’s own grammar exercises, quoted exactly** (Unit 1: A–F, pp. 7–8; Unit 2: A–F, pp. 10–11), then move to the skills. New words are taught in the **pre-stage of each skill** (pre → while → post), not in a separate vocabulary block. One card = one slide.
 
 ### Skills
 - **Listening**: a real recording on the closest topic (checked script and audio). Key words are taught first on flip cards; then one detail task and a speaking follow-up with suggested structures. Task types vary across a Unit (note completion, True/False, multiple choice, “Who…?”).
-- **Reading**: two original texts, easier → harder (A2, then A2+/B1), each with its own pre-reading words and a **different detail question type** (Unit 1: True/False, note completion; Unit 2: “Who…?” matching, True/False/Not given; Unit 3: multiple choice, short answers). Showing an answer highlights the evidence in the text.
+- **Reading**: two original texts, easier → harder (A2, then A2+/B1), each with its own pre-reading words and a **different detail question type** (Unit 1: True/False, note completion; Unit 2: “Who…?” matching, True/False/Not given; Unit 3: multiple choice, short answers; Unit 4: correct the wrong word, which paragraph; Unit 5: multiple choice, summary completion; Unit 6: match people to notices, multiple choice). Showing an answer highlights the evidence in the text.
 - **Speaking**: phrase flip cards + two-column tap-to-match responses, an information gap (Unit 1: map, Unit 2: spot the difference, Unit 3: family tree), and a role play with a clear outcome, timer and optional recording.
 - **Writing**: a model text with analysis questions (evidence highlighted), a plan, draft area with word count, checklist and download.
 - **Review**: ten-question Unit check, can-do list and homework.
@@ -65,13 +65,52 @@ Teach the whole grammar of the Unit first from the book’s theory page (sentenc
 | Writing: A profile | Pre: model text → task |
 | Review | Unit check · can-do and homework |
 
+**Unit 4 · grammar (33 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Grammar | Past simple form · use (helpful hints, watch out) · -ed spelling rules · -ed pronunciation /t/ /d/ /ɪd/ → **Book exercises A–F** (pp. 19–20, exact) |
+| Listening 1: Weekend chores | Pre: flip words → While: who did it? (the woman / the man / both) → Post: speaking |
+| Listening 2: Last night | Pre: flip words → While: note completion → Post: speaking |
+| Listening 3: Old friends | Pre: flip words → While: True/False → Post: speaking |
+| Reading: Days to remember | Text 1 (A2): diary, correct the wrong word · Text 2 (A2+/B1): blog, which paragraph? |
+| Speaking: Tell the story | Pre: sequencers · match → “Two Saturdays” information gap → tell a memorable day |
+| Writing: A diary entry | Pre: model text → task |
+
+**Unit 5 · grammar (33 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Grammar | Past simple of *to be* · irregular verbs form · vowel-change table · other changes / no change (book lists) → **Book exercises A–F** (pp. 22–23, exact) |
+| Listening 1: How was your day? | Pre: flip words → While: short answers (Yes, he did / No, he didn’t) → Post: speaking |
+| Listening 2: A trip to Brazil | Pre: flip words → While: note completion → Post: speaking |
+| Listening 3: A special weekend | Pre: flip words → While: multiple choice → Post: speaking |
+| Reading: Good news stories | Text 1 (A2): magazine interview, multiple choice · Text 2 (A2+/B1): news story, summary completion |
+| Speaking: Interview | Pre: interview phrases · match → “The missing cake” information gap → interview a partner and report |
+| Writing: An interview summary | Pre: model text → task |
+
+**Unit 6 · vocabulary (41 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Nouns | 3 flip sets (music, watching and reading, free time) → **Book A** (three word boxes), **B** (p. 25) |
+| Verbs and phrasal verbs | 3 flip sets → **Book C** (p. 25), **D** (p. 26) |
+| Phrases | 2 flip sets → **Book E, F** (p. 26) |
+| Adjectives and adverbs | 2 flip sets → **Book G** (anagram letters shown under each gap, p. 27) |
+| Word formation | 2 word-family tables → **Book H, I** (p. 27) |
+| Listening 1: Free time in Wales | Pre: flip words → While: multiple choice → Post: speaking |
+| Listening 2: Films, books and concerts | Pre: flip words → While: True/False → Post: speaking |
+| Reading: What’s on? | Text 1 (A2): four notices, match people to notices · Text 2 (B1): article, multiple choice |
+| Speaking: Choose together | Pre: suggesting phrases · match → weekend-planner information gap → plan a weekend |
+| Writing: A recommendation | Pre: model text → task |
+
 ## Homework
 
 Six parts per Unit: four auto-checked parts (vocabulary, grammar or word formation, a second real recording, an original B1–B1+ reading with detail questions incl. True/False/Not given and evidence highlighting) with a pass mark per part (default 80%, retries allowed, answers open after passing or three tries), one writing task sent to the teacher and one voice note. Results go to the teacher’s Google Sheet.
 
 ## Full Unit map
 
-The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Units 1–3 are built. Later listening topics are selection briefs, not verified audio assignments.
+The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Units 1–6 are built. Later listening topics are selection briefs, not verified audio assignments.
 
 | Unit | Source focus | Context | Reading | Listening topic | Speaking outcome | Writing outcome |
 | --- | --- | --- | --- | --- | --- | --- |

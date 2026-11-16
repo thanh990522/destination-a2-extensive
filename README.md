@@ -13,18 +13,21 @@ Giảng viên: **Mr. Hà Chí Thanh**
 | 1 · My day, my neighbourhood | Grammar | Present simple · there is / there are · it’s · **bài tập sách A–F (tr. 7–8) trích nguyên văn** | 31 (= 31 slide) | 115+ | ELLLO 1554, 1571 |
 | 2 · Life at home right now | Grammar | Present continuous · stative verbs · **bài tập sách A–F (tr. 10–11) trích nguyên văn** | 32 (= 32 slide) | 120+ | ELLLO A2-03, A2-042, A2-21 |
 | 3 · People who matter | Vocabulary | Family and friends · **bài tập sách A–I (tr. 13–15) trích nguyên văn** | 43 (= 43 slide) | 130+ | ELLLO 1467, A2-01 |
+| 4 · A memorable day | Grammar | Past simple 1 (regular verbs, -ed spelling & sounds) · **bài tập sách A–F (tr. 19–20) trích nguyên văn** | 33 (= 33 slide) | 130 | ELLLO A2-06, A2-023 |
+| 5 · What happened? | Grammar | Past simple 2 (was / were, irregular verbs) · **bài tập sách A–F (tr. 22–23) trích nguyên văn** | 33 (= 33 slide) | 125 | ELLLO A2-014, A2-07, A2-049 |
+| 6 · An enjoyable weekend | Vocabulary | Leisure time · **bài tập sách A–I (tr. 25–27) trích nguyên văn** | 41 (= 41 slide) | 136 | ELLLO 928, 918 |
 
 Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9** (`slides.html?u=1`) dùng cùng dữ liệu, và **homework 6 phần** (`homework.html?u=1`). Units 4–42 có sẵn khung chương trình (xem `PROGRAMME.md`).
 
 ## Cách phân bổ trong mỗi Unit
 
-- **Unit từ vựng** (mẫu: Unit 3): học theo đúng các nhóm của sách (Nouns, Verbs + Phrasal verbs, Phrases, Adjectives/Adverbs, Word formation) bằng flip card; **học xong nhóm nào làm ngay bài tập trong sách của nhóm đó** (trích đúng 100%: A–B, C–D, E, F–G, H–I), rồi mới sang nhóm tiếp theo và sau cùng là 4 kỹ năng.
-- **Unit ngữ pháp** (mẫu: Unit 1, Unit 2): **dạy toàn bộ ngữ pháp trước** theo trang lý thuyết của sách, **làm bài tập ngữ pháp trong sách** (trích đúng 100%), rồi mới sang từng kỹ năng; **từ mới được dạy ở phần pre** của mỗi kỹ năng (pre → while → post).
+- **Unit từ vựng** (mẫu: Unit 3, 6): học theo đúng các nhóm của sách (Nouns, Verbs + Phrasal verbs, Phrases, Adjectives/Adverbs, Word formation) bằng flip card; **học xong nhóm nào làm ngay bài tập trong sách của nhóm đó** (trích đúng 100%: A–B, C–D, E, F–G, H–I), rồi mới sang nhóm tiếp theo và sau cùng là 4 kỹ năng.
+- **Unit ngữ pháp** (mẫu: Unit 1, 2, 4, 5): **dạy toàn bộ ngữ pháp trước** theo trang lý thuyết của sách, **làm bài tập ngữ pháp trong sách** (trích đúng 100%), rồi mới sang từng kỹ năng; **từ mới được dạy ở phần pre** của mỗi kỹ năng (pre → while → post).
 - **Nghe**: dùng audio thật (ELLLO) sát chủ đề nhất; **luôn dạy từ mới (flip card) trước khi nghe**, nghe chi tiết (mỗi bài một dạng: điền ghi chú, True/False, trắc nghiệm, “Who…?”) → nói sau khi nghe có cấu trúc gợi ý.
 - **Đọc, nói, viết**: đều có bước dạy từ/cụm từ cần thiết trước, rồi mới làm nhiệm vụ. Phần nói có phrase bank, information gap, role play (đồng hồ, ghi âm, rubric). Phần viết có bài mẫu, dàn ý, checklist, đếm từ.
 - Nội dung slide hoàn toàn bằng tiếng Anh, **trừ nghĩa tiếng Việt và giải thích ngữ pháp** (khung “VI”).
 - **Mỗi câu hỏi có nút con mắt 👁 riêng** để hiện đáp án câu đó; ngoài ra có nút Check, All answers, Reset. Khi đáp án làm slide dài ra, slide cho cuộn lên xuống.
-- **Reading** có 2 bài đọc khác nhau, khó dần, chỉ hỏi chi tiết, mỗi bài một dạng câu hỏi (Unit 1: True/False + điền ghi chú; Unit 2: “Who…?” + True/False/Not given; Unit 3: trắc nghiệm + trả lời ngắn). Khi bấm mắt hoặc All answers, **câu chứa thông tin trong bài đọc được tô vàng** kèm số câu hỏi. Bài đọc trong homework ở mức **B1–B1+** (có True/False/Not given) và cũng tô vàng bằng chứng khi mở đáp án.
+- **Reading** có 2 bài đọc khác nhau, khó dần, chỉ hỏi chi tiết, mỗi bài một dạng câu hỏi (Unit 1: True/False + điền ghi chú; Unit 2: “Who…?” + True/False/Not given; Unit 3: trắc nghiệm + trả lời ngắn; Unit 4: sửa từ sai + chọn đoạn văn; Unit 5: trắc nghiệm + điền tóm tắt; Unit 6: nối người với thông báo + trắc nghiệm). Khi bấm mắt hoặc All answers, **câu chứa thông tin trong bài đọc được tô vàng** kèm số câu hỏi. Bài đọc trong homework ở mức **B1–B1+** (có True/False/Not given) và cũng tô vàng bằng chứng khi mở đáp án.
 - Từ vựng dạng **flip card**: bấm vào thẻ mới hiện nghĩa tiếng Việt và ví dụ (có nút “Flip all cards”).
 - Câu hỏi nói luôn có **cấu trúc gợi ý** (“Try: …”) ngay dưới câu hỏi; bài nối ở phần Speaking là **2 cột, bấm trái rồi bấm phải** để nối.
 - Vị trí đáp án đúng được **đảo đều giữa A/B/C** ở mọi bài tự soạn và homework; bài tập trong sách giữ nguyên thứ tự của sách.
