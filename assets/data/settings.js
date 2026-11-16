@@ -50,6 +50,14 @@ window.A2_SETTINGS = {
    "due": "",
    "note": "",
    "passMark": ""
+  },
+  "101": {
+   "lesson": false,
+   "slides": false,
+   "homework": false,
+   "due": "",
+   "note": "",
+   "passMark": ""
   }
  }
 };

@@ -8,12 +8,12 @@
   const lockScreen = (title, msg) => {
     root.innerHTML = `<div class="lock"><div class="lock-box">${ic('🔒', 'hero')}<h1>${esc(title)}</h1><p>${esc(msg)}</p><a class="btn" href="index.html">← All Units</a></div></div>`;
   };
-  if (!A2.built(n)) return lockScreen(`Unit ${n} is coming soon`, 'Your teacher is still preparing this Unit.');
-  if (!A2.canOpen(n, 'lesson')) return lockScreen(`Unit ${n} is not open yet`, 'Your teacher will open this lesson in class. Please check again later.');
+  if (!A2.built(n)) return lockScreen(`${A2.name(n)} is coming soon`, 'Your teacher is still preparing it.');
+  if (!A2.canOpen(n, 'lesson')) return lockScreen(`${A2.name(n)} is not open yet`, 'Your teacher will open this lesson in class. Please check again later.');
   try { await A2.loadScript(`assets/data/units/u${A2.pad(n)}.js`); } catch (e) { return lockScreen('The lesson could not load', 'Please check your internet connection and refresh the page.'); }
   const U = window.A2_UNITS[n];
   A2.balanceUnit(U);
-  document.title = `Unit ${n} · ${U.title} · Destination A2`;
+  document.title = `${A2.name(n)} · ${U.title} · Destination A2`;
   const KEY = `a2.u${n}`;
   const store = Object.assign({ ans: {}, drafts: {}, ticks: {}, scores: {}, stage: U.stages[0].id }, A2.LS.get(KEY, {}));
   const save = () => A2.LS.set(KEY, store);
@@ -25,7 +25,7 @@
   root.innerHTML = `
   <header class="topbar sk-top">
     <a class="brand" href="index.html" aria-label="All Units">${ic('🧭', 'sm')}<span>DESTINATION <b>A2</b></span></a>
-    <div class="top-title"><span class="unit-pill">UNIT ${A2.pad(n)}</span><b>${esc(U.title)}</b><small>${md(U.focus)}</small></div>
+    <div class="top-title"><span class="unit-pill">${A2.tag(n)}</span><b>${esc(U.title)}</b><small>${md(U.focus)}</small></div>
     <nav class="top-actions"><a class="btn sm ghost" href="slides.html?u=${n}">${ic('🖥️', 'xs')} Slides</a><a class="btn sm y" href="homework.html?u=${n}">${ic('🏠', 'xs')} Homework</a>${A2.studentChip()}</nav>
   </header>${teacherNote}
   <div class="lesson">

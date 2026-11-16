@@ -154,7 +154,8 @@ const LS = { get: k => { try { return localStorage.getItem(k) || ''; } catch (e)
 const msg = (el, cls, t) => { $(el).innerHTML = t ? `<div class="msg ${cls}">${t}</div>` : ''; };
 const C = window.COURSE, BUILT = C.built || [];
 const pad = n => String(n).padStart(2, '0');
-const title = n => { const u = C.units[n - 1]; return u ? `${u[3]}` : ''; };
+const title = n => { if (n > 100) return `Units ${(n - 101) * 3 + 1}–${(n - 101) * 3 + 3}`; const u = C.units[n - 1]; return u ? `${u[3]}` : ''; };
+const uname = n => (n > 100 ? `Review ${n - 100}` : `Unit ${n}`);
 const isTeacher = () => LS.get('a2_teacher') === 'true';
 function devInfo() {
   $('#dev').textContent = (isTeacher() ? '✅ Thiết bị giáo viên' : 'Thiết bị chưa đánh dấu giáo viên') + (LS.get('a2_gh') ? ' · 🔑 Đã có GitHub key' : ' · ⚠ Chưa có GitHub key') + (SET && SET.progressUrl ? ' · 📊 Đã nối Google Sheet' : ' · ⚠ Chưa nối Google Sheet');
@@ -202,10 +203,12 @@ async function saveSettings(message) {
 /* ---------- open / close ---------- */
 function renderUnits() {
   const head = `<div class="urow head"><span>Unit</span><span>Bài học</span><span>Slide</span><span>Homework</span><span>Hạn nộp</span><span>Điểm đạt</span><span>Lời nhắn cho học viên</span></div>`;
-  const rows = C.units.map(u => {
+  const list = [];
+  C.units.forEach(u => { list.push(u); if (u[0] % 3 === 0) list.push([100 + u[0] / 3, 'Review', 'Book review + extra · homework 50 + 50', `Review ${u[0] / 3} · Units ${u[0] - 2}–${u[0]}`]); });
+  const rows = list.map(u => {
     const n = u[0], built = BUILT.includes(n), c = SET.units[n] || {};
     const sw = k => `<label class="sw" title="${k}"><input type="checkbox" data-n="${n}" data-k="${k}" ${c[k] ? 'checked' : ''} ${built ? '' : 'disabled'}><span></span></label>`;
-    return `<div class="urow ${built ? '' : 'off'}" id="u${n}"><div class="nm"><span class="uid">U${pad(n)}</span><b style="display:inline">${esc(u[3])}</b><small style="display:block">${esc(u[2])} · ${built ? '✅ đã soạn' : '⏳ chưa soạn'}</small></div>
+    return `<div class="urow ${built ? '' : 'off'}" id="u${n}"><div class="nm"><span class="uid">${n > 100 ? "R" + pad(n - 100) : "U" + pad(n)}</span><b style="display:inline">${esc(u[3])}</b><small style="display:block">${esc(u[2])} · ${built ? '✅ đã soạn' : '⏳ chưa soạn'}</small></div>
       ${sw('lesson')}${sw('slides')}${sw('homework')}
       <input class="f" type="date" data-n="${n}" data-k="due" value="${esc(c.due || '')}" ${built ? '' : 'disabled'}>
       <input class="f" type="number" min="50" max="100" placeholder="${SET.passMark || 80}" data-n="${n}" data-k="passMark" value="${esc(c.passMark || '')}" ${built ? '' : 'disabled'}>
@@ -227,10 +230,10 @@ $('#oSave').onclick = async () => {
 };
 
 /* ---------- homework ---------- */
-$('#hwUnit').innerHTML = BUILT.map(n => `<option value="${n}">Unit ${n} · ${esc(title(n))}</option>`).join('');
+$('#hwUnit').innerHTML = BUILT.map(n => `<option value="${n}">${uname(n)} · ${esc(title(n))}</option>`).join('');
 let HWsha = null;
 const hwPath = n => `assets/data/homework/hw${pad(n)}.js`;
-const hwHeader = n => `/* Homework for Unit ${n}. Edited from the admin page (admin/ → Homework). Keep valid JSON after the = sign. */\nwindow.A2_HOMEWORK[${n}] = `;
+const hwHeader = n => `/* Homework for ${uname(n)}. Edited from the admin page (admin/ → Homework). Keep valid JSON after the = sign. */\nwindow.A2_HOMEWORK[${n}] = `;
 function validateHw(H) {
   const errs = [];
   if (!H || !Array.isArray(H.parts) || !H.parts.length) errs.push('Thiếu "parts".');

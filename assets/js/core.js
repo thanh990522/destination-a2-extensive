@@ -18,7 +18,11 @@
   const esc = (A2.esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])));
   A2.params = new URLSearchParams(location.search);
   A2.pad = n => String(n).padStart(2, '0');
-  A2.unitParam = () => { const n = parseInt(A2.params.get('u') || '1', 10); return n >= 1 && n <= 42 ? n : 1; };
+  A2.unitParam = () => { const n = parseInt(A2.params.get('u') || '1', 10); return (n >= 1 && n <= 42) || (n >= 101 && n <= 114) ? n : 1; };
+  /* Reviews use numbers 101–114 (Review 1 = 101) */
+  A2.isReview = n => n > 100;
+  A2.name = n => (n > 100 ? `Review ${n - 100}` : `Unit ${n}`);
+  A2.tag = n => (n > 100 ? `REVIEW ${String(n - 100).padStart(2, '0')}` : `UNIT ${String(n).padStart(2, '0')}`);
   A2.loadScript = src => new Promise((resolve, reject) => {
     const s = document.createElement('script');
     s.src = src; s.onload = () => resolve(); s.onerror = () => reject(new Error('Could not load ' + src));
@@ -208,7 +212,7 @@
   };
   A2.renderItems = (items, prefix, opts = {}) => {
     const matchOptions = opts.matchOptions;
-    return `<ol class="items ${opts.cols ? 'cols' : ''} ${opts.cls || ''}" ${opts.start ? `start="${opts.start}"` : ''}>${items.map((it, i) => (it.box ? `<li class="boxrow"><div class="bank" aria-label="Word box">${it.box.map(w => `<span>${esc(w)}</span>`).join('')}</div></li>` : '') + A2.renderItem(it, `${prefix}-${(opts.offset || 0) + i + 1}`, (opts.offset || 0) + i + 1, { matchOptions, abc: opts.abc })).join('')}</ol>`;
+    return `<ol class="items ${opts.cols ? 'cols' : ''} ${opts.cls || ''}" ${opts.start ? `start="${opts.start}"` : ''}>${items.map((it, i) => (it.sec ? `<li class="boxrow"><p class="secrow">${A2.md(it.sec)}</p></li>` : '') + (it.box ? `<li class="boxrow"><div class="bank" aria-label="Word box">${it.box.map(w => `<span>${esc(w)}</span>`).join('')}</div></li>` : '') + A2.renderItem(it, `${prefix}-${(opts.offset || 0) + i + 1}`, (opts.numStart || 1) + (opts.offset || 0) + i, { matchOptions, abc: opts.abc })).join('')}</ol>`;
   };
   A2.checkBar = (id, total) => `<div class="checkbar" data-checkbar="${id}"><button type="button" class="btn sm" data-check="${id}">✓ Check</button><button type="button" class="btn sm ghost" data-showall="${id}">${A2.eye} All answers</button><button type="button" class="btn sm ghost" data-reset="${id}">↺ Reset</button><span class="score" data-score="${id}" aria-live="polite">${total ? `– / ${total}` : ''}</span></div>`;
 
