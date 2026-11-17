@@ -17,6 +17,8 @@ Giảng viên: **Mr. Hà Chí Thanh**
 | 4 · A memorable day | Grammar | Past simple 1 (regular verbs, -ed spelling & sounds) · **bài tập sách A–F (tr. 19–20) trích nguyên văn** | 33 (= 33 slide) | 130 | ELLLO A2-06, A2-023 |
 | 5 · What happened? | Grammar | Past simple 2 (was / were, irregular verbs) · **bài tập sách A–F (tr. 22–23) trích nguyên văn** | 33 (= 33 slide) | 125 | ELLLO A2-014, A2-07, A2-049 |
 | 6 · An enjoyable weekend | Vocabulary | Leisure time · **bài tập sách A–I (tr. 25–27) trích nguyên văn** | 41 (= 41 slide) | 136 | ELLLO 928, 918 |
+| **Review 2** · Units 4–6 | Review | **Chỉ bài tập sách A–F (tr. 28–29, câu 1–50)** · sách đặt Grammar trước (A–B) nên Grammar → Extra ngữ pháp, rồi Vocabulary (C–F) → Extra từ vựng · homework 50 câu ngữ pháp + 50 câu từ vựng | 14 (= 14 slide) | 110 + 100 homework | – |
+| 7 · An unexpected interruption | Grammar | Past continuous · when / while / as · **bài tập sách A–F (tr. 31–32) trích nguyên văn** | 32 (= 32 slide) | 129 | ELLLO Sound Grammar B2-11 |
 
 Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9** (`slides.html?u=1`) dùng cùng dữ liệu, và **homework 6 phần** (`homework.html?u=1`). Units 4–42 có sẵn khung chương trình (xem `PROGRAMME.md`).
 

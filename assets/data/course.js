@@ -11,7 +11,9 @@ window.COURSE = {
   4,
   5,
   6,
-  101
+  7,
+  101,
+  102
  ],
  "principles": [
   [
@@ -39,7 +41,7 @@ window.COURSE = {
    "Writing rehearses or follows the speaking task. Use a model, a short plan, a checklist and a revision step."
   ]
  ],
- "note": "Units 1–6 and Review 1 are complete (Units with lessons, slides and homework; Reviews with the book review, extra challenge exercises and a 100-question homework). Units 7–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
+ "note": "Units 1–7 and Reviews 1–2 are complete (Units with lessons, slides and homework; Reviews with the book review, extra challenge exercises and a 100-question homework). Units 8–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
  "units": [
   [
    1,
@@ -118,10 +120,10 @@ window.COURSE = {
    "Grammar",
    "Past continuous",
    "An unexpected interruption",
-   "Actions in progress and sequence markers",
-   "An eyewitness account",
-   "An interrupted activity",
-   "Explain what was happening",
+   "Past continuous with when / while / as, past simple for interruptions",
+   "Storm posts · an eyewitness report",
+   "ELLLO Sound Grammar B2-11 (Movie night, A terrible holiday, Why didn’t you text back?) (verified)",
+   "Explain what was happening as a witness",
    "A short incident account",
    30
   ],
@@ -548,7 +550,7 @@ window.COURSE = {
  ],
  "reviews": [
   "Book Review 1 (pp. 16–17) + extra vocabulary and grammar challenges · homework: 50 vocabulary + 50 grammar questions.",
-  "Tell a past story and agree on a leisure activity.",
+  "Book Review 2 (pp. 28–29) + extra grammar and vocabulary challenges · homework: 50 grammar + 50 vocabulary questions.",
   "Explain an incident during a sports activity.",
   "Discuss school experiences and a recent achievement.",
   "Discuss a suitable job and make a plan.",
