@@ -9,11 +9,11 @@ One book Unit = one integrated learning Unit. The book’s number, order and lan
 ### Vocabulary Units (model: Units 3 and 6)
 Follow the categories that the book Unit actually uses (Unit 3: nouns, verbs and phrasal verbs, phrases, adjectives and adverbs, word formation). Each category is taught with **flip cards** (3–8 items per slide, Vietnamese meaning and example on the back), and is followed at once by **the book’s own exercises for that category, quoted exactly** (Unit 3: A–B after nouns, C–D after verbs, E after phrases, F–G after adjectives and adverbs, H–I after the word-family tables). Then the skills, each with its own pre-stage words.
 
-### Grammar Units (model: Units 1, 2, 4 and 5)
+### Grammar Units (model: Units 1, 2, 4, 5 and 7)
 Teach the whole grammar of the Unit first from the book’s theory page (sentence formulas in highlighted frames, uses, helpful hints, watch-out notes, a Vietnamese box), then do the **book’s own grammar exercises, quoted exactly** (Unit 1: A–F, pp. 7–8; Unit 2: A–F, pp. 10–11), then move to the skills. New words are taught in the **pre-stage of each skill** (pre → while → post), not in a separate vocabulary block. One card = one slide.
 
 ### Reviews (model: Review 1)
-Book review exercises only, quoted exactly and numbered as in the book (Review 1: A–F, questions 1–50, pp. 16–17). The vocabulary exercises come first and are followed by **three extra challenge exercises for vocabulary** (word families in a text, tricky-word multiple choice, key-word sentence transformation); then the grammar exercises, followed by **three extra challenge exercises for grammar** (simple or continuous text, error correction, question formation). No skills block. Homework has two auto-checked parts only: **50 vocabulary questions** and **50 grammar questions**, grouped in labelled sections. Reviews use the numbers 101–114 inside the site (Review 1 = 101).
+Book review exercises only, quoted exactly and numbered as in the book (Review 1: A–F, questions 1–50, pp. 16–17). The vocabulary exercises come first and are followed by **three extra challenge exercises for vocabulary** (word families in a text, tricky-word multiple choice, key-word sentence transformation); then the grammar exercises, followed by **three extra challenge exercises for grammar** (simple or continuous text, error correction, question formation). No skills block. Homework has two auto-checked parts only: **50 vocabulary questions** and **50 grammar questions**, grouped in labelled sections. Reviews keep the book’s order: Review 2 starts with grammar (A–B) and then vocabulary (C–F), so its grammar extra comes first. Reviews use the numbers 101–114 inside the site (Review 1 = 101).
 
 ### Skills
 - **Listening**: a real recording on the closest topic (checked script and audio). Key words are taught first on flip cards; then one detail task and a speaking follow-up with suggested structures. Task types vary across a Unit (note completion, True/False, multiple choice, “Who…?”).
@@ -107,13 +107,25 @@ Book review exercises only, quoted exactly and numbered as in the book (Review 1
 | Speaking: Choose together | Pre: suggesting phrases · match → weekend-planner information gap → plan a weekend |
 | Writing: A recommendation | Pre: model text → task |
 
+**Unit 7 · grammar (32 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Grammar | Past continuous form · use · with the past simple (when / while / as, watch out, helpful hint) → **Book exercises A–F** (pp. 31–32, exact) |
+| Listening 1: Movie night | Pre: flip words → While: note completion → Post: speaking |
+| Listening 2: A terrible holiday | Pre: flip words → While: True/False → Post: speaking |
+| Listening 3: Why didn’t you text back? | Pre: flip words → While: multiple choice → Post: speaking |
+| Reading: When it happened | Text 1 (A2): four storm posts, who was it? · Text 2 (A2+/B1): eyewitness report, short answers |
+| Speaking: The witness | Pre: witness phrases · match → “The missing phone” information gap → police interview |
+| Writing: An incident account | Pre: model text → task |
+
 ## Homework
 
 Six parts per Unit: four auto-checked parts (vocabulary, grammar or word formation, a second real recording, an original B1–B1+ reading with detail questions incl. True/False/Not given and evidence highlighting) with a pass mark per part (default 80%, retries allowed, answers open after passing or three tries), one writing task sent to the teacher and one voice note. Results go to the teacher’s Google Sheet.
 
 ## Full Unit map
 
-The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Units 1–6 are built. Later listening topics are selection briefs, not verified audio assignments.
+The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Units 1–7 and Reviews 1–2 are built. Later listening topics are selection briefs, not verified audio assignments.
 
 | Unit | Source focus | Context | Reading | Listening topic | Speaking outcome | Writing outcome |
 | --- | --- | --- | --- | --- | --- | --- |

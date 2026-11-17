@@ -101,7 +101,7 @@
   R.pairs = (c) => {
     const right = c.right || c.items.map(i => i.a);
     return `${lead(c)}<div class="set pairs" data-set="${c.id}" data-pairs="${c.id}">
-      <ol class="pairs-l">${c.items.map((it, i) => { const id = `${c.id}-${i + 1}`; it.t = 'match'; return `<li class="item pl" data-item="${id}" data-ml="${id}"><span class="num">${i + 1}</span><div class="qbody"><p class="qtext">${md(it.q)}</p><p class="chosen" data-chosen="${id}"></p><div class="ans" id="ans-${id}" hidden><span class="ans-k">Answer</span> <b>${md(it.a)}</b></div></div><button class="eye" type="button" data-eye="${id}" aria-label="Show this answer" aria-expanded="false">${A2.eye}</button></li>`; }).join('')}</ol>
+      <ol class="pairs-l">${c.items.map((it, i) => { const id = `${c.id}-${i + 1}`; it.t = 'match'; return `<li class="item pl" data-item="${id}" data-ml="${id}"><span class="num">${(c.numStart || 1) + i}</span><div class="qbody"><p class="qtext">${md(it.q)}</p><p class="chosen" data-chosen="${id}"></p><div class="ans" id="ans-${id}" hidden><span class="ans-k">Answer</span> <b>${md(it.a)}</b></div></div><button class="eye" type="button" data-eye="${id}" aria-label="Show this answer" aria-expanded="false">${A2.eye}</button></li>`; }).join('')}</ol>
       <div class="pairs-r">${right.map((r, k) => `<button type="button" class="pr" data-mr="${esc(r)}"><i>${'abcdefghij'[k]}</i>${md(r)}<span class="pr-n"></span></button>`).join('')}</div>
     </div>${A2.checkBar(c.id, c.items.length)}`;
   };

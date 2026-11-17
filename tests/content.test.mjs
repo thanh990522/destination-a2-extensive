@@ -33,7 +33,7 @@ function checkItem(it, where) {
 test('the programme keeps the 42 Units, 14 Reviews and lists the built Units', () => {
   assert.equal(C.units.length, 42); assert.equal(C.reviews.length, 14);
   C.units.forEach((u, i) => { assert.equal(u[0], i + 1); assert.equal(u.length, 10); });
-  assert.deepEqual([...C.built], [1, 2, 3, 4, 5, 6, 101]);
+  assert.deepEqual([...C.built], [1, 2, 3, 4, 5, 6, 7, 101, 102]);
   assert.match(C.units[0][2], /Present simple/); assert.match(C.units[1][2], /Present continuous/); assert.match(C.units[2][2], /Family and friends/);
 });
 
@@ -129,7 +129,7 @@ for (const n of C.built.filter(n => n > 100)) {
   });
   test(`Review ${n - 100}: homework is vocabulary and grammar, 50 questions each`, () => {
     assert.equal(H.unit, n);
-    assert.deepEqual([...H.parts.map(p => p.id)], ['vocab', 'grammar']);
+    assert.deepEqual([...H.parts.map(p => p.id)].sort(), ['grammar', 'vocab']);
     H.parts.forEach(p => { assert.equal(p.items.length, 50, p.id); p.items.forEach((it, i) => checkItem(it, `hw${n} ${p.id}-${i + 1}`)); });
   });
 }
