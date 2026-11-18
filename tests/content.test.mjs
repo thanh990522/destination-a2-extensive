@@ -33,7 +33,7 @@ function checkItem(it, where) {
 test('the programme keeps the 42 Units, 14 Reviews and lists the built Units', () => {
   assert.equal(C.units.length, 42); assert.equal(C.reviews.length, 14);
   C.units.forEach((u, i) => { assert.equal(u[0], i + 1); assert.equal(u.length, 10); });
-  assert.deepEqual([...C.built], [1, 2, 3, 4, 5, 6, 7, 101, 102]);
+  assert.deepEqual([...C.built], [1, 2, 3, 4, 5, 6, 7, 8, 9, 101, 102]);
   assert.match(C.units[0][2], /Present simple/); assert.match(C.units[1][2], /Present continuous/); assert.match(C.units[2][2], /Family and friends/);
 });
 

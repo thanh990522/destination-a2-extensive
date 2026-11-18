@@ -12,6 +12,8 @@ window.COURSE = {
   5,
   6,
   7,
+  8,
+  9,
   101,
   102
  ],
@@ -41,7 +43,7 @@ window.COURSE = {
    "Writing rehearses or follows the speaking task. Use a model, a short plan, a checklist and a revision step."
   ]
  ],
- "note": "Units 1–7 and Reviews 1–2 are complete (Units with lessons, slides and homework; Reviews with the book review, extra challenge exercises and a 100-question homework). Units 8–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
+ "note": "Units 1–9 and Reviews 1–2 are complete (Units with lessons, slides and homework; Reviews with the book review, extra challenge exercises and a 100-question homework). Units 10–42 keep the programme plan; their listening topics are briefs until a real recording is selected and checked.",
  "units": [
   [
    1,
@@ -132,11 +134,11 @@ window.COURSE = {
    "Grammar",
    "Imperative, infinitive, -ing form",
    "Trying something new",
-   "Activity instructions and useful verb patterns",
-   "A simple how-to guide",
-   "Instructions for an everyday task",
+   "Imperatives, verb + to-infinitive / -ing, see / hear + object + V / V-ing",
+   "Climbing-wall rules · a 30-day challenge blog",
+   "ELLLO Sound Grammar A2-17 (Cook dinner, Any tips?), Views #1504 (Meg and Todd: likes and dislikes) (verified)",
    "Explain a task and check understanding",
-   "A short instruction guide",
+   "A short how-to guide",
    33
   ],
   [
@@ -144,9 +146,9 @@ window.COURSE = {
    "Vocabulary",
    "Sport",
    "A club for everyone",
-   "The Unit’s sport words, phrases and word families",
-   "A sports-club leaflet",
-   "Sport habits and preferences",
+   "Sport nouns, verbs, phrases, adjectives, adverbs, word families",
+   "A sports-centre leaflet · an athlete’s story",
+   "ELLLO One Minute English A2-034 (Sports on TV), Views #927 (Netball) (verified)",
    "Recommend a suitable sports club",
    "A club invitation",
    36

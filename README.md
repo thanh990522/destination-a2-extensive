@@ -19,6 +19,8 @@ Giảng viên: **Mr. Hà Chí Thanh**
 | 6 · An enjoyable weekend | Vocabulary | Leisure time · **bài tập sách A–I (tr. 25–27) trích nguyên văn** | 41 (= 41 slide) | 136 | ELLLO 928, 918 |
 | **Review 2** · Units 4–6 | Review | **Chỉ bài tập sách A–F (tr. 28–29, câu 1–50)** · sách đặt Grammar trước (A–B) nên Grammar → Extra ngữ pháp, rồi Vocabulary (C–F) → Extra từ vựng · homework 50 câu ngữ pháp + 50 câu từ vựng | 14 (= 14 slide) | 110 + 100 homework | – |
 | 7 · An unexpected interruption | Grammar | Past continuous · when / while / as · **bài tập sách A–F (tr. 31–32) trích nguyên văn** | 32 (= 32 slide) | 129 | ELLLO Sound Grammar B2-11 |
+| 8 · Trying something new | Grammar | Imperative · to-infinitive / -ing · see / hear + object + V / V-ing · **bài tập sách A–F (tr. 34–35) trích nguyên văn** | 32 (= 32 slide) | 130+ | ELLLO A2-17, Views 1504 |
+| 9 · A club for everyone | Vocabulary | Sport · **bài tập sách A–I (tr. 37–39) trích nguyên văn** | 42 (= 42 slide) | 135+ | ELLLO A2-034, Views 927 |
 
 Mỗi Unit có: **bài học** (`lesson.html?u=1`), **slide trình chiếu 16:9** (`slides.html?u=1`) dùng cùng dữ liệu, và **homework 6 phần** (`homework.html?u=1`). Units 4–42 có sẵn khung chương trình (xem `PROGRAMME.md`).
 
