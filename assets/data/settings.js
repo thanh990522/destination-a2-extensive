@@ -1,7 +1,7 @@
 /* Site settings — edited from the admin page (admin/). Students load this file on every visit. */
 window.A2_SETTINGS = {
  "passMark": 80,
- "progressUrl": "",
+ "progressUrl": "https://script.google.com/macros/s/AKfycbzG8-snnWwz-qGQITWt3tCnCsdnV0rpNAJk0Q8QIn282Hw-egzDDLWtdhyP5V5SEFbEag/exec",
  "units": {
   "1": {
    "lesson": true,
@@ -51,23 +51,7 @@ window.A2_SETTINGS = {
    "note": "",
    "passMark": ""
   },
-  "101": {
-   "lesson": false,
-   "slides": false,
-   "homework": false,
-   "due": "",
-   "note": "",
-   "passMark": ""
-  },
   "7": {
-   "lesson": false,
-   "slides": false,
-   "homework": false,
-   "due": "",
-   "note": "",
-   "passMark": ""
-  },
-  "102": {
    "lesson": false,
    "slides": false,
    "homework": false,
@@ -84,6 +68,22 @@ window.A2_SETTINGS = {
    "passMark": ""
   },
   "9": {
+   "lesson": false,
+   "slides": false,
+   "homework": false,
+   "due": "",
+   "note": "",
+   "passMark": ""
+  },
+  "101": {
+   "lesson": false,
+   "slides": false,
+   "homework": false,
+   "due": "",
+   "note": "",
+   "passMark": ""
+  },
+  "102": {
    "lesson": false,
    "slides": false,
    "homework": false,
