@@ -6,10 +6,10 @@ Teacher: **Mr. Hà Chí Thanh**
 
 One book Unit = one integrated learning Unit. The book’s number, order and language scope stay the same. Every Unit adds a familiar situation and all four skills, with speaking throughout. Pacing is flexible: the programme is organised by Unit, not by session.
 
-### Vocabulary Units (model: Units 3 and 6)
+### Vocabulary Units (model: Units 3, 6 and 9)
 Follow the categories that the book Unit actually uses (Unit 3: nouns, verbs and phrasal verbs, phrases, adjectives and adverbs, word formation). Each category is taught with **flip cards** (3–8 items per slide, Vietnamese meaning and example on the back), and is followed at once by **the book’s own exercises for that category, quoted exactly** (Unit 3: A–B after nouns, C–D after verbs, E after phrases, F–G after adjectives and adverbs, H–I after the word-family tables). Then the skills, each with its own pre-stage words.
 
-### Grammar Units (model: Units 1, 2, 4, 5 and 7)
+### Grammar Units (model: Units 1, 2, 4, 5, 7 and 8)
 Teach the whole grammar of the Unit first from the book’s theory page (sentence formulas in highlighted frames, uses, helpful hints, watch-out notes, a Vietnamese box), then do the **book’s own grammar exercises, quoted exactly** (Unit 1: A–F, pp. 7–8; Unit 2: A–F, pp. 10–11), then move to the skills. New words are taught in the **pre-stage of each skill** (pre → while → post), not in a separate vocabulary block. One card = one slide.
 
 ### Reviews (model: Review 1)
@@ -119,13 +119,40 @@ Book review exercises only, quoted exactly and numbered as in the book (Review 1
 | Speaking: The witness | Pre: witness phrases · match → “The missing phone” information gap → police interview |
 | Writing: An incident account | Pre: model text → task |
 
+**Unit 8 · grammar (32 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Grammar | Imperative · to-infinitive or -ing (book verb lists, watch out) · see / hear + object + V / V-ing → **Book exercises A–F** (pp. 34–35, exact) |
+| Listening 1: Cook dinner | Pre: flip words → While: to-do list completion → Post: giving instructions |
+| Listening 2: Any tips? | Pre: flip words → While: do it or don’t do it? → Post: giving advice |
+| Listening 3: Likes and dislikes | Pre: flip words → While: Meg, Todd or both? → Post: love / hate / don’t mind + -ing |
+| Reading: New challenges | Text 1 (A2): climbing-wall rules, yes / no · Text 2 (A2+/B1): 30-day swimming challenge blog, multiple choice |
+| Speaking: Teach me! | Pre: instruction phrases · match → teach-and-check gap → explain a skill |
+| Writing: A how-to guide | Pre: model text → task |
+
+**Unit 9 · vocabulary (42 slides)**
+
+| Stage | Slides |
+| --- | --- |
+| Nouns | 4 flip sets (sports, people, places and things, events) → **Book A, B** (p. 37) |
+| Verbs | 3 flip sets → **Book C** (p. 37), **D** (matching, p. 38) |
+| Phrases | 2 flip sets → **Book E** (p. 38) |
+| Adjectives and adverbs | 2 flip sets → **Book F** (p. 38), **G** (p. 39) |
+| Word formation | 2 word-family tables → **Book H, I** (p. 39) |
+| Listening 1: Sports on TV | Pre: flip words → While: multiple choice → Post: speaking |
+| Listening 2: Netball | Pre: flip words → While: fact-file completion → Post: explain a sport |
+| Reading: Clubs and champions | Text 1 (A2): sports-centre leaflet, True/False · Text 2 (A2+/B1): athlete’s story, sentence completion |
+| Speaking: Find a club | Pre: recommending phrases · match → club-finder gap → recommend a club |
+| Writing: A club invitation | Pre: model text → task |
+
 ## Homework
 
 Six parts per Unit: four auto-checked parts (vocabulary, grammar or word formation, a second real recording, an original B1–B1+ reading with detail questions incl. True/False/Not given and evidence highlighting) with a pass mark per part (default 80%, retries allowed, answers open after passing or three tries), one writing task sent to the teacher and one voice note. Results go to the teacher’s Google Sheet.
 
 ## Full Unit map
 
-The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Units 1–7 and Reviews 1–2 are built. Later listening topics are selection briefs, not verified audio assignments.
+The interactive Programme page contains the complete mapping of book focus, language preparation and four-skill outcomes. The table below gives the Unit context and main speaking product. Units 1–9 and Reviews 1–2 are built. Later listening topics are selection briefs, not verified audio assignments.
 
 | Unit | Source focus | Context | Reading | Listening topic | Speaking outcome | Writing outcome |
 | --- | --- | --- | --- | --- | --- | --- |
