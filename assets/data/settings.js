@@ -1,7 +1,7 @@
 /* Site settings — edited from the admin page (admin/). Students load this file on every visit. */
 window.A2_SETTINGS = {
  "passMark": 80,
- "progressUrl": "https://script.google.com/macros/s/AKfycbwVM4t6zUxL6uDS77G0qzW4xcOhtLHv-ir01kd_bF1eEc5G2_p16yufMXX6gBmJgUeP2Q/exec",
+ "progressUrl": "https://script.google.com/macros/s/AKfycbyENK3Djn2msbpHtIprSK2-CieywuF5h9CWdGYoXlCj2gqcNqKNJ1HQEr-7XoPTGwGW-Q/exec",
  "units": {
   "1": {
    "lesson": true,
