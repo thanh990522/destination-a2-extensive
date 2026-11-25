@@ -121,13 +121,13 @@ pre.gs{background:#0F172A;color:#E2E8F0;border-radius:12px;padding:12px;font-siz
       <ol class="steps2">
         <li>Tạo Google Sheet mới → <b>Extensions → Apps Script</b>.</li>
         <li>Dán toàn bộ code bên dưới, đổi dòng <code>ADMIN_KEY</code> thành mật khẩu riêng → Save.</li>
-        <li><b>Deploy → New deployment → Web app</b> · Execute as: <b>Me</b> · Who has access: <b>Anyone</b> → Deploy.</li>
+        <li><b>Deploy → New deployment → Web app</b> · Execute as: <b>Me</b> · Who has access: <b>Anyone</b> (không phải “Anyone with Google account”) → Deploy. Khi sửa code: <b>Manage deployments → ✏️ → New version → Deploy</b> để giữ nguyên URL.</li>
         <li>Copy <b>Web app URL</b> → dán vào ô dưới → <b>Lưu lên website</b>.</li>
       </ol>
       <div class="bar" style="justify-content:flex-start"><button class="btn ghost sm" id="copyGs">📋 Copy code Apps Script</button></div>
       <pre class="gs" id="gs">Đang tải…</pre>
       <p class="sub" style="margin-top:10px"><b>Web app URL</b> (lưu lên website để học viên gửi kết quả)</p>
-      <div class="bar"><input class="f" id="pUrl" placeholder="https://script.google.com/macros/s/…/exec" style="flex:1"><button class="btn" id="pUrlSave">Lưu lên website</button></div>
+      <div class="bar"><input class="f" id="pUrl" placeholder="https://script.google.com/macros/s/…/exec" style="flex:1"><button class="btn ghost" id="pUrlTest">🔌 Kiểm tra kết nối</button><button class="btn" id="pUrlSave">Lưu lên website</button></div>
       <p class="sub" style="margin-top:10px"><b>ADMIN_KEY</b> (chỉ lưu trên trình duyệt này, dùng để tải kết quả)</p>
       <div class="bar"><input class="f" id="aKey" type="password" placeholder="mật khẩu trong Apps Script" style="flex:1"><button class="btn" id="aKeySave">Lưu</button></div>
       <div id="setMsg"></div>
@@ -285,21 +285,37 @@ $('#hwSave').onclick = async () => {
 $('#hwCopy').onclick = async () => { try { await navigator.clipboard.writeText($('#hwCopy').dataset.link); msg('#hwMsg', 'ok', 'Đã copy link: ' + esc($('#hwCopy').dataset.link)); } catch (e) { msg('#hwMsg', 'info', esc($('#hwCopy').dataset.link)); } };
 $('#hwShowRes').onclick = () => { $('#rUnit').value = $('#hwUnit').value; document.querySelector('.tab[data-t="res"]').click(); if (ROWS) drawResults(); else $('#rLoad').click(); };
 
+/* ---------- Google Sheet connection ---------- */
+const GS_FIX = `<b>Google chặn yêu cầu vì Web app đang bắt đăng nhập.</b> Cách sửa (giữ nguyên URL): mở Apps Script → <b>Deploy → Manage deployments</b> → bấm ✏️ → <b>Who has access: Anyone</b> (không chọn “Anyone with Google account” hay “Only myself”) → Version: <b>New version</b> → <b>Deploy</b>. Sau đó bấm <b>🔌 Kiểm tra kết nối</b>.`;
+async function gsGet(url, query) {
+  let r;
+  try { r = await fetch(url + '?' + query + '&t=' + Date.now(), { cache: 'no-store' }); }
+  catch (e) { const err = new Error(GS_FIX); err.html = true; throw err; }
+  const text = await r.text();
+  try { return JSON.parse(text); }
+  catch (e) { const err = new Error(/<html/i.test(text) ? GS_FIX : 'Apps Script trả về dữ liệu không đúng dạng JSON. Hãy dán lại code mới nhất và Deploy “New version”.'); err.html = true; throw err; }
+}
+async function gsPing(url) {
+  const j = await gsGet(url, 'ping=1');
+  if (!j || !j.ok) throw new Error('Apps Script trả lời nhưng không đúng. Hãy dán lại code mới nhất và Deploy “New version”.');
+  return true;
+}
+
 /* ---------- results ---------- */
 let ROWS = null;
-$('#rUnit').innerHTML += BUILT.map(n => `<option value="${n}">Unit ${n}</option>`).join('');
+$('#rUnit').innerHTML += BUILT.map(n => `<option value="${n}">${uname(n)}</option>`).join('');
 $('#rLoad').onclick = async () => {
   const url = SET && SET.progressUrl, key = LS.get('a2_key');
   if (!url) return msg('#rMsg', 'err', 'Chưa nối Google Sheet – vào tab ⚙️ Cài đặt.');
   if (!key) return msg('#rMsg', 'err', 'Chưa nhập ADMIN_KEY – vào tab ⚙️ Cài đặt.');
   msg('#rMsg', 'info', 'Đang tải dữ liệu…');
   try {
-    const r = await fetch(url + '?key=' + encodeURIComponent(key) + '&t=' + Date.now()); const j = await r.json();
-    if (!j.ok) throw new Error(j.error === 'wrong key' ? 'ADMIN_KEY không đúng.' : 'Không tải được dữ liệu.');
+    const j = await gsGet(url, 'key=' + encodeURIComponent(key));
+    if (!j.ok) throw new Error(j.error === 'wrong key' ? 'ADMIN_KEY không đúng: hãy nhập đúng mật khẩu ADMIN_KEY trong Apps Script (tab ⚙️ Cài đặt).' : 'Không tải được dữ liệu' + (j.error ? ': ' + j.error : '.'));
     ROWS = j.rows; const cls = [...new Set(ROWS.map(x => x.cls).filter(Boolean))].sort();
     $('#rCls').innerHTML = '<option value="">Tất cả lớp</option>' + cls.map(c => `<option>${esc(c)}</option>`).join('');
     msg('#rMsg', 'ok', `Đã tải ${ROWS.length} dòng.`); drawResults();
-  } catch (err) { msg('#rMsg', 'err', esc(err.message)); }
+  } catch (err) { msg('#rMsg', 'err', err.html ? err.message : esc(err.message)); }
 };
 ['#rCls', '#rUnit', '#rQ'].forEach(s => $(s).addEventListener('input', () => ROWS && drawResults()));
 function aggregate() {
@@ -355,7 +371,18 @@ $('#ghSave').onclick = async () => {
 $('#ghDel').onclick = () => { LS.set('a2_gh', ''); fillSettings(); devInfo(); msg('#ghMsg', 'ok', 'Đã xoá key khỏi trình duyệt này.'); };
 $('#pUrlSave').onclick = async () => {
   const v = $('#pUrl').value.trim(); if (v && !/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(v)) return msg('#setMsg', 'err', 'URL phải có dạng https://script.google.com/macros/s/…/exec');
-  msg('#setMsg', 'info', 'Đang lưu…'); try { await loadSettings(true); SET.progressUrl = v; await saveSettings('Update progress tracker URL'); msg('#setMsg', 'ok', '✅ Đã lưu URL lên website.'); } catch (err) { msg('#setMsg', 'err', esc(err.message)); }
+  if (v) { msg('#setMsg', 'info', 'Đang kiểm tra kết nối…'); try { await gsPing(v); } catch (err) { return msg('#setMsg', 'err', 'Chưa lưu. ' + (err.html ? err.message : esc(err.message))); } }
+  msg('#setMsg', 'info', 'Đang lưu…'); try { await loadSettings(true); SET.progressUrl = v; await saveSettings('Update progress tracker URL'); msg('#setMsg', 'ok', '✅ Kết nối tốt. Đã lưu URL lên website.'); } catch (err) { msg('#setMsg', 'err', esc(err.message)); }
+};
+$('#pUrlTest').onclick = async () => {
+  const v = $('#pUrl').value.trim() || (SET && SET.progressUrl); if (!v) return msg('#setMsg', 'err', 'Chưa có Web app URL.');
+  msg('#setMsg', 'info', 'Đang kiểm tra kết nối…');
+  try {
+    await gsPing(v);
+    const key = LS.get('a2_key'); let extra = '';
+    if (key) { const j = await gsGet(v, 'key=' + encodeURIComponent(key)); extra = j.ok ? ` ADMIN_KEY đúng · Sheet có ${j.rows.length} dòng.` : ' ⚠ ADMIN_KEY trên trình duyệt này không khớp với Apps Script.'; }
+    msg('#setMsg', 'ok', '✅ Kết nối Google Sheet hoạt động. Học viên gửi kết quả được.' + extra);
+  } catch (err) { msg('#setMsg', 'err', err.html ? err.message : esc(err.message)); }
 };
 $('#aKeySave').onclick = () => { const v = $('#aKey').value.trim(); if (!v || v.startsWith('•')) return msg('#setMsg', 'err', 'Hãy nhập ADMIN_KEY.'); LS.set('a2_key', v); fillSettings(); msg('#setMsg', 'ok', 'Đã lưu ADMIN_KEY trên trình duyệt này.'); };
 $('#passSave').onclick = async () => {
